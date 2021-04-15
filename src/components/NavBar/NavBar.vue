@@ -1,9 +1,10 @@
 <template>
     <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      <router-link to="/shows">Shows</router-link>
       <router-link to="/about">About</router-link>
-      <h2>{{ show }}</h2>
+      <!-- <h2>{{ currentShow }}</h2> -->
     </div>
     <router-view/>
   </div>
@@ -13,7 +14,7 @@
 export default {
   name: 'NavBar',
   computed: {
-    show() {
+    currentShow() {
       return this.$store.getters.getCurrentShow;
     },
   },
