@@ -5,7 +5,7 @@
       <p>
         {{show.name}}
       </p>
-      <img :src='show.pictures.large'>
+      <img :src='show.pictures.large' :alt='show.name'>
     </div>
   </div>
 </template>
