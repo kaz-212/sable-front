@@ -6,6 +6,9 @@
         {{show.name}}
       </p>
       <img :src='show.pictures.large' :alt='show.name'>
+      <div class="tags" v-bind:key='tag.key' v-for='tag in show.tags'>
+        {{tag.name}}
+      </div>
     </div>
   </div>
 </template>
