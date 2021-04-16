@@ -9,7 +9,6 @@
 import VideoStream from '../components/VideoStream/VideoStream.vue';
 
 export default {
-  name: 'Home',
   components: {
     VideoStream,
   },

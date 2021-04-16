@@ -1,8 +1,7 @@
 import axios from 'axios';
 
-// const sableAPI = 'https://sable-radio.herokuapp.com/api';
+const sableAPI = 'https://sable-radio.herokuapp.com/api/schedule';
 // const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
-const testAPI = 'https://api.mixcloud.com/spartacus/party-time/';
 
 export default ({
   state: {
@@ -11,7 +10,7 @@ export default ({
   },
   actions: {
     async setCurrentShow(state) {
-      const show = await axios.get(testAPI);
+      const show = await axios.get(sableAPI);
       console.log(show);
       state.commit('commitCurrentShow', show);
     },
