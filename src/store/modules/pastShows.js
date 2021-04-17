@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 
-export default ({
+export default {
   state: {
-    pastShows: [],
+    pastShows: []
   },
   actions: {
     async fetchShows(state) {
@@ -12,16 +12,15 @@ export default ({
       JSON.stringify(show);
       console.log(show);
       state.commit('setShows', show);
-    },
+    }
   },
-  modules: {
-  },
+  modules: {},
   getters: {
-    allShows: (state) => state.pastShows,
+    allShows: state => state.pastShows
   },
   mutations: {
     setShows(state, shows) {
       state.pastShows = shows;
-    },
-  },
-});
+    }
+  }
+};

@@ -2,24 +2,23 @@ import axios from 'axios';
 
 const sableAPI = 'https://sable-radio.herokuapp.com/api/schedule/currentshow';
 
-export default ({
+export default {
   state: {
-    currentShow: '',
+    currentShow: ''
   },
   actions: {
     async fetchCurrentShow(state) {
       const show = await axios.get(sableAPI);
       state.commit('setCurrentShow', show);
-    },
+    }
   },
-  modules: {
-  },
+  modules: {},
   getters: {
-    getCurrentShow: (state) => state.currentShow,
+    getCurrentShow: state => state.currentShow
   },
   mutations: {
     setCurrentShow(state, show) {
       state.currentShow = show;
-    },
-  },
-});
+    }
+  }
+};

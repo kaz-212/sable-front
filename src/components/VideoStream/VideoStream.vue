@@ -5,8 +5,7 @@
 </template>
 
 <script>
-
 export default {
-  name: 'VideoStream',
+  name: 'VideoStream'
 };
 </script>
