@@ -8,8 +8,12 @@ export default ({
   },
   actions: {
     async fetchCurrentShow(state) {
-      const show = await axios.get(sableAPI);
-      state.commit('setCurrentShow', show);
+      try {
+        const show = await axios.get(sableAPI);
+        state.commit('setCurrentShow', show);
+      } catch (e) {
+        console.log(`${e}, no shows to display`);
+      }
     }
   },
   modules: {
