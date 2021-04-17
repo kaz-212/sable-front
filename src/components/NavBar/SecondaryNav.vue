@@ -1,13 +1,27 @@
 <template>
   <div>
-    <p>Secondary nav</p>
+    <p>
+      LIVE NOW:
+    <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
+    {{ thisShow.data.name }}
+    </p>
   </div>
 </template>
 
 <script>
-// if start_time < time.now < end_time - return name
-// maybe this should be done at the backend level
-// will need to add an endpoint for api/schedule/:time.now
+import { mapGetters, mapActions } from 'vuex';
+
+export default {
+  name: 'SecondaryNav',
+  methods: {
+    ...mapActions(['fetchCurrentShow'])
+  },
+  computed: mapGetters(['thisShow']),
+  created() {
+    this.fetchCurrentShow();
+  }
+};
+
 </script>
 
 <style></style>
