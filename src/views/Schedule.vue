@@ -14,11 +14,11 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
   name: 'Schedule',
   methods: {
-    ...mapActions(['fetchSchedule']),
+    ...mapActions(['fetchSchedule'])
   },
   computed: mapGetters(['schedule']),
   created() {
     this.fetchSchedule();
-  },
+  }
 };
 </script>

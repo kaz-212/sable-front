@@ -19,11 +19,11 @@ import { mapGetters, mapActions } from 'vuex';
 export default {
   name: 'Shows',
   methods: {
-    ...mapActions(['fetchShows']),
+    ...mapActions(['fetchShows'])
   },
   computed: mapGetters(['allShows']),
   created() {
     this.fetchShows();
-  },
+  }
 };
 </script>
