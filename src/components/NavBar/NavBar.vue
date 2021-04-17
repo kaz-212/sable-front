@@ -4,6 +4,7 @@
       <router-link to="/">Home</router-link>
       <router-link to="/shows">Shows</router-link>
       <router-link to="/about">About</router-link>
+      <router-link to="/schedule">Schedule</router-link>
       <!-- <h2>{{ currentShow }}</h2> -->
       <SecondaryNav />
     </div>
@@ -16,11 +17,6 @@ import SecondaryNav from './SecondaryNav.vue';
 
 export default {
   name: 'NavBar',
-  computed: {
-    currentShow() {
-      return this.$store.getters.getCurrentShow;
-    },
-  },
   components: {
     SecondaryNav,
   },

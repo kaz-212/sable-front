@@ -1,29 +1,27 @@
 import axios from 'axios';
 
 const sableAPI = 'https://sable-radio.herokuapp.com/api/schedule';
-// const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 
 export default ({
   state: {
-    currentShow: 'hello this is the current show',
-    allShows: [],
+    weeklySchedule: [],
   },
   actions: {
-    async setCurrentShow(state) {
-      const show = await axios.get(sableAPI);
-      console.log(show);
-      state.commit('commitCurrentShow', show);
+    async fetchSchedule(state) {
+      const schedule = await axios.get(sableAPI);
+      JSON.stringify(schedule);
+      console.log(schedule);
+      state.commit('setSchedule', schedule);
     },
   },
   modules: {
   },
   getters: {
-    getCurrentShow: (state) => state.currentShow,
+    schedule: (state) => state.weeklySchedule,
   },
   mutations: {
-    commitCurrentShow(state, payload) {
-      state.currentShow = payload;
-      state.allShows.push(payload);
+    setSchedule(state, schedule) {
+      state.weeklySchedule = schedule;
     },
   },
 });

@@ -4,7 +4,7 @@ const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 
 export default ({
   state: {
-    shows: [],
+    pastShows: [],
   },
   actions: {
     async fetchShows(state) {
@@ -17,11 +17,11 @@ export default ({
   modules: {
   },
   getters: {
-    allShows: (state) => state.shows,
+    allShows: (state) => state.pastShows,
   },
   mutations: {
     setShows(state, shows) {
-      state.shows = shows;
+      state.pastShows = shows;
     },
   },
 });
