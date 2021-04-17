@@ -10,9 +10,6 @@ export default {
   components: {
     NavBar,
   },
-  mounted() {
-    this.$store.dispatch('setCurrentShow');
-  },
 };
 </script>
 
