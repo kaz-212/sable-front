@@ -14,10 +14,9 @@ export default ({
       state.commit('setShows', show);
     }
   },
-  modules: {
-  },
+  modules: {},
   getters: {
-    allShows: (state) => state.pastShows
+    allShows: state => state.pastShows
   },
   mutations: {
     setShows(state, shows) {
@@ -25,3 +24,4 @@ export default ({
     }
   }
 });
+

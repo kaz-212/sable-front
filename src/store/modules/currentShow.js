@@ -16,8 +16,7 @@ export default ({
       }
     }
   },
-  modules: {
-  },
+  modules: {},
   getters: {
     thisShow: (state) => state.currentShow
   },

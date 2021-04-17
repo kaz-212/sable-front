@@ -1,5 +1,5 @@
 <template>
-    <div id="app">
+  <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link>
       <router-link to="/shows">Shows</router-link>
@@ -8,7 +8,7 @@
       <!-- <h2>{{ currentShow }}</h2> -->
       <SecondaryNav />
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -18,7 +18,7 @@ import SecondaryNav from './SecondaryNav.vue';
 export default {
   name: 'NavBar',
   components: {
-    SecondaryNav,
-  },
+    SecondaryNav
+  }
 };
 </script>

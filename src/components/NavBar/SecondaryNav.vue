@@ -21,8 +21,7 @@ export default {
     this.fetchCurrentShow();
   }
 };
+
 </script>
 
-<style>
-
-</style>
+<style></style>

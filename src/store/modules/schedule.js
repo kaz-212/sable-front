@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const sableAPI = 'https://sable-radio.herokuapp.com/api/schedule';
 
-export default ({
+export default {
   state: {
     weeklySchedule: []
   },
@@ -14,10 +14,9 @@ export default ({
       state.commit('setSchedule', schedule);
     }
   },
-  modules: {
-  },
+  modules: {},
   getters: {
-    schedule: (state) => state.weeklySchedule
+    schedule: state => state.weeklySchedule
   },
   mutations: {
     setSchedule(state, schedule) {
@@ -25,3 +24,4 @@ export default ({
     }
   }
 });
+

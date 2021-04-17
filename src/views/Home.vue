@@ -10,7 +10,7 @@ import VideoStream from '../components/VideoStream/VideoStream.vue';
 
 export default {
   components: {
-    VideoStream,
-  },
+    VideoStream
+  }
 };
 </script>
