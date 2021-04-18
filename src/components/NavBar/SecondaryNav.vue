@@ -3,6 +3,7 @@
     <p>
       LIVE
       <LiveNow />
+      <TickerTape />
             <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
       {{ thisShow.data.name }}
     </p>
@@ -11,11 +12,13 @@
 
 <script>
 import LiveNow from '../Animations/LiveNow.vue';
+import TickerTape from '../Animations/TickerTape.vue';
 
 export default {
   name: 'SecondaryNav',
   components: {
-    LiveNow
+    LiveNow,
+    TickerTape
   },
   computed: {
     thisShow() {
