@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      LIVE NOW:
+      LIVE
       <LiveNow />
             <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
       {{ thisShow.data.name }}
