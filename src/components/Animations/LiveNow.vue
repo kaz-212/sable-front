@@ -11,6 +11,7 @@
   width: 8px;
   height: 8px;
   margin-left: 2px;
+  margin-right: 2px;
   background-color: $hoverColour;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
