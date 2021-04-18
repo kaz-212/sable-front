@@ -1,16 +1,22 @@
 <template>
   <div>
     <p>
-      LIVE NOW:
-      <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
+      LIVE
+      <LiveNow />
+            <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
       {{ thisShow.data.name }}
     </p>
   </div>
 </template>
 
 <script>
+import LiveNow from '../Animations/LiveNow.vue';
+
 export default {
   name: 'SecondaryNav',
+  components: {
+    LiveNow
+  },
   computed: {
     thisShow() {
       return this.$store.getters['currentShow/thisShow'];
