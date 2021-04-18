@@ -1,7 +1,7 @@
 <template>
-  <div class="ticker-wrap">
+  <div class="ticker-wrap" :key='showName'>
     <div class="ticker">
-      <div :key='showName' class="ticker__item">{{ showName }}</div>
+      <div class="ticker__item">{{ showName }}</div>
     </div>
   </div>
 </template>
@@ -63,7 +63,9 @@ export default {
     animation-duration: $tickerDuration;
 
     &__item {
+      display: inline-block;
       color: $primaryTextColour;
+      font-size: $navLinkSize;
     }
   }
 }
