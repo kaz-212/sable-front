@@ -1,10 +1,16 @@
 <template>
   <div class="ticker-wrap">
     <div class="ticker">
-      <div class="ticker__item">Unhardcode Me</div>
+      <div :key='showName' class="ticker__item">{{ showName }}</div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ['showName']
+};
+</script>
 
 <style lang='scss' scoped>
 $duration: 10s;

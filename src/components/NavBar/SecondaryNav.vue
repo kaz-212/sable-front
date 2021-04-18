@@ -3,9 +3,8 @@
     <p>
       LIVE
       <LiveNow />
-      <TickerTape />
+      <TickerTape :showName='thisShow.data.name' />
             <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
-      {{ thisShow.data.name }}
     </p>
   </div>
 </template>
