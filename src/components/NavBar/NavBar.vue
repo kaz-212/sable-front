@@ -38,6 +38,7 @@ export default {
     margin: 0 40px;
     padding: 0 5px;
     font-size: $navLinkSize;
+    transition: 0.5s;
     &:hover {
       background-color: $hoverColour;
     }
