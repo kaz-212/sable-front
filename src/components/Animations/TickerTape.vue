@@ -13,8 +13,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-$duration: 10s;
-
 @-webkit-keyframes ticker {
   0% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -61,8 +59,8 @@ $duration: 10s;
     animation-timing-function: linear;
    -webkit-animation-name: ticker;
     animation-name: ticker;
-    -webkit-animation-duration: $duration;
-    animation-duration: $duration;
+    -webkit-animation-duration: $tickerDuration;
+    animation-duration: $tickerDuration;
 
     &__item {
       color: $primaryTextColour;
