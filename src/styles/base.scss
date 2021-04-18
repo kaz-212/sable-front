@@ -1,7 +1,13 @@
 $primaryLineWidth: 2px;
 $secondaryLineWidth: 1px;
+
+// colours
 $primaryTextColour: black;
-$backgroundColour: white;
+$hoverColour: rgba(239, 59, 59, 0.705);
+
+// sizes
+$navLinkSize: 20px;
+$navHeight: 50px;
 
 * {
   margin: 0;
