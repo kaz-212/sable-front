@@ -3,6 +3,7 @@ import axios from 'axios';
 const sableAPI = 'https://sable-radio.herokuapp.com/api/schedule';
 
 export default ({
+  namespaced: true,
   state: {
     weeklySchedule: []
   },

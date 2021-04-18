@@ -2,7 +2,8 @@ import axios from 'axios';
 
 const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 
-export default ({
+export default {
+  namespaced: true,
   state: {
     pastShows: []
   },
@@ -23,5 +24,4 @@ export default ({
       state.pastShows = shows;
     }
   }
-});
-
+};
