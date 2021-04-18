@@ -29,7 +29,7 @@ export default {
   display: block;
   width: 100vw;
   height: $navHeight;
-  border-bottom: 1px solid black;
+  border-bottom: $primaryLineWidth solid black;
   display: flex;
 
   .nav-link {
@@ -46,14 +46,14 @@ export default {
   .logo {
     margin-left: 100px;
     padding-right: 100px;
-    border-right: 1px solid black;
+    border-right: $primaryLineWidth solid black;
     display: flex;
     align-items: center;
   }
 
   .links {
-    margin-left: auto;
-    margin-right: 100px;
+    margin-left: 100px;
+    margin-right: auto;
     display: flex;
     align-items: center;
   }
