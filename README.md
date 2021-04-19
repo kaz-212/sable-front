@@ -12,6 +12,8 @@ Notes
 
 To get description of a show, use show.data.key in allShows and make an API call to https://api.mixcloud.com/key when it is clicked. This will return a JSON containing a description (see https://api.mixcloud.com/sable/robin-matto-aka-il-matto-the-picnic-blanket-mix/)
 
+To query the mixcloud database use this query string parameter template: https://api.mixcloud.com/search/?q=sugarspice&everythingnice&type=cloudcast
+
 Search: https://codepen.io/duaneblake/pen/LMoMOL 
 
 Django Admin Cloudinary: https://support.cloudinary.com/hc/en-us/community/posts/360009747059-How-to-upload-image-through-Django-admin-page
