@@ -28,6 +28,7 @@ export default {
 #nav {
   display: block;
   width: 100vw;
+  background-color: $backgroundColour;
   height: $navHeight;
   border-bottom: $primaryLineWidth solid black;
   display: flex;
