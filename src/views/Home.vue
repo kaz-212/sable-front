@@ -1,10 +1,13 @@
 <template>
   <div class="home">
-    <h2>Welcome to the home page. navigate around :)</h2>
-    <table>
-      <tr>
-        <td>HELLO</td>
-        <td><VideoStream /></td>
+    <table rules="cols">
+      <tr class="video">
+        <td class="cell left"><div>HELLO</div></td>
+        <td class="cell right">
+          <div>
+            <div class="video-wrapper"><VideoStream /></div>
+          </div>
+        </td>
       </tr>
     </table>
 
@@ -27,3 +30,22 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+table {
+  width: 100%;
+  .video {
+    width: 100%;
+    // background-color: olive;
+    .cell {
+      height: 60vh;
+      &.right {
+        width: 73%;
+        .video-wrapper {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+</style>
