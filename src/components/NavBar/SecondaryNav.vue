@@ -1,9 +1,9 @@
 <template>
   <div>
-    <p>
+    <p v-if="thisShow">
       LIVE NOW:
       <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
-      {{ thisShow.data.name }}
+      {{ thisShow.name }}
     </p>
   </div>
 </template>

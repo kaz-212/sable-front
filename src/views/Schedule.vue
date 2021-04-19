@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <div class="schedule" :key="show.id" v-for="show in schedule.data">
+  <div class="home" v-if="schedule">
+    <div class="schedule" :key="show.id" v-for="show in schedule">
       <!-- INSERT BEAUTIFUL REGEX FOR DATE TIMES !  -->
       <p>{{ show.date_time }} - {{ show.end_time }}</p>
       <h2>{{ show.name }}</h2>
@@ -9,16 +9,15 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-
 export default {
   name: 'Schedule',
-  methods: {
-    ...mapActions(['fetchSchedule'])
+  computed: {
+    schedule() {
+      return this.$store.getters['schedule/schedule'];
+    }
   },
-  computed: mapGetters(['schedule']),
   created() {
-    this.fetchSchedule();
+    this.$store.dispatch('schedule/fetchSchedule');
   }
 };
 </script>
