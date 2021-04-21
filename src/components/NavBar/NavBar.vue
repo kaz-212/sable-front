@@ -28,6 +28,7 @@ export default {
 #nav {
   display: block;
   width: 100vw;
+  background-color: $backgroundColour;
   height: $navHeight;
   border-bottom: $primaryLineWidth solid black;
   display: flex;
@@ -37,6 +38,7 @@ export default {
     color: $primaryTextColour;
     margin-right: 80px;
     font-size: $navLinkSize;
+    transition: 0.5s;
     &:hover {
       background-color: $hoverColour;
     }
