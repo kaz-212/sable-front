@@ -44,7 +44,8 @@ export default {
   }
 
   .logo {
-    margin-left: 100px;
+    width: $leftColWidth;
+
     padding-right: 100px;
     border-right: $primaryLineWidth solid black;
     display: flex;
