@@ -14,16 +14,15 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
-
 export default {
   name: 'Shows',
-  methods: {
-    ...mapActions(['fetchShows'])
+  computed: {
+    allShows() {
+      return this.$store.getters['pastShows/allShows'];
+    }
   },
-  computed: mapGetters(['allShows']),
   created() {
-    this.fetchShows();
+    this.$store.dispatch('pastShows/fetchShows');
   }
 };
 </script>

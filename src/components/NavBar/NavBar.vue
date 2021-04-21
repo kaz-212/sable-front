@@ -36,8 +36,7 @@ export default {
   .nav-link {
     text-decoration: none;
     color: $primaryTextColour;
-    margin: 0 40px;
-    padding: 0 5px;
+    margin-right: 80px;
     font-size: $navLinkSize;
     transition: 0.5s;
     &:hover {
@@ -46,15 +45,16 @@ export default {
   }
 
   .logo {
-    margin-left: 100px;
+    width: $leftColWidth;
     padding-right: 100px;
+    padding-left: 30px;
     border-right: $primaryLineWidth solid black;
     display: flex;
     align-items: center;
   }
 
   .links {
-    margin-left: 100px;
+    margin-left: 30px;
     margin-right: auto;
     display: flex;
     align-items: center;

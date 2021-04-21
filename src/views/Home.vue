@@ -1,13 +1,23 @@
 <template>
   <div class="home">
-    <h2>Welcome to the home page. navigate around :)</h2>
-    <table>
-      <tr>
-        <td>HELLO</td>
-        <td><VideoStream /></td>
-      </tr>
-    </table>
-
+    <div class="wrapper">
+      <div class="stream-row">
+        <div class="stream-info">
+          <div class="live">
+            live (red square)
+          </div>
+          <div class="info">
+            <span>{{ thisShow.name }}</span>
+            <span
+              >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
+            >
+          </div>
+        </div>
+        <div class="stream-video">
+          <div class="video-wrapper"><VideoStream /></div>
+        </div>
+      </div>
+    </div>
     {{ isLive }}
   </div>
 </template>
@@ -23,7 +33,47 @@ export default {
   computed: {
     isLive() {
       return this.$store.getters['currentShow/isLive'];
+    },
+    thisShow() {
+      return this.$store.getters['currentShow/thisShow'];
     }
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.wrapper {
+  width: 100vw;
+  .stream-row {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    .stream-info {
+      width: $leftColWidth;
+      // background-color: olive;
+      border-right: $primaryLineWidth solid black;
+      border-bottom: $primaryLineWidth solid black;
+      display: flex;
+      justify-content: flex-start;
+      .live {
+        margin: 30px 0 0 30px;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0 0 100px;
+      }
+    }
+    .stream-video {
+      width: $rightColWidth;
+      height: 100%;
+      // background-color: red;
+      border-bottom: $primaryLineWidth solid black;
+      .video-wrapper {
+        width: 70%;
+        margin: 30px 0 0 30px;
+      }
+    }
+  }
+}
+</style>

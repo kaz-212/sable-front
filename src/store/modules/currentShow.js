@@ -10,9 +10,9 @@ export default {
   actions: {
     async fetchCurrentShow({ commit }) {
       try {
-        const show = await axios.get(sableAPI);
-        console.log(show);
-        commit('setCurrentShow', show);
+        const { data } = await axios.get(sableAPI);
+        console.log(data);
+        commit('setCurrentShow', data);
       } catch (e) {
         console.log(`${e}, no shows to display`);
         commit('setCurrentShow', []);

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p>
-      LIVE
+    <p v-if="thisShow">
+      LIVE NOW:
       <LiveNow />
       <TickerTape :showName='thisShow.data.name' />
             <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
