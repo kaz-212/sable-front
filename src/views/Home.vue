@@ -54,14 +54,14 @@ export default {
       border-right: $primaryLineWidth solid black;
       border-bottom: $primaryLineWidth solid black;
       display: flex;
-      justify-content: space-around;
+      justify-content: flex-start;
+      .live {
+        margin: 30px 0 0 30px;
+      }
       .info {
         display: flex;
         flex-direction: column;
-        margin-top: 50px;
-      }
-      .live {
-        margin-top: 50px;
+        margin: 30px 0 0 100px;
       }
     }
     .stream-video {
@@ -71,6 +71,7 @@ export default {
       border-bottom: $primaryLineWidth solid black;
       .video-wrapper {
         width: 70%;
+        margin: 30px 0 0 30px;
       }
     }
   }
