@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch('currentShow/fetchCurrentShow');
+    this.$store.dispatch('currentShow/getCurrentShowPlease');
   }
 };
 </script>

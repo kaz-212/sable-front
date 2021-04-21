@@ -17,6 +17,16 @@ export default {
         console.log(`${e}, no shows to display`);
         commit('setCurrentShow', []);
       }
+    },
+    async getCurrentShowPlease({ commit }) {
+      try {
+        const data = await axios.get(sableAPI);
+        console.log(data);
+        commit('setCurrentShow', data);
+      } catch (e) {
+        console.log(`${e}, no shows to display`);
+        commit('setCurrentShow', []);
+      }
     }
   },
   getters: {
