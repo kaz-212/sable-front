@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <div class="show" v-bind:key="show.key" v-for="show in allShows.data.data">
+  <div class="home" v-if="allShows && allShows.data">
+    <div class="show" v-bind:key="show.key" v-for="show in allShows.data">
       <h2>{{ show.key }}</h2>
       <p>
         {{ show.name }}
