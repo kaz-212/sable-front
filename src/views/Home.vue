@@ -6,7 +6,10 @@
           <div class="live">
             live (red square)
           </div>
-          <div class="info">
+          <div class="info" v-if="thisShow &&
+                                  thisShow.name &&
+                                  thisShow.date_time &&
+                                  thisShow.end_time">
             <span>{{ thisShow.name }}</span>
             <span
               >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span

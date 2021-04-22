@@ -1,10 +1,10 @@
 <template>
   <div>
-    <p v-if="thisShow">
+    <p v-if="thisShow && thisShow.name">
       LIVE NOW:
       <LiveNow />
-      <TickerTape :showName='thisShow.data.name' />
-            <!-- {{ thisShow.data.date_time }} - {{ thisShow.data.end_time }} -->
+      <TickerTape :showName='thisShow.name' />
+            <!-- {{ thisShow.date_time }} - {{ thisShow.end_time }} -->
     </p>
   </div>
 </template>
@@ -25,7 +25,7 @@ export default {
     }
   },
   created() {
-    this.$store.dispatch('currentShow/getCurrentShowPlease');
+    this.$store.dispatch('currentShow/fetchCurrentShow');
   }
 };
 </script>
