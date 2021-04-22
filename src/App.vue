@@ -1,22 +1,17 @@
 <template>
   <div id="app">
-    <NavBar />
+    <NavBarRes />
     <router-view />
   </div>
 </template>
 
 <script>
-import NavBar from './components/NavBar/NavBar.vue';
+import NavBarRes from './components/NavBar/NavBarRes.vue';
 
 export default {
   name: 'Skeleton',
   components: {
-    NavBar
+    NavBarRes
   }
 };
 </script>
-
-<style lang="scss">
-#app {
-}
-</style>
