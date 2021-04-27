@@ -2,8 +2,8 @@
   <div v-if="thisShow && thisShow.name" class="radio-player">
     <div class="ticker-container">
       <TickerTape :showName="thisShow.name" />
-      <i v-if="!playing" class="fas fa-play"></i>
-      <i v-else class="fas fa-pause"></i>
+      <i @click="playing = !playing" v-if="!playing" class="fas fa-play icon"></i>
+      <i @click="playing = !playing" v-else class="fas fa-pause icon"></i>
     </div>
     <div class="blinker-container">
       <LiveNow />
@@ -42,16 +42,17 @@ export default {
 .radio-player {
   // margin-right: 90px;
   // background-color: olive;
-  margin: 10px 0;
+  margin: 10px 30px;
   display: flex;
   justify-content: flex-end;
   width: 300px;
   .ticker-container {
     overflow: hidden;
     border-right: 1px solid black;
-    i {
+    .icon {
       margin-right: 40px;
       margin-left: 10px;
+      cursor: pointer;
     }
   }
   .blinker-container,
