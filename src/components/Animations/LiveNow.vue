@@ -1,11 +1,10 @@
 <template>
-  <div style='top:0' class='live-now-circle'>
-  </div>
+  <div class="live-now-circle"></div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .live-now-circle {
-  display: inline-block;
+  // display: inline-block;
   position: relative;
   top: 1px;
   width: 8px;
@@ -31,8 +30,14 @@
 }
 
 @keyframes flickerAnimation {
-  0% {opacity: 1;}
-  50% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

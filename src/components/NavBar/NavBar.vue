@@ -9,17 +9,17 @@
       <router-link class="nav-link" :to="{ name: 'Schedule' }">schedule</router-link>
     </div>
     <!-- <h2>{{ currentShow }}</h2> -->
-    <SecondaryNav />
+    <RadioPlayer />
   </nav>
 </template>
 
 <script>
-import SecondaryNav from './SecondaryNav.vue';
+import RadioPlayer from './RadioPlayer.vue';
 
 export default {
   name: 'NavBar',
   components: {
-    SecondaryNav
+    RadioPlayer
   }
 };
 </script>
