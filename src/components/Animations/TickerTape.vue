@@ -41,7 +41,7 @@ export default {
 
 .ticker-wrap {
   position: relative;
-  max-width: 65px;
+  width: 100px;
   overflow: hidden;
   background-color: $backgroundColour;
   padding-left: 100%;

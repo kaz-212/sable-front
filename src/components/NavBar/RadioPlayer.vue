@@ -2,24 +2,16 @@
   <div v-if="thisShow && thisShow.name" class="radio-player">
     <div class="ticker-container">
       <TickerTape :showName="thisShow.name" />
-      <i @click="playing = !playing" v-if="!playing" class="fas fa-play icon"></i>
-      <i @click="playing = !playing" v-else class="fas fa-pause icon"></i>
     </div>
-    <div class="blinker-container">
-      <LiveNow />
-    </div>
-    <!-- {{ thisShow.date_time }} - {{ thisShow.end_time }} -->
   </div>
 </template>
 
 <script>
-import LiveNow from '../Animations/LiveNow.vue';
-import TickerTape from '../Animations/TickerTape.vue';
+import TickerTape from '@/components/Animations/TickerTape.vue';
 
 export default {
   name: 'RadioPlayer',
   components: {
-    LiveNow,
     TickerTape
   },
   data() {
@@ -40,15 +32,13 @@ export default {
 
 <style lang="scss" scoped>
 .radio-player {
-  // margin-right: 90px;
   // background-color: olive;
-  margin: 10px 30px;
+  margin: 10px 20px;
   display: flex;
   justify-content: flex-end;
   width: 300px;
   .ticker-container {
     overflow: hidden;
-    border-right: 1px solid black;
     .icon {
       margin-right: 40px;
       margin-left: 10px;
