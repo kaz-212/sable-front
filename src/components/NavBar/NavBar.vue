@@ -6,7 +6,7 @@
     <div class="links">
       <router-link class="nav-link" :to="{ name: 'Shows' }">shows</router-link>
       <router-link class="nav-link" :to="{ name: 'About' }">about</router-link>
-      <router-link class="nav-link" :to="{ name: 'Schedule' }">schedule</router-link>
+      <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
     </div>
     <!-- <h2>{{ currentShow }}</h2> -->
     <SecondaryNav />
