@@ -1,21 +1,21 @@
 <template>
   <div class="home" v-if="allShows && allShows.data">
     <div class="show" v-bind:key="show.key" v-for="show in allShows.data">
-      <Card :name="show.name"
-            :image="show.pictures.large"
-            :type="'show'"
-            :tags="show.tags"/>
+      <ShowCard :name="show.name"
+                :image="show.pictures.large"
+                :type="'show'"
+                :tags="show.tags" />
     </div>
   </div>
 </template>
 
 <script>
-import Card from '@/components/Cards/Card.vue';
+import ShowCard from '@/components/Cards/ShowCard.vue';
 
 export default {
   name: 'Shows',
   components: {
-    Card
+    ShowCard
   },
   computed: {
     allShows() {

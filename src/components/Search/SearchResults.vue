@@ -6,7 +6,7 @@
             :type="'resident'"/>
     </div>
     <div :key="show.key" v-for="show in queryShows">
-      <Card :name="show.name"
+      <ShowCard :name="show.name"
             :image="show.pictures.large"
             :type="'show'"
             :tags="show.tags" />
@@ -16,11 +16,13 @@
 
 <script>
 import Card from '../Cards/Card.vue';
+import ShowCard from '../Cards/ShowCard.vue';
 
 export default {
   name: 'SearchResults',
   components: {
-    Card
+    Card,
+    ShowCard
   },
   computed: {
     queryResidents() {
