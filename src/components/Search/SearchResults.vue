@@ -1,21 +1,27 @@
 <template>
   <div>
     <div :key="resident.id" v-for="resident in queryResidents">
-      {{resident.name}}
-      <div v-if="resident.image_url">
-        <img :src="resident.image_url" :alt="resident.name" />
-      </div>
+      <Card :name="resident.name"
+            :image="resident.image_url"
+            :type="'resident'"/>
     </div>
     <div :key="show.key" v-for="show in queryShows">
-      {{show.name}}
-      <img :src="show.pictures.large" :alt="show.name" />
+      <Card :name="show.name"
+            :image="show.pictures.large"
+            :type="'show'"
+            :tags="show.tags" />
     </div>
   </div>
 </template>
 
 <script>
+import Card from '../Cards/Card.vue';
+
 export default {
   name: 'SearchResults',
+  components: {
+    Card
+  },
   computed: {
     queryResidents() {
       return this.$store.getters['search/getResidents'];

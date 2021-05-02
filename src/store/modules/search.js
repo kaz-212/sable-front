@@ -31,11 +31,17 @@ export default {
     },
     async searchAll(context, queryString) {
       try {
-        context.dispatch('searchResidents', queryString);
-        context.dispatch('searchShows', queryString);
+        await Promise.all(
+          [context.dispatch('searchResidents', queryString),
+            context.dispatch('searchShows', queryString)]
+        );
       } catch (e) {
         console.log(e);
       }
+    },
+    clearAll(state) {
+      state.commit('setShows', '');
+      state.commit('setResidents', '');
     }
   },
   getters: {

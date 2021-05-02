@@ -18,8 +18,12 @@ export default {
   }),
   methods: {
     searchQuerySubmitted() {
-      console.log(this.searchTerm);
-      this.$store.dispatch('search/searchAll', this.searchTerm);
+      if (this.searchTerm !== '') {
+        this.$store.dispatch('search/searchAll', this.searchTerm);
+        this.searchTerm = '';
+      } else {
+        this.$store.dispatch('search/clearAll');
+      }
     }
   }
 };
@@ -33,5 +37,7 @@ export default {
     height: 25px;
     font-size: 20px;
   }
+
+  input:focus { outline: none; }
 
 </style>
