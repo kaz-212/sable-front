@@ -25,6 +25,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+
+  input[type=text] {
+    border: none;
+    border-bottom: $primaryLineWidth solid;
+    height: 25px;
+    font-size: 20px;
+  }
 
 </style>

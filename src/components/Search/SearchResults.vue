@@ -1,10 +1,14 @@
 <template>
   <div>
-    <div v-if="queryResidents">
-      {{queryResidents}}
+    <div :key="resident.id" v-for="resident in queryResidents">
+      {{resident.name}}
+      <div v-if="resident.image_url">
+        <img :src="resident.image_url" :alt="resident.name" />
+      </div>
     </div>
     <div :key="show.key" v-for="show in queryShows">
       {{show.name}}
+      <img :src="show.pictures.large" :alt="show.name" />
     </div>
   </div>
 </template>
