@@ -14,6 +14,7 @@
       <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Schedule' }"
         >schedule</router-link
       >
+      <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
     </div>
     <div class="hamburger" @click="expandNav = !expandNav">
       <span class="bar"></span>
