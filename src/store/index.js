@@ -4,6 +4,7 @@ import schedule from './modules/schedule';
 import pastShows from './modules/pastShows';
 import currentShow from './modules/currentShow';
 import residents from './modules/residents';
+import search from './modules/search';
 
 Vue.use(Vuex);
 
@@ -12,6 +13,7 @@ export default new Vuex.Store({
     schedule,
     pastShows,
     currentShow,
-    residents
+    residents,
+    search
   }
 });

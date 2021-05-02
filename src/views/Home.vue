@@ -22,16 +22,24 @@
       </div>
     </div>
     {{ isLive }}
+    <h3>Query</h3>
+    <SearchBar />
+    <h3>Results:</h3>
+    <SearchResults />
   </div>
 </template>
 
 <script>
 import VideoStream from '../components/VideoStream/VideoStream.vue';
+import SearchBar from '../components/Search/SearchBar.vue';
+import SearchResults from '../components/Search/SearchResults.vue';
 
 export default {
   name: 'Home',
   components: {
-    VideoStream
+    VideoStream,
+    SearchBar,
+    SearchResults
   },
   computed: {
     isLive() {
