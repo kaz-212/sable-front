@@ -3,8 +3,8 @@
     <div v-if="image">
       <img :src="image" :alt="name" />
     </div>
-    <h2>{{name}}</h2>
-    <h2>{{date}}</h2>
+    <h2>{{name.slice(0, -10)}}</h2>
+    <h2>{{name.slice(-8)}}</h2>
     <h3>{{type}}</h3>
     <div class="tags" v-bind:key="tag.key" v-for="tag in tags">
       <h3 class="tag">{{ tag.name }}</h3>
@@ -18,7 +18,6 @@ export default {
   props: {
     name: String,
     image: String,
-    date: String,
     type: String,
     tags: Array
   }
