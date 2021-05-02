@@ -36,7 +36,7 @@ export default {
   margin: 10px 20px;
   display: flex;
   justify-content: flex-end;
-  width: 300px;
+  width: 120px;
   .ticker-container {
     overflow: hidden;
     .icon {

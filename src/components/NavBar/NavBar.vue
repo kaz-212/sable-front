@@ -1,15 +1,21 @@
 <template>
   <nav id="nav">
-    <div class="logo">
+    <div @click="expandNav = false" class="logo">
       <i class="fas fa-search icon"></i>
       <router-link class="nav-link" :to="{ name: 'Home' }">sable radio</router-link>
     </div>
-    <div class="links">
-      <router-link class="nav-link" :to="{ name: 'Shows' }">shows</router-link>
-      <router-link class="nav-link" :to="{ name: 'About' }">about</router-link>
-      <router-link class="nav-link" :to="{ name: 'Schedule' }">schedule</router-link>
+    <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Shows' }"
+        >shows</router-link
+      >
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'About' }"
+        >about</router-link
+      >
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Schedule' }"
+        >schedule</router-link
+      >
     </div>
-    <div class="hamburger">
+    <div class="hamburger" @click="expandNav = !expandNav">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
@@ -25,7 +31,6 @@
 <script>
 import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
 import LiveNow from '@/components/Animations/LiveNow.vue';
-
 import RadioPlayer from './RadioPlayer.vue';
 
 export default {
@@ -34,6 +39,11 @@ export default {
     RadioPlayer,
     RadioEmbed,
     LiveNow
+  },
+  data() {
+    return {
+      expandNav: false
+    };
   }
 };
 </script>
@@ -46,6 +56,11 @@ export default {
   height: $navHeight;
   border-bottom: $primaryLineWidth solid black;
   display: flex;
+  flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   .nav-link {
     text-decoration: none;
@@ -108,14 +123,46 @@ export default {
       border-radius: 10px;
     }
   }
-
-  @media (max-width: 450px) {
+}
+@media (max-width: 1100px) {
+  #nav {
+    height: auto;
+    justify-content: flex-end;
+    flex-flow: column;
     .hamburger {
       display: flex;
     }
 
     .links {
-      display: none;
+      &.hide {
+        display: none;
+      }
+      order: 3;
+      flex-direction: column;
+      align-items: center;
+      margin-left: auto;
+      .nav-link {
+        margin: 30px 0;
+      }
+    }
+
+    .logo {
+      border: none;
+      width: 100vw;
+      margin-top: 10px;
+      order: 1;
+      .nav-link {
+        font-size: 22px;
+        margin-right: 0;
+      }
+    }
+
+    .player {
+      margin-left: auto;
+      order: 2;
+      .radio-player {
+        justify-content: center;
+      }
     }
   }
 }
