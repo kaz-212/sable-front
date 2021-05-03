@@ -10,7 +10,6 @@ export default {
   actions: {
     async fetchShows(state) {
       const { data } = await axios.get(mixcloudAPI);
-      console.log(data);
       state.commit('setShows', data);
     }
   },
