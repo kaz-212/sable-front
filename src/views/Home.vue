@@ -6,10 +6,10 @@
           <div class="live">
             live (red square)
           </div>
-          <div class="info" v-if="thisShow &&
-                                  thisShow.name &&
-                                  thisShow.date_time &&
-                                  thisShow.end_time">
+          <div
+            class="info"
+            v-if="thisShow && thisShow.name && thisShow.date_time && thisShow.end_time"
+          >
             <span>{{ thisShow.name }}</span>
             <span
               >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
@@ -22,14 +22,17 @@
       </div>
     </div>
     {{ isLive }}
+
     <h3>Query</h3>
     <SearchBar />
     <h3>Results:</h3>
     <SearchResults />
+
   </div>
 </template>
 
 <script>
+import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
 import VideoStream from '../components/VideoStream/VideoStream.vue';
 import SearchBar from '../components/Search/SearchBar.vue';
 import SearchResults from '../components/Search/SearchResults.vue';
