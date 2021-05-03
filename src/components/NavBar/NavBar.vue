@@ -76,6 +76,7 @@ export default {
 
   .logo {
     width: $leftColWidth;
+    height: $navHeight;
     padding-right: 100px;
     padding-left: 30px;
     border-right: $primaryLineWidth solid black;
