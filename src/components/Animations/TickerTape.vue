@@ -65,7 +65,7 @@ export default {
     &__item {
       display: inline-block;
       color: $primaryTextColour;
-      font-size: 12px;
+      font-size: 20px;
     }
   }
 }
