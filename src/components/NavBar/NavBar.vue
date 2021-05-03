@@ -79,6 +79,7 @@ export default {
     height: $navHeight;
     padding-right: 100px;
     padding-left: 30px;
+    padding-top: 8px;
     border-right: $primaryLineWidth solid black;
     display: flex;
     align-items: center;
@@ -96,6 +97,10 @@ export default {
     margin-right: auto;
     display: flex;
     align-items: center;
+  }
+
+  .fa-search {
+    padding-bottom: 6px;
   }
 
   .player {
