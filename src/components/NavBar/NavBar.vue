@@ -16,10 +16,10 @@
       >
       <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
     </div>
-    <div class="hamburger" @click="expandNav = !expandNav">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+    <div class="hamburger" :class="{ toggle: expandNav }" @click="expandNav = !expandNav">
+      <span class="bar line1"></span>
+      <span class="bar line2"></span>
+      <span class="bar line3"></span>
     </div>
     <div class="player">
       <RadioPlayer />
@@ -79,7 +79,7 @@ export default {
     height: $navHeight;
     padding-right: 100px;
     padding-left: 30px;
-    padding-top: 8px;
+    padding-top: 7px;
     border-right: $primaryLineWidth solid black;
     display: flex;
     align-items: center;
@@ -90,6 +90,10 @@ export default {
     .nav-link {
       margin-left: 10vw;
     }
+  }
+
+  span {
+    transition: all 0.5s ease-in-out;
   }
 
   .links {
@@ -128,6 +132,20 @@ export default {
       width: 100%;
       background-color: $primaryTextColour;
       border-radius: 10px;
+    }
+
+    &.toggle {
+      .line1 {
+        background-color: $primaryTextColour;
+        transform: rotate(-135deg) translate(-3px, -7px);
+      }
+      .line2 {
+        opacity: 0;
+      }
+      .line3 {
+        background-color: $primaryTextColour;
+        transform: rotate(135deg) translate(-3px, 7px);
+      }
     }
   }
 }
@@ -173,4 +191,5 @@ export default {
     }
   }
 }
+
 </style>
