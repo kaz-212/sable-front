@@ -36,6 +36,18 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    nextImg() {
+      if (this.selectedImg === this.imgs.length - 1) {
+        this.selectedImg = 0;
+      } else {
+        this.selectedImg += 1;
+      }
+    }
+  },
+  created() {
+    this.interval = setInterval(() => this.nextImg(), 12000);
   }
 };
 </script>
