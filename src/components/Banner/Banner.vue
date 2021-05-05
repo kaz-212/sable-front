@@ -57,6 +57,7 @@ export default {
   display: flex;
   overflow: hidden;
   position: relative;
+  border-bottom: $primaryLineWidth solid black;
   .img-wrapper {
     min-width: 100vw;
     height: 60vh;
