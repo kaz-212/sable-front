@@ -1,8 +1,9 @@
 <template>
   <nav id="nav">
     <div @click="expandNav = false" class="logo">
-      <i class="fas fa-search icon"></i>
-      <router-link class="nav-link" :to="{ name: 'Home' }">sable radio</router-link>
+      <i @click="setSearching" class="fas fa-search icon"></i>
+      <SearchBar v-if="isSearching" />
+      <router-link v-else class="nav-link" :to="{ name: 'Home' }">sable radio</router-link>
     </div>
     <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
       <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Shows' }"
@@ -32,6 +33,7 @@
 <script>
 import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
 import LiveNow from '@/components/Animations/LiveNow.vue';
+import SearchBar from '@/components/Search/SearchBar.vue';
 import RadioPlayer from './RadioPlayer.vue';
 
 export default {
@@ -39,12 +41,23 @@ export default {
   components: {
     RadioPlayer,
     RadioEmbed,
-    LiveNow
+    LiveNow,
+    SearchBar
   },
   data() {
     return {
       expandNav: false
     };
+  },
+  computed: {
+    isSearching() {
+      return this.$store.getters['search/isSearching'];
+    }
+  },
+  methods: {
+    setSearching() {
+      this.$store.dispatch('search/searching');
+    }
   }
 };
 </script>
