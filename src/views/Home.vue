@@ -3,9 +3,6 @@
     <div class="wrapper">
       <div class="stream-row">
         <div class="stream-info">
-          <div class="live">
-            live (red square)
-          </div>
           <div
             class="info"
             v-if="thisShow && thisShow.name && thisShow.date_time && thisShow.end_time"
@@ -14,6 +11,10 @@
             <span
               >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
             >
+          </div>
+          <div
+            v-else>
+            <Banner />
           </div>
         </div>
         <div class="stream-video">
@@ -32,6 +33,7 @@
 </template>
 
 <script>
+import Banner from '@/components/Banner/Banner.vue';
 import VideoStream from '../components/VideoStream/VideoStream.vue';
 import SearchBar from '../components/Search/SearchBar.vue';
 import SearchResults from '../components/Search/SearchResults.vue';
@@ -41,7 +43,8 @@ export default {
   components: {
     VideoStream,
     SearchBar,
-    SearchResults
+    SearchResults,
+    Banner
   },
   computed: {
     isLive() {
@@ -68,9 +71,6 @@ export default {
       border-bottom: $primaryLineWidth solid black;
       display: flex;
       justify-content: flex-start;
-      .live {
-        margin: 30px 0 0 30px;
-      }
       .info {
         display: flex;
         flex-direction: column;
