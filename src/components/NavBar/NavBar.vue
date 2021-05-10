@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 #nav {
   display: block;
-  width: 100vw;
+  width: 100%;
   background-color: $backgroundColour;
   height: $navHeight;
   border-bottom: $primaryLineWidth solid black;
