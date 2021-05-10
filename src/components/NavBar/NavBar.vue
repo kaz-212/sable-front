@@ -69,9 +69,6 @@ export default {
     margin-right: 80px;
     font-size: $navLinkSize;
     transition: 0.5s;
-    &:hover {
-      background-color: $hoverColour;
-    }
   }
 
   .logo {
