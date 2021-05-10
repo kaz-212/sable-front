@@ -5,7 +5,11 @@
                type="text"
                v-model="searchTerm"
                placeholder="search here">
-        <button type="submit" name="button" class="btn-search">Search</button>
+        <button type="submit" name="button" class="btn-search">
+          <i class="fas fa-search icon"></i>
+          <!-- Search -->
+        </button>
+        <i @click="setNotSearching" class="fas fa-times icon"></i>
       </form>
   </div>
 </template>
@@ -24,6 +28,9 @@ export default {
       } else {
         this.$store.dispatch('search/clearAll');
       }
+    },
+    setNotSearching() {
+      this.$store.dispatch('search/notSearching');
     }
   }
 };
@@ -39,5 +46,21 @@ export default {
   }
 
   input:focus { outline: none; }
+
+  .icon {
+    cursor: pointer;
+    padding-left: 17px;
+  }
+
+  .btn-search {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding-left: 17px;
+  }
 
 </style>

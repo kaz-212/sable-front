@@ -1,8 +1,11 @@
 <template>
   <nav id="nav">
     <div @click="expandNav = false" class="logo">
-      <i @click="setSearching" class="fas fa-search icon"></i>
-      <SearchBar v-if="isSearching" />
+      <i @click="setSearching"
+          class="fas fa-search icon"
+          :class="{ searchtoggle: isSearching }">
+      </i>
+      <SearchBar v-if="isSearching" class="searchbar" />
       <router-link v-else class="nav-link" :to="{ name: 'Home' }">sable radio</router-link>
     </div>
     <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
@@ -17,12 +20,12 @@
       >
       <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
     </div>
-    <div class="hamburger" :class="{ toggle: expandNav }" @click="expandNav = !expandNav">
+    <div class="hamburger" :class="{ toggledropdown: expandNav }" @click="expandNav = !expandNav">
       <span class="bar line1"></span>
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player">
+    <div class="player" v-if="thisShow">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
@@ -52,6 +55,9 @@ export default {
   computed: {
     isSearching() {
       return this.$store.getters['search/isSearching'];
+    },
+    thisShow() {
+      return this.$store.getters['currentShow/thisShow'];
     }
   },
   methods: {
@@ -82,12 +88,15 @@ export default {
     margin-right: 80px;
     font-size: $navLinkSize;
     transition: 0.5s;
+    // &:hover {
+    //   background-color: $hoverColour;
+    // }
   }
 
   .logo {
     width: $leftColWidth;
     height: $navHeight;
-    padding-right: 100px;
+    // padding-right: 100px;
     padding-left: 30px;
     padding-top: 7px;
     border-right: $primaryLineWidth solid black;
@@ -95,6 +104,9 @@ export default {
     align-items: center;
     .icon {
       cursor: pointer;
+      &.searchtoggle {
+        display: none;
+      }
     }
 
     .nav-link {
@@ -110,12 +122,13 @@ export default {
   .links {
     margin-left: 30px;
     margin-right: auto;
+    padding-top: 5px;
     display: flex;
     align-items: center;
   }
 
   .fa-search {
-    padding-bottom: 6px;
+    padding-bottom: 4px;
   }
 
   .player {
@@ -145,7 +158,7 @@ export default {
       border-radius: 10px;
     }
 
-    &.toggle {
+    &.toggledropdown {
       .line1 {
         background-color: $primaryTextColour;
         transform: rotate(-135deg) translate(-3px, -7px);
@@ -158,6 +171,10 @@ export default {
         transform: rotate(135deg) translate(-3px, 7px);
       }
     }
+  }
+
+  .searchbar {
+    padding-left: 30px;
   }
 }
 @media (max-width: 1100px) {

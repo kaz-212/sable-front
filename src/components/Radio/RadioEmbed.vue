@@ -40,6 +40,7 @@ export default {
 .radioco-playButton {
   color: $primaryTextColour;
   font-size: 22px;
+  padding-top: 3px;
   cursor: pointer;
 }
 .radioco-playButton-playing {
