@@ -1,21 +1,25 @@
 <template>
-  <div class="banner">
+  <div class="banner" v-if="slides">
     <div class="selectas">
       <div
-        v-for="(img, index) in imgs"
-        :key="index"
+        v-for="(slide, index) in slides"
+        :key="slide.id"
         class="selecta"
         :class="{ selected: selectedImg === index }"
         @click="selectedImg = index"
       ></div>
     </div>
-    <div class="img-wrapper">
-      <img :src="imgs[selectedImg].url" alt="image" />
+    <div class="img-wrapper" v-if="slides[selectedImg].image_url">
+      <img :src="slides[selectedImg].image_url" alt="banner-image" />
     </div>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
+const bannerImgURL = 'https://sable-radio.herokuapp.com/api/banner';
+
 export default {
   name: 'Banner',
   data() {
@@ -23,18 +27,19 @@ export default {
       selectedImg: 0,
       imgs: [
         {
-          url:
+          image_url:
             'https://images.unsplash.com/photo-1498145645178-ab2c7cebc433?ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFkaW8lMjB2aW55bHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
         },
         {
-          url:
+          image_url:
             'https://images.unsplash.com/photo-1589448369336-7e68b874f245?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80'
         },
         {
-          url:
+          image_url:
             'https://images.unsplash.com/photo-1593078166039-c9878df5c520?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cmFkaW98ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'
         }
-      ]
+      ],
+      slides: ''
     };
   },
   methods: {
@@ -46,8 +51,14 @@ export default {
       }
     }
   },
-  created() {
+  async created() {
     this.interval = setInterval(() => this.nextImg(), 12000);
+    try {
+      const { data } = await axios.get(bannerImgURL);
+      this.slides = data;
+    } catch (e) {
+      this.slides = this.imgs;
+    }
   }
 };
 </script>
