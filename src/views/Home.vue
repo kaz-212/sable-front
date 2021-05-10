@@ -5,15 +5,21 @@
         <div class="stream-info">
           <div
             class="info"
-            v-if="thisShow && thisShow.name && thisShow.date_time && thisShow.end_time"
+            v-if="thisShow &&
+                  thisShow.name &&
+                  thisShow.date_time &&
+                  thisShow.end_time &&
+                  thisShow.live"
           >
-            <span>{{ thisShow.name }}</span>
-            <span
-              >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
-            >
-          <div class="stream-video">
-            <div class="video-wrapper"><VideoStream /></div>
-          </div>
+            <div class="stream-video">
+              <div class="video-wrapper"><VideoStream /></div>
+            </div>
+            <span>
+              {{ thisShow.name }}
+            </span>
+            <span>
+              {{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}
+            </span>
           </div>
           <div
             v-else>
