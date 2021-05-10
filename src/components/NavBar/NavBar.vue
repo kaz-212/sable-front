@@ -89,6 +89,7 @@ export default {
 
     .nav-link {
       margin-left: 10vw;
+      min-width: 150px;
     }
   }
 
@@ -191,5 +192,4 @@ export default {
     }
   }
 }
-
 </style>
