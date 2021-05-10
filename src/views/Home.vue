@@ -11,14 +11,14 @@
             <span
               >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
             >
+          <div class="stream-video">
+            <div class="video-wrapper"><VideoStream /></div>
+          </div>
           </div>
           <div
             v-else>
             <Banner />
           </div>
-        </div>
-        <div class="stream-video">
-          <div class="video-wrapper"><VideoStream /></div>
         </div>
       </div>
     </div>
