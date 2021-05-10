@@ -52,7 +52,7 @@ export default {
 <style lang="scss" scoped>
 #nav {
   display: block;
-  width: 100vw;
+  width: 100%;
   background-color: $backgroundColour;
   height: $navHeight;
   border-bottom: $primaryLineWidth solid black;
@@ -69,9 +69,6 @@ export default {
     margin-right: 80px;
     font-size: $navLinkSize;
     transition: 0.5s;
-    &:hover {
-      background-color: $hoverColour;
-    }
   }
 
   .logo {
