@@ -7,7 +7,8 @@ export default {
   namespaced: true,
   state: {
     searchResidentsState: [],
-    searchShowsState: []
+    searchShowsState: [],
+    isSearching: false
   },
   actions: {
     async searchResidents(state, queryString) {
@@ -21,9 +22,9 @@ export default {
     async searchShows(state, queryString) {
       try {
         const { data } = await axios.get(mixcloudQueryURL);
-        const result = data.data.filter(show => (
+        const result = data.data.filter(show =>
           show.name.toLowerCase().includes(queryString.toLowerCase())
-        ));
+        );
         state.commit('setShows', result);
       } catch (e) {
         console.log(e);
@@ -31,10 +32,10 @@ export default {
     },
     async searchAll(context, queryString) {
       try {
-        await Promise.all(
-          [context.dispatch('searchResidents', queryString),
-            context.dispatch('searchShows', queryString)]
-        );
+        await Promise.all([
+          context.dispatch('searchResidents', queryString),
+          context.dispatch('searchShows', queryString)
+        ]);
       } catch (e) {
         console.log(e);
       }
