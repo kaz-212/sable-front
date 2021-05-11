@@ -3,7 +3,7 @@
     <div class="row">
       <div class="contact head">contact</div>
       <div class="details">
-        {{ contactText }}
+        get in touch at
         <a href="hello@sableradio.live">hello@sableradio.live</a>
       </div>
     </div>
@@ -16,12 +16,7 @@
 
 <script>
 export default {
-  name: 'Footer',
-  data() {
-    return {
-      contactText: 'get in touch at'
-    };
-  }
+  name: 'Footer'
 };
 </script>
 
