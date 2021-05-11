@@ -24,7 +24,7 @@ export default {
 #footer {
   width: 100%;
   font-size: $navLinkSize;
-  position: absolute;
+  // position: absolute;
   bottom: 0;
   .row {
     border-top: $primaryLineWidth solid $primaryTextColour;
