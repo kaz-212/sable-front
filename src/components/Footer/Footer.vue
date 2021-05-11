@@ -1,15 +1,39 @@
 <template>
   <div id="footer">
     <div class="row">
+      <div class="contact head">find us</div>
+      <div class="details findus-text">
+        <p>
+          Our studio is located on St Mary's Street at the top of Mabgate green,
+          a 5 minute walk from Leeds Bus Station.
+        </p>
+      </div>
+    </div>
+    <div class="row">
       <div class="contact head">contact</div>
-      <div class="details">
+      <div class="details contact-text">
         get in touch at
         <a href="hello@sableradio.live">hello@sableradio.live</a>
       </div>
     </div>
     <div class="row">
-      <div class="socials head">socials</div>
-      <div class="details">fb sc tw</div>
+      <div class="head">socials</div>
+      <div class="details socials">
+        <a
+          class="footer-link"
+          href="https://www.facebook.com/sableradio/"
+          target="_blank"
+        >
+          <i class="fab fa-facebook icon"></i>
+        </a>
+        <a
+          class="footer-link"
+          href="https://www.instagram.com/sable.radio/"
+          target="_blank"
+        >
+          <i class="fab fa-instagram icon"></i>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -38,11 +62,20 @@ export default {
       align-items: center;
       border-right: $primaryLineWidth solid $primaryTextColour;
     }
+    .socials {
+      padding-left: 5px;
+    }
+    .findus-text {
+      font-size: 18px;
+    }
     .details {
       display: flex;
       align-items: center;
       margin-left: 30px;
       white-space: pre-wrap;
+      .footer-link {
+        padding-right: 2vw;
+      }
       a {
         color: $primaryTextColour;
       }
@@ -50,53 +83,15 @@ export default {
   }
 }
 
-@media (max-width: 1100px) {
-  #nav {
-    height: auto;
-    justify-content: flex-end;
-    flex-flow: column;
-    .hamburger {
-      display: flex;
+@media (max-width: 700px) {
+  #footer {
+    .contact-text {
+      font-size: 17px;
     }
-
-    .links {
-      &.hide {
-        display: none;
+    .details {
+      .footer-link {
+        margin-right: 5vw;
       }
-      order: 3;
-      flex-direction: column;
-      align-items: center;
-      margin-left: auto;
-      .nav-link {
-        margin: 30px 0;
-      }
-    }
-
-    .logo {
-      border: none;
-      width: 100vw;
-      margin-top: 10px;
-      order: 1;
-      .nav-link {
-        font-size: 22px;
-        margin-right: 0;
-      }
-    }
-
-    .player {
-      margin-left: auto;
-      order: 2;
-      .radio-player {
-        justify-content: center;
-      }
-    }
-  }
-}
-
-@media (max-width: 1350px) {
-  #nav {
-    .nav-link {
-      margin-right: 35px;
     }
   }
 }
