@@ -66,6 +66,7 @@ export default {
       display: inline-block;
       color: $primaryTextColour;
       font-size: 14px;
+      padding-top: 4px;
     }
   }
 }
