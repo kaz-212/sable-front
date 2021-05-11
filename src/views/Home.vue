@@ -1,55 +1,33 @@
 <template>
   <div class="home">
-    <div class="wrapper">
-      <div class="stream-row">
-        <div class="stream-info">
-          <div
-            class="info"
-            v-if="thisShow &&
-                  thisShow.name &&
-                  thisShow.date_time &&
-                  thisShow.end_time &&
-                  thisShow.live"
-          >
-            <div class="stream-video">
-              <div class="video-wrapper"><VideoStream /></div>
-            </div>
-            <span>
-              {{ thisShow.name }}
-            </span>
-            <span>
-              {{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}
-            </span>
-          </div>
-          <div
-            v-else>
-            <Banner />
-          </div>
+    <div
+      class="stream-wrapper"
+      v-if="thisShow && thisShow.name && thisShow.date_time && thisShow.end_time && thisShow.live"
+    >
+      <div class="stream-video">
+        <div class="video-wrapper"><VideoStream /></div>
+      </div>
+      <div class="stream-info">
+        <div class="info">
+          {{ thisShow.name }} {{ thisShow.date_time.slice(11, 16) }} -
+          {{ thisShow.end_time.slice(11, 16) }}
         </div>
       </div>
     </div>
-    {{ isLive }}
-
-    <h3>Query</h3>
-    <SearchBar />
-    <h3>Results:</h3>
-    <SearchResults />
-
+    <div v-else>
+      <Banner />
+    </div>
   </div>
 </template>
 
 <script>
 import Banner from '@/components/Banner/Banner.vue';
 import VideoStream from '../components/VideoStream/VideoStream.vue';
-import SearchBar from '../components/Search/SearchBar.vue';
-import SearchResults from '../components/Search/SearchResults.vue';
 
 export default {
   name: 'Home',
   components: {
     VideoStream,
-    SearchBar,
-    SearchResults,
     Banner
   },
   computed: {
@@ -64,35 +42,58 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.wrapper {
+.home {
   width: 100vw;
-  .stream-row {
-    width: 100%;
-    height: 60vh;
+  .stream-wrapper {
+    height: auto;
     display: flex;
-    .stream-info {
-      width: $leftColWidth;
-      // background-color: olive;
-      border-right: $primaryLineWidth solid black;
-      border-bottom: $primaryLineWidth solid black;
-      display: flex;
-      justify-content: flex-start;
-      .info {
-        display: flex;
-        flex-direction: column;
-        margin: 30px 0 0 100px;
-      }
-    }
     .stream-video {
-      width: $rightColWidth;
-      height: 100%;
-      // background-color: red;
-      border-bottom: $primaryLineWidth solid black;
-      .video-wrapper {
-        width: 70%;
-        margin: 30px 0 0 30px;
+      width: 94vw;
+      height: auto;
+      // border-bottom: 1px solid black;
+      border-right: 1px solid black;
+    }
+    .stream-info {
+      width: 6vw;
+      .info {
+        transform: rotate(90deg);
+        height: 20vh;
+        margin-top: 15vh;
+        // margin-right: 2vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 25px;
       }
     }
   }
+  // .stream-row {
+  //   width: 100%;
+  //   height: 60vh;
+  //   display: flex;
+  //   .stream-info {
+  //     width: $leftColWidth;
+  //     // background-color: olive;
+  //     border-right: $primaryLineWidth solid black;
+  //     border-bottom: $primaryLineWidth solid black;
+  //     display: flex;
+  //     justify-content: flex-start;
+  //     .info {
+  //       display: flex;
+  //       flex-direction: column;
+  //       margin: 30px 0 0 100px;
+  //     }
+  //   }
+  //   .stream-video {
+  //     width: $rightColWidth;
+  //     height: 100%;
+  //     // background-color: red;
+  //     border-bottom: $primaryLineWidth solid black;
+  //     .video-wrapper {
+  //       width: 70%;
+  //       margin: 30px 0 0 30px;
+  //     }
+  //   }
+  // }
 }
 </style>

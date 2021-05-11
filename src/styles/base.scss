@@ -12,6 +12,7 @@ $hoverColour: rgba(239, 59, 59, 0.705);
 $navLinkSize: 23px;
 $navHeight: 57px;
 $footerHeight: 57px;
+$pageHeight: calc(100vh - 57px);
 
 * {
   margin: 0;
