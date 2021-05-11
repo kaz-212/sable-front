@@ -151,6 +151,7 @@ export default {
     justify-content: space-between;
     width: 30px;
     height: 21px;
+    margin-top: 15px;
     .bar {
       height: 3px;
       width: 100%;
@@ -216,6 +217,14 @@ export default {
       .radio-player {
         justify-content: center;
       }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  #nav {
+    .nav-link {
+      margin-right: 35px;
     }
   }
 }
