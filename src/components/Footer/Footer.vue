@@ -1,28 +1,27 @@
 <template>
   <div id="footer">
     <div class="row">
-      <div class="contact head">
-        contact
-      </div>
+      <div class="contact head">contact</div>
       <div class="details">
-        Whether you want to blah blah blah
-        or whatever just get in touch with us at
-        blH LADF ASDF ASD A
-        ASD SDF SSDF SDF S
-        karan.basu@gmail.com
+        {{ contactText }}
+        <a href="hello@sableradio.live">hello@sableradio.live</a>
       </div>
     </div>
     <div class="row">
-      <div class="socials head">
-        socials
-      </div>
+      <div class="socials head">socials</div>
+      <div class="details">fb sc tw</div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data() {
+    return {
+      contactText: 'get in touch at'
+    };
+  }
 };
 </script>
 
@@ -40,15 +39,18 @@ export default {
       width: $leftColWidth;
       height: $footerHeight;
       display: flex;
+      padding-left: 2vw;
       align-items: center;
-      justify-content: center;
-      border-right:  solid $primaryTextColour;
+      border-right: $primaryLineWidth solid $primaryTextColour;
     }
     .details {
       display: flex;
       align-items: center;
-      justify-content: center;
       margin-left: 30px;
+      white-space: pre-wrap;
+      a {
+        color: $primaryTextColour;
+      }
     }
   }
 }
