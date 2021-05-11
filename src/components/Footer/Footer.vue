@@ -4,7 +4,13 @@
       <div class="contact head">
         contact
       </div>
-      <div class="details">karan.basu@gmail.com</div>
+      <div class="details">
+        Whether you want to blah blah blah
+        or whatever just get in touch with us at
+        blH LADF ASDF ASD A
+        ASD SDF SSDF SDF S
+        karan.basu@gmail.com
+      </div>
     </div>
     <div class="row">
       <div class="socials head">
@@ -31,17 +37,18 @@ export default {
     width: 100%;
     display: flex;
     .head {
-      border-right: $primaryLineWidth solid $primaryTextColour;
       width: $leftColWidth;
       height: $footerHeight;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-right:  solid $primaryTextColour;
     }
     .details {
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-left: 30px;
     }
   }
 }
