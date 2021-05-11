@@ -9,8 +9,8 @@
       </div>
       <div class="stream-info">
         <div class="info">
-          {{ thisShow.name }} {{ thisShow.date_time.slice(11, 16) }} -
-          {{ thisShow.end_time.slice(11, 16) }}
+          {{ thisShow.name }} <span class="time">{{ thisShow.date_time.slice(11, 16) }} -
+          {{ thisShow.end_time.slice(11, 16) }}</span>
         </div>
       </div>
     </div>
@@ -43,27 +43,34 @@ export default {
 
 <style lang="scss" scoped>
 .home {
-  width: 100vw;
+  width: 100%;
   .stream-wrapper {
     height: auto;
     display: flex;
     .stream-video {
-      width: 94vw;
+      width: 95%;
       height: auto;
       // border-bottom: 1px solid black;
       border-right: 1px solid black;
     }
     .stream-info {
-      width: 6vw;
+      width: 5%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
       .info {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
         transform: rotate(90deg);
-        height: 20vh;
-        margin-top: 15vh;
-        // margin-right: 2vw;
         position: absolute;
-        top: 0;
-        right: 0;
-        font-size: 25px;
+        top: 200px;
+        font-size: 27px;
+        width: 350px;
+        .time {
+          margin-left: 14px;
+        }
       }
     }
   }
