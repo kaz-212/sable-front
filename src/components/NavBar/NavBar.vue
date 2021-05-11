@@ -25,7 +25,7 @@
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-if="thisShow.name">
+    <div class="player" v-if="thisShow">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />

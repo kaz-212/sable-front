@@ -38,7 +38,6 @@ export default {
           dispatch('searchResidents', queryString),
           dispatch('searchShows', queryString)
         ]);
-        commit('setNotSearching');
         router.push({ name: 'Search' });
       } catch (e) {
         console.log(e);

@@ -24,7 +24,6 @@ export default {
     searchQuerySubmitted() {
       if (this.searchTerm !== '') {
         this.$store.dispatch('search/searchAll', this.searchTerm);
-        this.searchTerm = '';
       } else {
         this.$store.dispatch('search/clearAll');
       }
