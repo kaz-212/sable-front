@@ -1,20 +1,38 @@
 <template>
   <div id="footer">
     <div class="row">
-      <div class="contact head">
-        contact
-      </div>
-      <div class="details">
-        Whether you want to blah blah blah
-        or whatever just get in touch with us at
-        blH LADF ASDF ASD A
-        ASD SDF SSDF SDF S
-        karan.basu@gmail.com
+      <div class="contact head">find us</div>
+      <div class="findus findus-text">
+        <p>
+          Our studio is located on St Mary's Street at the top of Mabgate green,
+          a 5 minute walk from Leeds Bus Station.
+        </p>
       </div>
     </div>
     <div class="row">
-      <div class="socials head">
-        socials
+      <div class="contact head">contact</div>
+      <div class="details contact-text">
+        get in touch at
+        <a href="hello@sableradio.live">hello@sableradio.live</a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="head">socials</div>
+      <div class="details socials">
+        <a
+          class="footer-link"
+          href="https://www.facebook.com/sableradio/"
+          target="_blank"
+        >
+          <i class="fab fa-facebook icon"></i>
+        </a>
+        <a
+          class="footer-link"
+          href="https://www.instagram.com/sable.radio/"
+          target="_blank"
+        >
+          <i class="fab fa-instagram icon"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -30,76 +48,64 @@ export default {
 #footer {
   width: 100%;
   font-size: $navLinkSize;
-  // position: absolute;
   bottom: 0;
   .row {
     border-top: $primaryLineWidth solid $primaryTextColour;
     width: 100%;
     display: flex;
     .head {
-      width: $leftColWidth;
-      height: $footerHeight;
+      min-width: $leftColWidth;
       display: flex;
+      padding-left: 2vw;
+      padding-right: 2vw;
       align-items: center;
-      justify-content: center;
-      border-right:  solid $primaryTextColour;
+      // width: auto;
+      height: auto;
+      min-height: $footerHeight;
+      border-right: $primaryLineWidth solid $primaryTextColour;
+    }
+    .socials {
+      padding-left: 5px;
+    }
+
+    .findus-text {
+      font-size: 18px;
     }
     .details {
       display: flex;
       align-items: center;
-      justify-content: center;
       margin-left: 30px;
+      white-space: pre-wrap;
+      .footer-link {
+        margin-right: 2vw;
+      }
+      a {
+        color: $primaryTextColour;
+      }
     }
-  }
-}
-
-@media (max-width: 1100px) {
-  #nav {
-    height: auto;
-    justify-content: flex-end;
-    flex-flow: column;
-    .hamburger {
+    .findus {
       display: flex;
-    }
-
-    .links {
-      &.hide {
-        display: none;
-      }
-      order: 3;
-      flex-direction: column;
       align-items: center;
-      margin-left: auto;
-      .nav-link {
-        margin: 30px 0;
-      }
-    }
-
-    .logo {
-      border: none;
-      width: 100vw;
-      margin-top: 10px;
-      order: 1;
-      .nav-link {
-        font-size: 22px;
-        margin-right: 0;
-      }
-    }
-
-    .player {
-      margin-left: auto;
-      order: 2;
-      .radio-player {
-        justify-content: center;
+      padding-top: 5px;
+      margin-left: 30px;
+      margin-right: 30px;
+      white-space: pre-wrap;
+      a {
+        color: $primaryTextColour;
       }
     }
   }
 }
 
-@media (max-width: 1350px) {
-  #nav {
-    .nav-link {
-      margin-right: 35px;
+@media (max-width: 700px) {
+  #footer {
+    .contact-text {
+      font-size: 17px;
+    }
+    .details {
+      .footer-link {
+        margin-right: 5vw;
+      }
     }
   }
 }

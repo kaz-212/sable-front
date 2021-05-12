@@ -2,7 +2,13 @@
   <div class="home">
     <div
       class="stream-wrapper"
-      v-if="thisShow && thisShow.name && thisShow.date_time && thisShow.end_time && thisShow.live"
+      v-if="
+        thisShow &&
+        thisShow.name &&
+        thisShow.date_time &&
+        thisShow.end_time &&
+        thisShow.live
+      "
     >
       <div class="stream-video">
         <div class="video-wrapper"><VideoStream /></div>
