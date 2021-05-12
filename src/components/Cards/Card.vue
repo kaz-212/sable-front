@@ -1,10 +1,10 @@
 <template>
   <div class="card">
-    <div v-if="image">
-      <img :src="image" :alt="name" />
+    <div class="image">
+      <img v-if="image" :src="image" :alt="name" />
     </div>
     <h2 class="name">{{ name }}</h2>
-    <h3 class="date">{{ date }}</h3>
+    <h3 v-if="date" class="date">{{ date }}</h3>
     <!-- <h3>{{ type }}</h3> -->
     <div class="tags">
       <h3 v-bind:key="tag.key" v-for="tag in tags" class="tag">{{ tag.name }}</h3>
@@ -19,7 +19,10 @@ export default {
     name: String,
     image: String,
     type: String,
-    date: String,
+    date: {
+      type: String,
+      default: null
+    },
     tags: {
       type: Array,
       default: null
@@ -34,10 +37,14 @@ export default {
   .image {
     width: 300px;
     height: 300px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     img {
       object-fit: cover;
-      width: 300px;
-      height: 300px;
+      max-width: 100%;
+      max-height: 100%;
     }
   }
   .name {

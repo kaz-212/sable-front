@@ -1,15 +1,20 @@
 <template>
-  <Card :name="name.slice(0, -10)"
-        :image="image"
-        :type="type"
-        :date="name.slice(-8)"
-        :tags="tags"/>
+  <div class="show-card">
+    <Card
+      :name="name.slice(0, -10)"
+      :image="image"
+      :type="type"
+      :date="name.slice(-8)"
+      :tags="tags"
+    />
+  </div>
 </template>
 
 <script>
 import Card from './Card.vue';
 
 export default {
+  name: 'show-card',
   components: {
     Card
   },
@@ -22,6 +27,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>
