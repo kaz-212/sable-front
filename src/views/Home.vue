@@ -17,7 +17,8 @@
         <div class="info">
           {{ thisShow.name }}
           <span class="time"
-            >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
+            >{{ thisShow.date_time.slice(11, 16) }} -
+            {{ thisShow.end_time.slice(11, 16) }}</span
           >
         </div>
       </div>
@@ -62,6 +63,7 @@ export default {
       border-right: 1px solid black;
     }
     .stream-info {
+      min-width: 72px;
       width: 5%;
       overflow: hidden;
       position: relative;
@@ -82,6 +84,7 @@ export default {
       }
     }
   }
+
   // .stream-row {
   //   width: 100%;
   //   height: 60vh;
