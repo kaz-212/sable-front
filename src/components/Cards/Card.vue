@@ -7,7 +7,9 @@
     <h3 class="date">{{ date }}</h3>
     <!-- <h3>{{ type }}</h3> -->
     <div class="tags">
-      <h3 v-bind:key="tag.key" v-for="tag in tags" class="tag">{{ tag.name }}</h3>
+      <h3 v-bind:key="tag.key" v-for="tag in tags" class="tag">
+        {{ tag.name }}
+      </h3>
     </div>
   </div>
 </template>
@@ -41,22 +43,26 @@ export default {
     }
   }
   .name {
-    padding: 15px 0 20px 0;
-    // background-color: red;
+    padding: 15px 0 20px 10px;
   }
   .date {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding-top: 5px;
+    border-top: $primaryLineWidth solid black;
+    border-bottom: $primaryLineWidth solid black;
+    padding: 10px 0 10px 10px;
   }
   .tags {
+    padding-left: 4px;
     display: flex;
     flex-wrap: wrap;
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     .tag {
-      padding-right: 10px;
+      margin-right: 10px;
+      margin-bottom: 3px;
       font-size: 16px;
       color: grey;
+      padding: 5px;
+      // border: $primaryLineWidth solid black;
     }
   }
 }
