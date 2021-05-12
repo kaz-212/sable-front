@@ -9,8 +9,10 @@
       </div>
       <div class="stream-info">
         <div class="info">
-          {{ thisShow.name }} <span class="time">{{ thisShow.date_time.slice(11, 16) }} -
-          {{ thisShow.end_time.slice(11, 16) }}</span>
+          {{ thisShow.name }}
+          <span class="time"
+            >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
+          >
         </div>
       </div>
     </div>
