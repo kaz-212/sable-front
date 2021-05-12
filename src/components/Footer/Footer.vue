@@ -12,7 +12,7 @@
     <div class="row">
       <div class="contact head">contact</div>
       <div class="details contact-text">
-        get in touch at
+        Get in touch at
         <a href="hello@sableradio.live">hello@sableradio.live</a>
       </div>
     </div>
@@ -75,7 +75,7 @@ export default {
       white-space: pre-wrap;
       .footer-link {
         margin-right: 5vw;
-        padding-left: 3px;
+        margin-left: 3px;
       }
       a {
         color: $primaryTextColour;
