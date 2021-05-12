@@ -59,13 +59,9 @@ export default {
       padding-left: 2vw;
       padding-right: 2vw;
       align-items: center;
-      // width: auto;
       height: auto;
       min-height: $footerHeight;
       border-right: $primaryLineWidth solid $primaryTextColour;
-    }
-    .socials {
-      padding-left: 5px;
     }
 
     .findus-text {
@@ -74,10 +70,12 @@ export default {
     .details {
       display: flex;
       align-items: center;
-      margin-left: 30px;
+      margin-left: 3vw;
+      margin-right: 3vw;
       white-space: pre-wrap;
       .footer-link {
-        margin-right: 2vw;
+        margin-right: 5vw;
+        padding-left: 3px;
       }
       a {
         color: $primaryTextColour;
@@ -87,8 +85,8 @@ export default {
       display: flex;
       align-items: center;
       padding-top: 5px;
-      margin-left: 30px;
-      margin-right: 30px;
+      margin-left: 3vw;
+      margin-right: 3vw;
       white-space: pre-wrap;
       a {
         color: $primaryTextColour;
@@ -101,11 +99,6 @@ export default {
   #footer {
     .contact-text {
       font-size: 17px;
-    }
-    .details {
-      .footer-link {
-        margin-right: 5vw;
-      }
     }
   }
 }
