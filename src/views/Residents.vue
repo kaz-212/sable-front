@@ -1,20 +1,22 @@
 <template>
   <div class="home">
-    <div class="resident" v-bind:key="resident.id" v-for="resident in residents">
-      <Card :name="resident.name"
-            :image="resident.image_url"
-            :type="'resident'"/>
-    </div>
+    <ResCard
+      v-bind:key="resident.id"
+      v-for="resident in residents"
+      :name="resident.name"
+      :image="resident.image_url"
+      :type="'resident'"
+    />
   </div>
 </template>
 
 <script>
-import Card from '@/components/Cards/Card.vue';
+import ResCard from '@/components/Cards/ResCard.vue';
 
 export default {
   name: 'Residents',
   components: {
-    Card
+    ResCard
   },
   computed: {
     residents() {
