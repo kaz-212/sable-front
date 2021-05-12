@@ -27,7 +27,7 @@ export default {
 }
 .radio-wrapper {
   padding-right: 10px;
-  border-right: 1px solid black;
+  border-right: $primaryLineWidth solid black;
 }
 .radioco-playButton-playing:before {
   content: '\f04b';
