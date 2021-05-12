@@ -2,7 +2,7 @@
   <div id="footer">
     <div class="row">
       <div class="contact head">find us</div>
-      <div class="details findus-text">
+      <div class="findus findus-text">
         <p>
           Our studio is located on St Mary's Street at the top of Mabgate green,
           a 5 minute walk from Leeds Bus Station.
@@ -48,23 +48,26 @@ export default {
 #footer {
   width: 100%;
   font-size: $navLinkSize;
-  // position: absolute;
   bottom: 0;
   .row {
     border-top: $primaryLineWidth solid $primaryTextColour;
     width: 100%;
     display: flex;
     .head {
-      width: $leftColWidth;
-      height: $footerHeight;
+      min-width: $leftColWidth;
       display: flex;
       padding-left: 2vw;
+      padding-right: 2vw;
       align-items: center;
+      // width: auto;
+      height: auto;
+      min-height: $footerHeight;
       border-right: $primaryLineWidth solid $primaryTextColour;
     }
     .socials {
       padding-left: 5px;
     }
+
     .findus-text {
       font-size: 18px;
     }
@@ -74,8 +77,19 @@ export default {
       margin-left: 30px;
       white-space: pre-wrap;
       .footer-link {
-        padding-right: 2vw;
+        margin-right: 2vw;
       }
+      a {
+        color: $primaryTextColour;
+      }
+    }
+    .findus {
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+      margin-left: 30px;
+      margin-right: 30px;
+      white-space: pre-wrap;
       a {
         color: $primaryTextColour;
       }

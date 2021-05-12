@@ -2,15 +2,24 @@
   <div class="home">
     <div
       class="stream-wrapper"
-      v-if="thisShow && thisShow.name && thisShow.date_time && thisShow.end_time && thisShow.live"
+      v-if="
+        thisShow &&
+        thisShow.name &&
+        thisShow.date_time &&
+        thisShow.end_time &&
+        thisShow.live
+      "
     >
       <div class="stream-video">
         <div class="video-wrapper"><VideoStream /></div>
       </div>
       <div class="stream-info">
         <div class="info">
-          {{ thisShow.name }} <span class="time">{{ thisShow.date_time.slice(11, 16) }} -
-          {{ thisShow.end_time.slice(11, 16) }}</span>
+          {{ thisShow.name }}
+          <span class="time"
+            >{{ thisShow.date_time.slice(11, 16) }} -
+            {{ thisShow.end_time.slice(11, 16) }}</span
+          >
         </div>
       </div>
     </div>

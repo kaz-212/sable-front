@@ -21,6 +21,9 @@ export default {
 
 <style lang="scss">
 #app {
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  // min-height: 100vh;
 }
 </style>
