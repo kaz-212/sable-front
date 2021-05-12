@@ -43,15 +43,14 @@ export default {
     }
   }
   .name {
-    padding: 15px 0 20px 10px;
+    padding: 15px 0 20px 0;
   }
   .date {
     border-top: $primaryLineWidth solid black;
     border-bottom: $primaryLineWidth solid black;
-    padding: 10px 0 10px 10px;
+    padding: 10px 0 10px 0;
   }
   .tags {
-    padding-left: 4px;
     display: flex;
     flex-wrap: wrap;
     padding-top: 10px;
