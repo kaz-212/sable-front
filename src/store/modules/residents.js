@@ -18,7 +18,13 @@ export default {
     }
   },
   getters: {
-    getResidents: state => state.residents
+    getResidents: state => state.residents,
+    getResidentById: state => id => {
+      // TODO add error handling
+      const resident = state.residents.find(item => item.id === id);
+      console.log('res', resident);
+      return resident;
+    }
   },
   mutations: {
     setResidents(state, residentsData) {

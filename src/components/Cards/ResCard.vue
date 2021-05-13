@@ -1,6 +1,6 @@
 <template>
   <div class="res-card">
-    <Card :name="name" :image="image" :type="type" />
+    <Card :name="name" :image="image" :type="type" :id="id" />
   </div>
 </template>
 
@@ -15,7 +15,8 @@ export default {
   props: {
     name: String,
     image: String,
-    type: String
+    type: String,
+    id: Number
   }
 };
 </script>
