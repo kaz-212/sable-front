@@ -23,7 +23,7 @@ export default {
     border-right: $primaryLineWidth solid black;
     .header {
       margin-top: 110px;
-      margin-left: 60px;
+      margin-left: 110px;
       font-size: 27px;
     }
   }
