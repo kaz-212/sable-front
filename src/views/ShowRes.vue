@@ -6,15 +6,13 @@
     </div>
     <section class="main">
       <div class="header-pane">
-        <p
-          class="
-        header"
-        >
-          Resident
-        </p>
+        <p class="header">Resident</p>
       </div>
       <div class="info">
         <h2 class="res-name">{{ resident.name }}</h2>
+        <div v-if="resident">
+          <p>{{ resident }}</p>
+        </div>
       </div>
     </section>
   </div>

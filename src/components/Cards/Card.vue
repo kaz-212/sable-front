@@ -1,9 +1,7 @@
 <template>
   <div class="card">
     <router-link :to="{ name: targetLocation, params: { id } }">
-      <div class="image">
-        <img v-if="image" :src="image" :alt="name" />
-      </div>
+      <img v-if="image" :src="image" :alt="name" />
     </router-link>
     <h2 class="name">{{ name }}</h2>
     <h3 v-if="date" class="date">{{ date }}</h3>
@@ -44,19 +42,13 @@ export default {
 <style lang="scss" scoped>
 .card {
   max-width: 300px;
-  .image {
+  img {
     width: 300px;
     height: 300px;
     border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    img {
-      object-fit: cover;
-      max-width: 100%;
-      max-height: 100%;
-    }
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
   }
   .name {
     padding: 15px 0 20px 0;

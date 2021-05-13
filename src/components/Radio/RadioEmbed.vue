@@ -2,7 +2,7 @@
   <div class="radio-wrapper">
     <div
       class="radioplayer"
-      data-src="http://streaming.radio.co/sced7c0e79/listen"
+      data-src="http://s2.radio.co/s34a974e27/listen"
       data-autoplay="false"
       data-playbutton="true"
       data-volumeslider="false"
