@@ -2,11 +2,16 @@
   <div id="footer">
     <div class="row">
       <div class="contact head">find us</div>
-      <div class="findus findus-text">
-        <p>
-          Our studio is located on St Mary's Street at the top of Mabgate green, a 5 minute walk
-          from Leeds Bus Station.
-        </p>
+      <div class="findus">
+        <FindUs />
+        <div class="findus-text">
+          <p>
+            Our studio is located on St Mary's Street at the top of Mabgate
+            green, a 5 minute walk from Leeds Bus Station.
+          </p>
+          <br />
+          <p>The studio is on the first floor and accessible via lift.</p>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -31,8 +36,13 @@
 </template>
 
 <script>
+import FindUs from './FindUs.vue';
+
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  components: {
+    FindUs
+  }
 };
 </script>
 
@@ -59,6 +69,9 @@ export default {
 
     .findus-text {
       font-size: 18px;
+      line-height: 25px;
+      margin-right: 2vw;
+      margin-left: 2vw;
     }
     .details {
       display: flex;
@@ -77,9 +90,6 @@ export default {
     .findus {
       display: flex;
       align-items: center;
-      padding-top: 5px;
-      margin-left: 3vw;
-      margin-right: 3vw;
       white-space: pre-wrap;
       a {
         color: $primaryTextColour;
