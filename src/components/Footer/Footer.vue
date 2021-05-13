@@ -1,13 +1,13 @@
 <template>
   <div id="footer">
-    <div class="row">
+    <div class="row" v-if="$route.name === 'Home'">
       <div class="contact head">find us</div>
       <div class="findus">
         <FindUs />
         <div class="findus-text">
           <p>
-            Our studio is located on St Mary's Street at the top of Mabgate
-            green, a 5 minute walk from Leeds Bus Station.
+            Our studio is located on St Mary's Street at the top of Mabgate green, a 5 minute walk
+            from Leeds Bus Station.
           </p>
           <br />
           <p>The studio is on the first floor and accessible via lift.</p>
@@ -56,6 +56,9 @@ export default {
     border-top: $primaryLineWidth solid $primaryTextColour;
     width: 100%;
     display: flex;
+    .contact-text {
+      font-size: 18px;
+    }
     .head {
       min-width: $leftColWidth;
       display: flex;
