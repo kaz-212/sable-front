@@ -5,10 +5,17 @@
       <VerticalShow />
     </div>
     <section class="main">
-      <div class="header">
-        <h1>Resident</h1>
+      <div class="header-pane">
+        <p
+          class="
+        header"
+        >
+          Resident
+        </p>
       </div>
-      <div class="info"></div>
+      <div class="info">
+        <h2 class="res-name">{{ resident.name }}</h2>
+      </div>
     </section>
   </div>
 </template>
@@ -54,9 +61,19 @@ export default {
   }
   .main {
     display: flex;
-    .header {
+    .header-pane {
       width: $leftColWidth;
-      border-right: $primaryLineWidth;
+      border-right: $primaryLineWidth solid black;
+      .header {
+        margin-top: 110px;
+        margin-left: 110px;
+        font-size: 27px;
+      }
+    }
+    .info {
+      .res-name {
+        margin: 110px auto 0 auto;
+      }
     }
   }
 }
