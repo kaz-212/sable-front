@@ -67,7 +67,7 @@ export default {
       margin-bottom: 3px;
       font-size: 16px;
       color: grey;
-      padding: 5px;
+      padding: 5px 5px 5px 0;
       // border: $primaryLineWidth solid black;
     }
   }
