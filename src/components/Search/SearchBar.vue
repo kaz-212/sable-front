@@ -1,16 +1,18 @@
 <template>
   <div class="search">
-      <form @submit.prevent="searchQuerySubmitted">
-        <input class="search-input"
-               type="text"
-               v-model="searchTerm"
-               placeholder="search here">
-        <button type="submit" name="button" class="btn-search">
-          <i class="fas fa-search icon"></i>
-          <!-- Search -->
-        </button>
-        <i @click="setNotSearching" class="fas fa-times icon"></i>
-      </form>
+    <form @submit.prevent="searchQuerySubmitted">
+      <input
+        class="search-input"
+        type="text"
+        v-model="searchTerm"
+        placeholder="search here"
+      />
+      <button type="submit" name="button" class="btn-search">
+        <i class="fas fa-search icon"></i>
+        <!-- Search -->
+      </button>
+      <i @click="setNotSearching" class="fas fa-times icon"></i>
+    </form>
   </div>
 </template>
 
@@ -36,30 +38,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+input[type='text'] {
+  border: none;
+  border-bottom: $primaryLineWidth solid;
+  background-color: $backgroundColour;
+  height: 25px;
+  font-size: 20px;
+}
 
-  input[type=text] {
-    border: none;
-    border-bottom: $primaryLineWidth solid;
-    height: 25px;
-    font-size: 20px;
-  }
+input:focus {
+  outline: none;
+}
 
-  input:focus { outline: none; }
+.icon {
+  cursor: pointer;
+  padding-left: 17px;
+}
 
-  .icon {
-    cursor: pointer;
-    padding-left: 17px;
-  }
-
-  .btn-search {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    padding-left: 17px;
-  }
-
+.btn-search {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  padding-left: 17px;
+}
 </style>
