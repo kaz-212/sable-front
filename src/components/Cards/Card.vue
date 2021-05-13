@@ -1,8 +1,10 @@
 <template>
   <div class="card">
-    <div class="image">
-      <img v-if="image" :src="image" :alt="name" />
-    </div>
+    <router-link :to="{ name: targetLocation, params: { id } }">
+      <div class="image">
+        <img v-if="image" :src="image" :alt="name" />
+      </div>
+    </router-link>
     <h2 class="name">{{ name }}</h2>
     <h3 v-if="date" class="date">{{ date }}</h3>
     <!-- <h3>{{ type }}</h3> -->
@@ -21,6 +23,7 @@ export default {
     name: String,
     image: String,
     type: String,
+    id: Number,
     date: {
       type: String,
       default: null
@@ -28,6 +31,11 @@ export default {
     tags: {
       type: Array,
       default: null
+    }
+  },
+  computed: {
+    targetLocation() {
+      return this.type === 'resident' ? 'ShowResident' : 'ShowShow';
     }
   }
 };
@@ -43,6 +51,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     img {
       object-fit: cover;
       max-width: 100%;

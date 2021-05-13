@@ -7,7 +7,8 @@
           v-for="resident in residents"
           :name="resident.name"
           :image="resident.image_url"
-          :type="'resident'"
+          type="resident"
+          :id="resident.id"
           class="grid-item"
         />
       </div>
@@ -30,8 +31,8 @@ export default {
       return this.$store.getters['residents/getResidents'];
     }
   },
-  created() {
-    this.$store.dispatch('residents/fetchResidents');
+  async created() {
+    await this.$store.dispatch('residents/fetchResidents');
   }
 };
 </script>

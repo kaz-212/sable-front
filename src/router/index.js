@@ -28,12 +28,17 @@ const routes = [
   {
     path: '/residents',
     name: 'Residents',
-    component: () => import(/* webpackChunkName: "schedule" */ '../views/Residents.vue')
+    component: () => import(/* webpackChunkName: "resident" */ '../views/Residents.vue')
+  },
+  {
+    path: '/residents/:id',
+    name: 'ShowResident',
+    component: () => import(/* webpackChunkName: "ShowResident" */ '../views/ShowRes.vue')
   },
   {
     path: '/search',
     name: 'Search',
-    component: () => import(/* webpackChunkName: "schedule" */ '../views/Search.vue')
+    component: () => import(/* webpackChunkName: "search" */ '../views/Search.vue')
   }
 ];
 
