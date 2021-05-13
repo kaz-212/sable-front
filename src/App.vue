@@ -21,6 +21,7 @@ export default {
 
 <style lang="scss">
 #app {
+  background-color: $backgroundColour;
   margin: 0;
   padding: 0;
   height: 100%;

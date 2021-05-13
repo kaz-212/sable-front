@@ -1,20 +1,29 @@
 <template>
-  <div class="home">
-    <div class="resident" v-bind:key="resident.id" v-for="resident in residents">
-      <Card :name="resident.name"
-            :image="resident.image_url"
-            :type="'resident'"/>
-    </div>
+  <div class="shows" v-if="residents">
+    <grid-template header="residents">
+      <div class="grid">
+        <ResCard
+          v-bind:key="resident.id"
+          v-for="resident in residents"
+          :name="resident.name"
+          :image="resident.image_url"
+          :type="'resident'"
+          class="grid-item"
+        />
+      </div>
+    </grid-template>
   </div>
 </template>
 
 <script>
-import Card from '@/components/Cards/Card.vue';
+import ResCard from '@/components/Cards/ResCard.vue';
+import GridTemplate from '@/components/Templates/GridTemplate.vue';
 
 export default {
   name: 'Residents',
   components: {
-    Card
+    ResCard,
+    GridTemplate
   },
   computed: {
     residents() {
