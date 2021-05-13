@@ -1,21 +1,30 @@
 <template>
-  <div class="home" v-if="allShows && allShows.data">
-    <div class="show" v-bind:key="show.key" v-for="show in allShows.data">
-      <ShowCard :name="show.name"
-                :image="show.pictures.large"
-                :type="'show'"
-                :tags="show.tags" />
-    </div>
+  <div class="shows" v-if="allShows && allShows.data">
+    <grid-template header="shows">
+      <div class="grid">
+        <ShowCard
+          v-bind:key="show.key"
+          v-for="show in allShows.data"
+          :name="show.name"
+          :image="show.pictures.large"
+          :type="'show'"
+          :tags="show.tags"
+          class="grid-item"
+        />
+      </div>
+    </grid-template>
   </div>
 </template>
 
 <script>
 import ShowCard from '@/components/Cards/ShowCard.vue';
+import GridTemplate from '@/components/Templates/GridTemplate.vue';
 
 export default {
   name: 'Shows',
   components: {
-    ShowCard
+    ShowCard,
+    GridTemplate
   },
   computed: {
     allShows() {
@@ -27,3 +36,8 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.shows {
+}
+</style>

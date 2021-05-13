@@ -4,8 +4,8 @@
       <div class="contact head">find us</div>
       <div class="findus findus-text">
         <p>
-          Our studio is located on St Mary's Street at the top of Mabgate green,
-          a 5 minute walk from Leeds Bus Station.
+          Our studio is located on St Mary's Street at the top of Mabgate green, a 5 minute walk
+          from Leeds Bus Station.
         </p>
       </div>
     </div>
@@ -19,18 +19,10 @@
     <div class="row">
       <div class="head">socials</div>
       <div class="details socials">
-        <a
-          class="footer-link"
-          href="https://www.facebook.com/sableradio/"
-          target="_blank"
-        >
+        <a class="footer-link" href="https://www.facebook.com/sableradio/" target="_blank">
           <i class="fab fa-facebook icon"></i>
         </a>
-        <a
-          class="footer-link"
-          href="https://www.instagram.com/sable.radio/"
-          target="_blank"
-        >
+        <a class="footer-link" href="https://www.instagram.com/sable.radio/" target="_blank">
           <i class="fab fa-instagram icon"></i>
         </a>
       </div>
@@ -49,6 +41,7 @@ export default {
   width: 100%;
   font-size: $navLinkSize;
   bottom: 0;
+  z-index: 1000;
   .row {
     border-top: $primaryLineWidth solid $primaryTextColour;
     width: 100%;
