@@ -1,8 +1,6 @@
 <template>
   <div class="card">
-    <div class="image">
-      <img v-if="image" :src="image" :alt="name" />
-    </div>
+    <img v-if="image" :src="image" :alt="name" />
     <h2 class="name">{{ name }}</h2>
     <h3 v-if="date" class="date">{{ date }}</h3>
     <!-- <h3>{{ type }}</h3> -->
@@ -36,18 +34,13 @@ export default {
 <style lang="scss" scoped>
 .card {
   max-width: 300px;
-  .image {
+  img {
     width: 300px;
     height: 300px;
     border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    img {
-      object-fit: cover;
-      max-width: 100%;
-      max-height: 100%;
-    }
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
   }
   .name {
     padding: 15px 0 20px 0;
