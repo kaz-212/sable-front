@@ -1,29 +1,16 @@
 <template>
-  <div class="showShow" v-if="resident">
+  <div class="showShow" v-if="show">
     <div class="banner">
-      <img :src="resident.image_url" alt="" />
+      <!-- <img :src="show.image_url" alt="" /> -->
       <VerticalShow />
     </div>
     <section class="main">
       <div class="header-pane">
-        <p class="header">Resident</p>
+        <p class="header">show</p>
       </div>
       <div class="info">
-        <h2 class="res-name">{{ resident.name }}</h2>
         <div class="description">
-          {{ resident.description }}
-        </div>
-        <div
-          class="cards"
-          v-if="
-            resident.mix_url_one ||
-            resident.mix_url_two ||
-            resident.mix_url_three
-          "
-        >
-          {{ resident.mix_url_one.slice(24) }}
-          {{ resident.mix_url_two.slice(24) }}
-          {{ resident.mix_url_three.slice(24) }}
+          {{ show }}
         </div>
       </div>
     </section>
@@ -42,7 +29,7 @@ export default {
     id() {
       return this.$route.params.id;
     },
-    resident() {
+    show() {
       return this.$store.getters['pastShows/getShowById'];
     }
   },

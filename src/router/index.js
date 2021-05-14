@@ -28,7 +28,7 @@ const routes = [
   {
     path: '/shows/:id',
     name: 'ShowShow',
-    component: () => import(/* webpackChunkName: "ShowResident" */ '../views/ShowShow.vue')
+    component: () => import(/* webpackChunkName: "ShowShow" */ '../views/ShowShow.vue')
   },
   {
     path: '/schedule',
