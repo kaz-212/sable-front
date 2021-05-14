@@ -1,15 +1,20 @@
 <template>
   <div class="showShow" v-if="show">
-    <div class="banner">
-      <!-- <img :src="show.image_url" alt="" /> -->
+    <div class="banner fade" v-if="show.pictures">
+      <img :src="show.pictures.extra_large" alt="" />
       <VerticalShow />
     </div>
     <section class="main">
       <div class="header-pane">
-        <p class="header">show</p>
+        <div class="header">show</div>
       </div>
-      <div class="info">
-        {{ show }}
+      <div class="info" v-if="show.name">
+        <div class="show-name">
+          {{ show.name.slice(0, -10) }}
+        </div>
+        <div class="date">
+          {{ show.name.slice(-8) }}
+        </div>
         <div class="description">
           {{ show.description }}
         </div>
@@ -63,11 +68,35 @@ export default {
     width: 100%;
     border-bottom: $primaryLineWidth solid black;
     img {
+      width: 95%;
+      height: 500px;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  }
+  .banner {
+    display: flex;
+    width: 100%;
+    border-bottom: $primaryLineWidth solid black;
+    img {
       border-right: $primaryLineWidth solid black;
       width: 95%;
       height: 500px;
       overflow: hidden;
       object-fit: cover;
+    }
+  }
+  .fade {
+    display: flex;
+    width: 100%;
+    border-bottom: $primaryLineWidth solid black;
+    img {
+      width: 95%;
+      height: 500px;
+      overflow: hidden;
+      object-fit: cover;
+      opacity: 40%;
+      border-right: $primaryLineWidth solid black;
     }
   }
   .main {

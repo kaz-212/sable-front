@@ -3,7 +3,8 @@
     <div class="info">
       {{ thisShow.name }}
       <span class="time"
-        >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
+        >{{ thisShow.date_time.slice(11, 16) }} -
+        {{ thisShow.end_time.slice(11, 16) }}</span
       >
     </div>
   </div>
@@ -31,6 +32,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  border-left: $primaryLineWidth solid black;
   .info {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
