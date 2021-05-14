@@ -8,7 +8,7 @@
           :name="resident.name"
           :image="resident.image_url"
           type="resident"
-          :id="resident.id"
+          :id="resident.id.toString()"
           class="grid-item"
         />
       </div>

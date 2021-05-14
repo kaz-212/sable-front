@@ -6,7 +6,7 @@
     </div>
     <section class="main">
       <div class="header-pane">
-        <p class="header">Resident</p>
+        <p class="header">resident</p>
       </div>
       <div class="info">
         <h2 class="res-name">{{ resident.name }}</h2>
@@ -104,6 +104,9 @@ export default {
       }
     }
     .info {
+      .description {
+        font-size: 25px;
+      }
       .res-name {
         margin: 110px auto 0 auto;
       }

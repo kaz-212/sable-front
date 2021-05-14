@@ -9,8 +9,20 @@
         <p class="header">show</p>
       </div>
       <div class="info">
+        {{ show }}
         <div class="description">
-          {{ show }}
+          {{ show.description }}
+        </div>
+        <div class="widget">
+          <iframe
+            width="100%"
+            height="60"
+            :src="
+              'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' +
+              encodeURI(show.key)
+            "
+            frameborder="0"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -66,6 +78,9 @@ export default {
       }
     }
     .info {
+      .description {
+        font-size: 25px;
+      }
       .res-name {
         margin: 110px auto 0 auto;
       }

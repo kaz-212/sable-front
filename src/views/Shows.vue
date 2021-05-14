@@ -8,6 +8,7 @@
           :name="show.name"
           :image="show.pictures.large"
           :type="'show'"
+          :id="show.key"
           :tags="show.tags"
           class="grid-item"
         />
