@@ -1,6 +1,7 @@
 # sable-radio
 
 Front-end component for Sable Radio website.
+## Tech Head
 
 To integrate with:
 
@@ -8,9 +9,7 @@ https://api.mixcloud.com/sableradio/cloudcasts/
 
 https://sable-radio.herokuapp.com/api/
 
-Notes
-
-To get description of a show, use show.data.key in allShows and make an API call to https://api.mixcloud.com/key when it is clicked. This will return a JSON containing a description (see https://api.mixcloud.com/sable/robin-matto-aka-il-matto-the-picnic-blanket-mix/)
+To get description of a show, use show.data.key in allShows and make an API call to `https://api.mixcloud.com/${key}` when it is clicked. This will return a JSON containing a description (see https://api.mixcloud.com/sable/robin-matto-aka-il-matto-the-picnic-blanket-mix/)
 
 To query the mixcloud database use this query string parameter template: https://api.mixcloud.com/search/?q=sugarspice&everythingnice&type=cloudcast
 

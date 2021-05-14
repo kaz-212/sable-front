@@ -85,8 +85,8 @@ export default {
     border-bottom: $primaryLineWidth solid black;
     img {
       border-right: $primaryLineWidth solid black;
-      width: 95%;
-      height: 400px;
+      width: 100%;
+      // height: calc(90vh - $navHeight);
       overflow: hidden;
       object-fit: cover;
       object-position: 50% 50%;
