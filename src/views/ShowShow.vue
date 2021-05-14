@@ -102,11 +102,11 @@ export default {
   .main {
     display: flex;
     .header-pane {
-      width: $leftColWidth;
+      min-width: $leftColWidth;
       border-right: $primaryLineWidth solid black;
       .header {
-        margin-top: 110px;
-        margin-left: 110px;
+        padding-left: 2vw;
+        padding-top: 2vw;
         font-size: 27px;
       }
     }
@@ -114,7 +114,7 @@ export default {
       .description {
         font-size: 25px;
       }
-      .res-name {
+      .show-name {
         margin: 110px auto 0 auto;
       }
     }
@@ -128,7 +128,7 @@ export default {
       min-width: $leftColWidth;
       display: flex;
       padding-left: 2vw;
-      padding-right: 2vw;
+      padding-top: 2vw;
       align-items: center;
       height: auto;
       min-height: $footerHeight;
