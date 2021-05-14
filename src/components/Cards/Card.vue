@@ -5,7 +5,6 @@
     </router-link>
     <h2 class="name">{{ name }}</h2>
     <h3 v-if="date" class="date">{{ date }}</h3>
-    <!-- <h3>{{ type }}</h3> -->
     <div class="tags">
       <h3 v-bind:key="tag.key" v-for="tag in tags" class="tag">
         {{ tag.name }}
@@ -21,7 +20,7 @@ export default {
     name: String,
     image: String,
     type: String,
-    id: Number,
+    id: String,
     date: {
       type: String,
       default: null
@@ -45,7 +44,7 @@ export default {
   img {
     width: 300px;
     height: 300px;
-    border: 1px solid black;
+    border: $primaryLineWidth solid black;
     object-fit: cover;
     max-width: 100%;
     max-height: 100%;

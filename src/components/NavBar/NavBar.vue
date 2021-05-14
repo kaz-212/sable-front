@@ -1,26 +1,45 @@
 <template>
   <nav id="nav">
     <div @click="expandNav = false" class="logo">
-      <i @click="setSearching"
-          class="fas fa-search icon"
-          :class="{ searchtoggle: isSearching }">
+      <i
+        @click="setSearching"
+        class="fas fa-search icon"
+        :class="{ searchtoggle: isSearching }"
+      >
       </i>
       <SearchBar v-if="isSearching" class="searchbar" />
-      <router-link v-else class="nav-link" :to="{ name: 'Home' }">sable radio</router-link>
+      <router-link v-else class="nav-link" :to="{ name: 'Home' }"
+        >sable radio</router-link
+      >
     </div>
     <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
-      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Shows' }"
+      <router-link
+        @click="expandNav = false"
+        class="nav-link"
+        :to="{ name: 'Shows' }"
         >shows</router-link
       >
-      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'About' }"
+      <router-link
+        @click="expandNav = false"
+        class="nav-link"
+        :to="{ name: 'About' }"
         >about</router-link
       >
-      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Schedule' }"
+      <router-link
+        @click="expandNav = false"
+        class="nav-link"
+        :to="{ name: 'Schedule' }"
         >schedule</router-link
       >
-      <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
+      <router-link class="nav-link" :to="{ name: 'Residents' }"
+        >residents</router-link
+      >
     </div>
-    <div class="hamburger" :class="{ toggledropdown: expandNav }" @click="expandNav = !expandNav">
+    <div
+      class="hamburger"
+      :class="{ toggledropdown: expandNav }"
+      @click="expandNav = !expandNav"
+    >
       <span class="bar line1"></span>
       <span class="bar line2"></span>
       <span class="bar line3"></span>

@@ -18,6 +18,7 @@ export default {
       try {
         console.log(id);
         const { data } = await axios.get(`${mixcloudAPIRoot}${id}`);
+        console.log(data);
         state.commit('setIndividualShow', data);
       } catch (e) {
         console.log(e);
@@ -27,7 +28,7 @@ export default {
   modules: {},
   getters: {
     allShows: state => state.pastShows,
-    oneShow: state => state.selectedShow
+    getShowById: state => state.selectedShow
   },
   mutations: {
     setShows(state, shows) {

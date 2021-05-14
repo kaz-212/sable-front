@@ -1,5 +1,5 @@
 <template>
-  <div class="shows" v-if="residents">
+  <div v-if="residents">
     <grid-template header="residents">
       <div class="grid">
         <ResCard

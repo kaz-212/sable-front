@@ -6,6 +6,7 @@
       :type="type"
       :date="name.slice(-8)"
       :tags="tags"
+      :id="id"
     />
   </div>
 </template>
@@ -22,7 +23,8 @@ export default {
     name: String,
     image: String,
     type: String,
-    tags: Array
+    tags: Array,
+    id: String
   }
 };
 </script>

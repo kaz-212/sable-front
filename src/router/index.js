@@ -11,19 +11,9 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  },
-  {
     path: '/shows',
     name: 'Shows',
     component: () => import(/* webpackChunkName: "shows" */ '../views/Shows.vue')
-  },
-  {
-    path: '/schedule',
-    name: 'Schedule',
-    component: () => import(/* webpackChunkName: "schedule" */ '../views/Schedule.vue')
   },
   {
     path: '/residents',
@@ -34,6 +24,21 @@ const routes = [
     path: '/residents/:id',
     name: 'ShowResident',
     component: () => import(/* webpackChunkName: "ShowResident" */ '../views/ShowRes.vue')
+  },
+  {
+    path: '/shows/:id',
+    name: 'ShowShow',
+    component: () => import(/* webpackChunkName: "ShowResident" */ '../views/ShowShow.vue')
+  },
+  {
+    path: '/schedule',
+    name: 'Schedule',
+    component: () => import(/* webpackChunkName: "schedule" */ '../views/Schedule.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/search',

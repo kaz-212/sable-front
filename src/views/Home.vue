@@ -60,7 +60,7 @@ export default {
       width: 95%;
       height: auto;
       // border-bottom: 1px solid black;
-      border-right: 1px solid black;
+      border-right: $primaryLineWidth solid black;
     }
     .stream-info {
       min-width: 72px;

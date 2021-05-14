@@ -22,9 +22,10 @@ export default {
     height: $pageHeight;
     border-right: $primaryLineWidth solid black;
     .header {
-      margin-top: 110px;
-      margin-left: 110px;
-      font-size: 27px;
+      margin-top: 2vw;
+      margin-left: 2vw;
+      // font-size: 27px;
+      font-size: $navLinkSize;
     }
   }
   .grid {
@@ -32,13 +33,13 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: $leftColWidth;
-    padding: 70px 0;
+    padding: 40px 0;
 
     .grid-item {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      margin: 40px 0;
+      margin: 00px 0;
     }
   }
 }

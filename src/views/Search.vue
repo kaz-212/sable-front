@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Search Results</h1>
     <SearchResults />
   </div>
 </template>

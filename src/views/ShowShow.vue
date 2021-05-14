@@ -1,5 +1,5 @@
 <template>
-  <div class="showRes" v-if="resident">
+  <div class="showShow" v-if="resident">
     <div class="banner">
       <img :src="resident.image_url" alt="" />
       <VerticalShow />
@@ -10,40 +10,17 @@
       </div>
       <div class="info">
         <h2 class="res-name">{{ resident.name }}</h2>
-        <div v-if="resident.soundcloud_url">
-          <Icon
-            :linkto="resident.soundcloud_url"
-            :iconClass="'fa fa-soundcloud'"
-          />
-        </div>
-        <div v-if="resident.mixcloud_url">
-          <Icon :linkto="resident.mixcloud_url" :iconClass="'fa fa-mixcloud'" />
-        </div>
-        <div v-if="resident.mixcloud_url">
-          <Icon
-            :linkto="resident.mixcloud_url"
-            :iconClass="'fab fa-facebook'"
-          />
-        </div>
-        <div v-if="resident.twitter_url">
-          <Icon :linkto="resident.twitter_url" :iconClass="'fa fa-twitter'" />
-        </div>
-        <div v-if="resident.instagram_url">
-          <Icon
-            :linkto="resident.instagram_url"
-            :iconClass="'fa fa-instagram'"
-          />
-        </div>
-        <div v-if="resident.bandcamp_url">
-          <Icon :linkto="resident.bandcamp_url" :iconClass="'fa fa-bandcamp'" />
-        </div>
-        <div v-if="resident.youtube_url">
-          <Icon :linkto="resident.youtube_url" :iconClass="'fab fa-youtube'" />
-        </div>
         <div class="description">
           {{ resident.description }}
         </div>
-        <div class="cards">
+        <div
+          class="cards"
+          v-if="
+            resident.mix_url_one ||
+            resident.mix_url_two ||
+            resident.mix_url_three
+          "
+        >
           {{ resident.mix_url_one.slice(24) }}
           {{ resident.mix_url_two.slice(24) }}
           {{ resident.mix_url_three.slice(24) }}
@@ -55,30 +32,28 @@
 
 <script>
 import VerticalShow from '@/components/Banner/VerticalShow.vue';
-import Icon from '@/components/Icons/Icon.vue';
 
 export default {
-  name: 'showRes',
+  name: 'showShow',
   components: {
-    VerticalShow,
-    Icon
+    VerticalShow
   },
   computed: {
     id() {
       return this.$route.params.id;
     },
     resident() {
-      return this.$store.getters['residents/getResidentById'];
+      return this.$store.getters['pastShows/getShowById'];
     }
   },
   created() {
-    this.$store.dispatch('residents/fetchIndividualResident', this.id);
+    this.$store.dispatch('pastShows/fetchIndividualShow', this.id);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.showRes {
+.showShow {
   .banner {
     display: flex;
     width: 100%;
