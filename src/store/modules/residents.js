@@ -5,7 +5,8 @@ const allResidentsURL = 'https://sable-radio.herokuapp.com/api/residents';
 export default {
   namespaced: true,
   state: {
-    residents: []
+    residents: [],
+    selectedResident: {}
   },
   actions: {
     async fetchResidents(state) {
@@ -15,20 +16,27 @@ export default {
       } catch (e) {
         console.log(e);
       }
+    },
+    async fetchIndividualResident(state, id) {
+      try {
+        console.log(id);
+        const { data } = await axios.get(`${allResidentsURL}/${id}`);
+        state.commit('setIndividualResident', data);
+      } catch (e) {
+        console.log(e);
+      }
     }
   },
   getters: {
     getResidents: state => state.residents,
-    getResidentById: state => id => {
-      // TODO add error handling
-      const resident = state.residents.find(item => item.id === id);
-      console.log('res', resident);
-      return resident;
-    }
+    getResidentById: state => state.selectedResident
   },
   mutations: {
     setResidents(state, residentsData) {
       state.residents = residentsData;
+    },
+    setIndividualResident(state, residentData) {
+      state.selectedResident = residentData;
     }
   }
 };

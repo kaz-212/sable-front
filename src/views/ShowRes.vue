@@ -10,8 +10,43 @@
       </div>
       <div class="info">
         <h2 class="res-name">{{ resident.name }}</h2>
-        <div v-if="resident">
-          <p>{{ resident }}</p>
+        <div v-if="resident.soundcloud_url">
+          <Icon
+            :linkto="resident.soundcloud_url"
+            :iconClass="'fa fa-soundcloud'"
+          />
+        </div>
+        <div v-if="resident.mixcloud_url">
+          <Icon :linkto="resident.mixcloud_url" :iconClass="'fa fa-mixcloud'" />
+        </div>
+        <div v-if="resident.mixcloud_url">
+          <Icon
+            :linkto="resident.mixcloud_url"
+            :iconClass="'fab fa-facebook'"
+          />
+        </div>
+        <div v-if="resident.twitter_url">
+          <Icon :linkto="resident.twitter_url" :iconClass="'fa fa-twitter'" />
+        </div>
+        <div v-if="resident.instagram_url">
+          <Icon
+            :linkto="resident.instagram_url"
+            :iconClass="'fa fa-instagram'"
+          />
+        </div>
+        <div v-if="resident.bandcamp_url">
+          <Icon :linkto="resident.bandcamp_url" :iconClass="'fa fa-bandcamp'" />
+        </div>
+        <div v-if="resident.youtube_url">
+          <Icon :linkto="resident.youtube_url" :iconClass="'fab fa-youtube'" />
+        </div>
+        <div class="description">
+          {{ resident.description }}
+        </div>
+        <div class="cards">
+          {{ resident.mix_url_one.slice(24) }}
+          {{ resident.mix_url_two.slice(24) }}
+          {{ resident.mix_url_three.slice(24) }}
         </div>
       </div>
     </section>
@@ -20,24 +55,24 @@
 
 <script>
 import VerticalShow from '@/components/Banner/VerticalShow.vue';
+import Icon from '@/components/Icons/Icon.vue';
 
 export default {
   name: 'showRes',
   components: {
-    VerticalShow
+    VerticalShow,
+    Icon
   },
   computed: {
     id() {
       return this.$route.params.id;
     },
     resident() {
-      return this.$store.getters['residents/getResidentById'](this.id);
+      return this.$store.getters['residents/getResidentById'];
     }
   },
   created() {
-    if (!this.resident) {
-      this.$store.dispatch('residents/fetchResidents');
-    }
+    this.$store.dispatch('residents/fetchIndividualResident', this.id);
   }
 };
 </script>

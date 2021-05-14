@@ -1,0 +1,20 @@
+<template>
+  <div>
+    <a v-if="linkto" :href="linkto" target="_blank">
+      <i :class="iconClass"></i>
+    </a>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Icon',
+  props: {
+    linkto: String,
+    iconClass: String
+  }
+};
+</script>
+
+<style>
+</style>
