@@ -13,19 +13,23 @@
         <div class="description">
           {{ show.description }}
         </div>
-        <div class="widget">
-          <iframe
-            width="100%"
-            height="60"
-            :src="
-              'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' +
-              encodeURI(show.key)
-            "
-            frameborder="0"
-          ></iframe>
-        </div>
+        <div class="widget"></div>
       </div>
     </section>
+    <div class="row">
+      <div class="head">listen</div>
+      <div class="details">
+        <iframe
+          width="100%"
+          height="60"
+          :src="
+            'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' +
+            encodeURI(show.key)
+          "
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -53,6 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .showShow {
+  font-size: $navLinkSize;
   .banner {
     display: flex;
     width: 100%;
@@ -63,7 +68,6 @@ export default {
       height: 500px;
       overflow: hidden;
       object-fit: cover;
-      // object-position: 50% 50%;
     }
   }
   .main {
@@ -84,6 +88,29 @@ export default {
       .res-name {
         margin: 110px auto 0 auto;
       }
+    }
+  }
+  .row {
+    border-top: $primaryLineWidth solid $primaryTextColour;
+    width: 100%;
+    display: flex;
+
+    .head {
+      min-width: $leftColWidth;
+      display: flex;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      align-items: center;
+      height: auto;
+      min-height: $footerHeight;
+      border-right: $primaryLineWidth solid $primaryTextColour;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      white-space: pre-wrap;
     }
   }
 }
