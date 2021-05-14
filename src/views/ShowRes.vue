@@ -41,7 +41,9 @@
           <Icon :linkto="resident.youtube_url" :iconClass="'fab fa-youtube'" />
         </div>
         <div class="description">
-          {{ resident.description }}
+          <vue-markdown>
+            {{ resident.description }}
+          </vue-markdown>
         </div>
         <div class="cards">
           {{ resident.mix_url_one.slice(24) }}
@@ -56,12 +58,14 @@
 <script>
 import VerticalShow from '@/components/Banner/VerticalShow.vue';
 import Icon from '@/components/Icons/Icon.vue';
+import VueMarkdown from 'vue-markdown';
 
 export default {
   name: 'showRes',
   components: {
     VerticalShow,
-    Icon
+    Icon,
+    VueMarkdown
   },
   computed: {
     id() {
