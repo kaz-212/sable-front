@@ -68,10 +68,12 @@ export default {
     height: calc(100vh - #{$navHeight});
     display: flex;
     justify-content: space-between;
+
     .stream-video {
       width: 100%;
       height: 100%;
       position: relative;
+      transform: translate(0, -10%);
       // top: -10%;
     }
     .stream-info {
