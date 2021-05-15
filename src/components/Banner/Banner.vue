@@ -16,7 +16,6 @@
     <div class="img-wrapper" v-if="slides[selectedImg].image_url">
       <img :src="slides[selectedImg].image_url" alt="banner-image" />
     </div>
-    <button>Hello</button>
   </div>
 </template>
 
