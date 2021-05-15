@@ -6,7 +6,7 @@
         :key="slide.id"
         class="selecta"
         :class="{ selected: selectedImg === index }"
-        @click="selectedImg = index"
+        @click="(selectedImg = index), pause()"
       ></div>
     </div>
     <MoreInfo
@@ -33,6 +33,7 @@ export default {
   data() {
     return {
       selectedImg: 0,
+      play: true,
       imgs: [
         {
           image_url:
@@ -57,10 +58,23 @@ export default {
       } else {
         this.selectedImg += 1;
       }
+    },
+    pause() {
+      this.play = false;
+      this.sliderController();
+    },
+    sliderController() {
+      if (this.play) {
+        this.interval = setInterval(() => this.nextImg(), 12000);
+      } else {
+        clearInterval(this.interval);
+      }
     }
   },
   async created() {
-    this.interval = setInterval(() => this.nextImg(), 12000);
+    if (this.play) {
+      this.sliderController();
+    }
     try {
       const { data } = await axios.get(bannerImgURL);
       this.slides = data;
