@@ -83,14 +83,16 @@ export default {
 
 <style lang="scss" scoped>
 .showRes {
+  width: 100%;
+  overflow: hidden;
   .banner {
+    min-width: calc(100vw - #{$sideBarWidth});
     display: flex;
-    width: 100%;
+    justify-content: space-between;
     border-bottom: $primaryLineWidth solid black;
     img {
-      border-right: $primaryLineWidth solid black;
-      width: 95%;
-      height: 500px;
+      width: 100%;
+      height: 70vh;
       overflow: hidden;
       object-fit: cover;
       // object-position: 50% 50%;
