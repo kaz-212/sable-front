@@ -15,17 +15,13 @@
       </div>
       <vertical-show />
     </div>
-    <div v-else class="">
+    <div
+      v-elseif="
+        thisShow && thisShow.name && thisShow.date_time && thisShow.end_time
+      "
+    >
       <Banner />
-      <!-- <div class="stream-info" v-if="thisShow.name">
-        <div class="info">
-          {{ thisShow.name }}
-          <span class="time"
-            >{{ thisShow.date_time.slice(11, 16) }} -
-            {{ thisShow.end_time.slice(11, 16) }}</span
-          >
-        </div>
-      </div> -->
+      <!-- <vertical-show /> -->
     </div>
   </div>
 </template>
@@ -69,28 +65,6 @@ export default {
       position: relative;
       transform: translate(0, -10%);
       // top: -10%;
-    }
-    .stream-info {
-      border-left: $primaryLineWidth solid black;
-      min-width: $sideBarWidth;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      .info {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        position: absolute;
-        align-items: center;
-        top: 200px;
-        font-size: 27px;
-        width: 350px;
-        .time {
-          margin-left: 14px;
-        }
-      }
     }
   }
 }
