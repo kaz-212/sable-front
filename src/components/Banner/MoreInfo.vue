@@ -1,6 +1,9 @@
 <template>
   <div class="more-info">
-    <button>Hi {{ link_url }}</button>
+    <div class="banner-info-name" v-if="name">{{ name.trim() }}</div>
+    <a :href="link_url" target="_blank" v-if="link_url"
+      ><button>more info</button></a
+    >
   </div>
 </template>
 
@@ -8,14 +11,37 @@
 export default {
   name: 'MoreInfo',
   props: {
-    link_url: String
+    link_url: String,
+    name: String
   }
 };
 </script>
 
 <style>
 .more-info {
-  z-index: 10000;
-  background-color: red;
+  position: absolute;
+  z-index: 1000;
+  bottom: 0;
+}
+button {
+  padding: 10px;
+  margin-bottom: 1.5vw;
+  margin-left: 2vw;
+  text-decoration: none;
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+  transition: 0.2s;
+}
+button:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+.banner-info-name {
+  padding: 10px;
+  margin-bottom: 1.5vw;
+  margin-left: 2vw;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255);
 }
 </style>
