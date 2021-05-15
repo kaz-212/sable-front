@@ -15,11 +15,7 @@
       </div>
       <vertical-show />
     </div>
-    <div
-      v-elseif="
-        thisShow && thisShow.name && thisShow.date_time && thisShow.end_time
-      "
-    >
+    <div v-else>
       <Banner />
       <!-- <vertical-show /> -->
     </div>
