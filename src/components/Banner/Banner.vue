@@ -33,7 +33,6 @@ export default {
   data() {
     return {
       selectedImg: 0,
-      play: true,
       imgs: [
         {
           image_url:
@@ -60,21 +59,12 @@ export default {
       }
     },
     pause() {
-      this.play = false;
-      this.sliderController();
-    },
-    sliderController() {
-      if (this.play) {
-        this.interval = setInterval(() => this.nextImg(), 12000);
-      } else {
-        clearInterval(this.interval);
-      }
+      clearInterval(this.interval);
     }
   },
   async created() {
-    if (this.play) {
-      this.sliderController();
-    }
+    this.interval = setInterval(() => this.nextImg(), 12000);
+
     try {
       const { data } = await axios.get(bannerImgURL);
       this.slides = data;
