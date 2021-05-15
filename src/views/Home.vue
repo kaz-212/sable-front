@@ -13,39 +13,25 @@
       <div class="stream-video">
         <div class="video-wrapper"><VideoStream /></div>
       </div>
-      <div class="stream-info">
-        <div class="info">
-          {{ thisShow.name }}
-          <span class="time"
-            >{{ thisShow.date_time.slice(11, 16) }} -
-            {{ thisShow.end_time.slice(11, 16) }}</span
-          >
-        </div>
-      </div>
+      <vertical-show />
     </div>
-    <div v-else class="">
+    <div v-else>
       <Banner />
-      <!-- <div class="stream-info" v-if="thisShow.name">
-        <div class="info">
-          {{ thisShow.name }}
-          <span class="time"
-            >{{ thisShow.date_time.slice(11, 16) }} -
-            {{ thisShow.end_time.slice(11, 16) }}</span
-          >
-        </div>
-      </div> -->
+      <!-- <vertical-show /> -->
     </div>
   </div>
 </template>
 
 <script>
 import Banner from '@/components/Banner/Banner.vue';
-import VideoStream from '../components/VideoStream/VideoStream.vue';
+import VideoStream from '@/components/VideoStream/VideoStream.vue';
+import VerticalShow from '@/components/Banner/VerticalShow.vue';
 
 export default {
   name: 'Home',
   components: {
     VideoStream,
+    VerticalShow,
     Banner
   },
   computed: {
@@ -75,28 +61,6 @@ export default {
       position: relative;
       transform: translate(0, -10%);
       // top: -10%;
-    }
-    .stream-info {
-      border-left: $primaryLineWidth solid black;
-      min-width: $sideBarWidth;
-      // width: 5%;
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      .info {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        position: absolute;
-        top: 200px;
-        font-size: 27px;
-        width: 350px;
-        .time {
-          margin-left: 14px;
-        }
-      }
     }
   }
 }

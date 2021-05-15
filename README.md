@@ -1,6 +1,9 @@
 # sable-radio
 
 Front-end component for Sable Radio website.
+
+Sidebar can accomodate up to 48 characters for a show name.
+
 ## Tech Head
 
 To integrate with:
