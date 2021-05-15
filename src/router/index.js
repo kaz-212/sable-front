@@ -44,6 +44,15 @@ const routes = [
     path: '/search',
     name: 'Search',
     component: () => import(/* webpackChunkName: "search" */ '../views/Search.vue')
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: () => import(/* webpackChunkName: "404" */ '../views/404.vue')
+  },
+  {
+    path: '*',
+    redirect: '/404'
   }
 ];
 

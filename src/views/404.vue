@@ -1,11 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="page-not-found">
+    <div class="message">
+      <h1>oops - 404 error</h1>
+      <br />
+      <p>this page does not exist</p>
+    </div>
   </div>
 </template>
 
+<script>
+export default {};
+</script>
+
 <style lang="scss" scoped>
-.about {
+.page-not-found {
   height: calc(100vh - (#{$navHeight} + #{$footerHeight * 2} + 3px));
   display: flex;
   justify-content: center;
