@@ -23,8 +23,17 @@
         </div>
       </div>
     </div>
-    <div v-else>
+    <div v-else class="">
       <Banner />
+      <!-- <div class="stream-info" v-if="thisShow.name">
+        <div class="info">
+          {{ thisShow.name }}
+          <span class="time"
+            >{{ thisShow.date_time.slice(11, 16) }} -
+            {{ thisShow.end_time.slice(11, 16) }}</span
+          >
+        </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -53,18 +62,22 @@ export default {
 <style lang="scss" scoped>
 .home {
   width: 100%;
+  overflow: hidden;
   .stream-wrapper {
-    height: auto;
+    min-width: calc(100vw - #{$sideBarWidth});
+    height: calc(100vh - #{$navHeight});
     display: flex;
+    justify-content: space-between;
     .stream-video {
-      width: 95%;
-      height: auto;
-      // border-bottom: 1px solid black;
-      border-right: $primaryLineWidth solid black;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      // top: -10%;
     }
     .stream-info {
-      min-width: 72px;
-      width: 5%;
+      border-left: $primaryLineWidth solid black;
+      min-width: $sideBarWidth;
+      // width: 5%;
       overflow: hidden;
       position: relative;
       display: flex;
@@ -84,34 +97,5 @@ export default {
       }
     }
   }
-
-  // .stream-row {
-  //   width: 100%;
-  //   height: 60vh;
-  //   display: flex;
-  //   .stream-info {
-  //     width: $leftColWidth;
-  //     // background-color: olive;
-  //     border-right: $primaryLineWidth solid black;
-  //     border-bottom: $primaryLineWidth solid black;
-  //     display: flex;
-  //     justify-content: flex-start;
-  //     .info {
-  //       display: flex;
-  //       flex-direction: column;
-  //       margin: 30px 0 0 100px;
-  //     }
-  //   }
-  //   .stream-video {
-  //     width: $rightColWidth;
-  //     height: 100%;
-  //     // background-color: red;
-  //     border-bottom: $primaryLineWidth solid black;
-  //     .video-wrapper {
-  //       width: 70%;
-  //       margin: 30px 0 0 30px;
-  //     }
-  //   }
-  // }
 }
 </style>

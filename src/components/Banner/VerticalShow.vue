@@ -26,13 +26,12 @@ export default {
 
 <style lang="scss" scoped>
 .vertical-show {
-  min-width: 72px;
-  width: 5%;
+  border-left: $primaryLineWidth solid black;
+  min-width: $sideBarWidth;
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
-  border-left: $primaryLineWidth solid black;
   .info {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
@@ -40,7 +39,7 @@ export default {
     transform: rotate(90deg);
     position: absolute;
     top: 200px;
-    font-size: 20px;
+    font-size: 27px;
     width: 350px;
     .time {
       margin-left: 14px;
