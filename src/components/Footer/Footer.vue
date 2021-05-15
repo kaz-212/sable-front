@@ -17,7 +17,7 @@
     <div class="row">
       <div class="contact head">contact</div>
       <div class="details contact-text">
-        Get in touch at
+        get in touch at
         <a href="hello@sableradio.live">hello@sableradio.live</a>
       </div>
     </div>

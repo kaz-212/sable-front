@@ -23,7 +23,7 @@ export default {
         const { data } = await axios.get(`${allResidentsURL}/${id}`);
         state.commit('setIndividualResident', data);
       } catch (e) {
-        console.log(e);
+        console.log(`${e} check checl`);
       }
     }
   },
