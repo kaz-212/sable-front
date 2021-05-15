@@ -76,16 +76,14 @@ export default {
   display: flex;
   overflow: hidden;
   position: relative;
-  border-bottom: $primaryLineWidth solid black;
   .img-wrapper {
     min-width: 100vw;
-    height: 60vh;
-    overflow: hidden;
-    margin: 0 auto;
+    height: 70vh;
+    // overflow: hidden;
+    // margin: 0 auto;
     position: relative;
-    // display: flex;
     img {
-      min-width: 100%;
+      width: 100%;
       position: absolute;
       top: 50%;
       left: 50%;
