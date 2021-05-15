@@ -1,6 +1,12 @@
 <template>
   <div class="vertical-show" v-if="isLive">
-    <div class="info">
+    <div
+      class="info"
+      :class="{
+        medium: thisShow.name.length >= 21 && 30 > thisShow.name.length,
+        small: thisShow.name.length >= 30
+      }"
+    >
       {{ thisShow.name }}
       <span class="time"
         >{{ thisShow.date_time.slice(11, 16) }} -
@@ -38,12 +44,19 @@ export default {
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
     position: absolute;
-    top: 200px;
+    align-items: center;
+    top: 225px;
     font-size: 27px;
-    width: 350px;
+    width: 450px;
     .time {
       margin-left: 14px;
     }
+  }
+  .medium {
+    font-size: 19px;
+  }
+  .small {
+    font-size: 15px;
   }
 }
 </style>

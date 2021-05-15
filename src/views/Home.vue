@@ -13,15 +13,7 @@
       <div class="stream-video">
         <div class="video-wrapper"><VideoStream /></div>
       </div>
-      <div class="stream-info">
-        <div class="info">
-          {{ thisShow.name }}
-          <span class="time"
-            >{{ thisShow.date_time.slice(11, 16) }} -
-            {{ thisShow.end_time.slice(11, 16) }}</span
-          >
-        </div>
-      </div>
+      <vertical-show />
     </div>
     <div v-else class="">
       <Banner />
@@ -40,12 +32,14 @@
 
 <script>
 import Banner from '@/components/Banner/Banner.vue';
-import VideoStream from '../components/VideoStream/VideoStream.vue';
+import VideoStream from '@/components/VideoStream/VideoStream.vue';
+import VerticalShow from '@/components/Banner/VerticalShow.vue';
 
 export default {
   name: 'Home',
   components: {
     VideoStream,
+    VerticalShow,
     Banner
   },
   computed: {
@@ -79,7 +73,6 @@ export default {
     .stream-info {
       border-left: $primaryLineWidth solid black;
       min-width: $sideBarWidth;
-      // width: 5%;
       overflow: hidden;
       position: relative;
       display: flex;
@@ -90,6 +83,7 @@ export default {
         -o-transform: rotate(90deg);
         transform: rotate(90deg);
         position: absolute;
+        align-items: center;
         top: 200px;
         font-size: 27px;
         width: 350px;
