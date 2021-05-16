@@ -1,8 +1,11 @@
 <template>
-  <div class="ticker-wrap" :key="showName">
-    <div class="ticker">
-      <div class="ticker__item">{{ showName }}</div>
-    </div>
+  <div class="ticker-wrap">
+    <p class="marquee">
+      <span>{{ `- ${showName} -` }}</span>
+    </p>
+    <p class="marquee marquee2">
+      <span>{{ `- ${showName} -` }}</span>
+    </p>
   </div>
 </template>
 
@@ -13,60 +16,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@-webkit-keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    -webkit-transform: translate3d(-270%, 0, 0);
-    transform: translate3d(-270%, 0, 0);
-  }
-}
-
-@keyframes ticker {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-    visibility: visible;
-  }
-
-  100% {
-    -webkit-transform: translate3d(-270%, 0, 0);
-    transform: translate3d(-270%, 0, 0);
-  }
-}
-
 .ticker-wrap {
-  position: relative;
-  width: 100px;
-  overflow: hidden;
   background-color: $backgroundColour;
-  padding-left: 100%;
   box-sizing: content-box;
   margin: 5px;
-
-  .ticker {
-    display: inline-block;
+  .marquee {
+    overflow-x: hidden;
     white-space: nowrap;
-    padding-right: 100%;
-    box-sizing: content-box;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
-    animation-timing-function: linear;
-    -webkit-animation-name: ticker;
-    animation-name: ticker;
-    -webkit-animation-duration: $tickerDuration;
-    animation-duration: $tickerDuration;
+    position: absolute;
+  }
 
-    &__item {
-      display: inline-block;
-      color: $primaryTextColour;
-      font-size: 14px;
-      padding-top: 4px;
+  .marquee span {
+    display: inline-block;
+    // if more gap needed up this value
+    padding-left: 120%;
+    animation: marquee 5s linear infinite;
+  }
+
+  .marquee2 span {
+    animation-delay: 2.5s;
+  }
+
+  @keyframes marquee {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    100% {
+      -webkit-transform: translate(-100%, 0);
+      transform: translate(-100%, 0);
+    }
+  }
+  @-webkit-keyframes marquee {
+    0% {
+      -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
+    }
+    100% {
+      -webkit-transform: translate(-100%, 0);
+      transform: translate(-100%, 0);
     }
   }
 }
