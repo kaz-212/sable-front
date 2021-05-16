@@ -1,4 +1,5 @@
 import axios from 'axios';
+import router from '../../router/index';
 
 const allResidentsURL = 'https://sable-radio.herokuapp.com/api/residents';
 
@@ -22,8 +23,10 @@ export default {
         console.log(id);
         const { data } = await axios.get(`${allResidentsURL}/${id}`);
         state.commit('setIndividualResident', data);
+        return data;
       } catch (e) {
-        console.log(`${e} check checl`);
+        console.log(e);
+        return router.push({ name: '404' });
       }
     }
   },
