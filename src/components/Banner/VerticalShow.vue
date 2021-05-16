@@ -46,7 +46,7 @@ export default {
     position: absolute;
     align-items: center;
     top: 225px;
-    font-size: 27px;
+    font-size: 25px;
     width: 450px;
     .time {
       margin-left: 14px;
