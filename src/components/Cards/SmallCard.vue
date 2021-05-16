@@ -8,9 +8,9 @@
     </div>
     <h3 v-if="date" class="date">{{ date }}</h3>
     <div class="tags">
-      <h3 v-bind:key="tag.key" v-for="tag in tags" class="tag">
+      <p v-bind:key="tag.key" v-for="tag in tags" class="tag">
         {{ tag.name }}
-      </h3>
+      </p>
     </div>
   </div>
 </template>

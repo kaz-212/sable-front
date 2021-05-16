@@ -136,6 +136,7 @@ export default {
       width: 100%;
       .description {
         font-size: 25px;
+        margin-bottom: 45px;
       }
       .res-name {
         margin: 50px auto 0 auto;

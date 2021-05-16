@@ -30,11 +30,11 @@ export default {
     display: inline-block;
     // if more gap needed up this value
     padding-left: 120%;
-    animation: marquee 5s linear infinite;
+    animation: marquee 12s linear infinite;
   }
 
   .marquee2 span {
-    animation-delay: 2.5s;
+    animation-delay: 6s;
   }
 
   @keyframes marquee {
