@@ -132,14 +132,15 @@ export default {
     .info {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
       width: 100%;
       .description {
         font-size: 25px;
         margin-bottom: 45px;
+        width: 80%;
       }
       .res-name {
-        margin: 50px auto 0 auto;
+        margin-top: 50px;
         font-size: 31px;
       }
       .links {
@@ -156,8 +157,9 @@ export default {
         justify-content: center;
       }
       .cards {
+        width: 80%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
 
         .show {
           margin: 20px;

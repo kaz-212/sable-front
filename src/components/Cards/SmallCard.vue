@@ -62,6 +62,7 @@ export default {
     border-top: $primaryLineWidth solid black;
     border-bottom: $primaryLineWidth solid black;
     padding: 10px 0 10px 0;
+    letter-spacing: 1px;
   }
   .tags {
     display: flex;
