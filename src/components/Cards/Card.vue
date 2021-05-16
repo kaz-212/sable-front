@@ -41,6 +41,7 @@ export default {
 <style lang="scss" scoped>
 .card {
   max-width: 300px;
+  margin-bottom: 25px;
   img {
     width: 300px;
     height: 300px;
@@ -67,7 +68,9 @@ export default {
       margin-bottom: 3px;
       font-size: 16px;
       color: grey;
-      padding: 5px 5px 5px 0;
+      // padding: 5px 5px 5px 0;
+
+      padding-right: 7px;
       // border: $primaryLineWidth solid black;
     }
   }
