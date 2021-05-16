@@ -50,7 +50,16 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    padding-right: 35px;
+    padding-bottom: 8px;
+    margin-right: 140px;
+  }
+}
+@media (max-width: 1100px) {
+  .radio-player {
+    .ticker-container {
+      margin-right: 200px;
+    }
   }
 }
 </style>
