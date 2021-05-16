@@ -1,10 +1,10 @@
 <template>
   <div class="ticker-wrap">
     <p class="marquee">
-      <span>{{ `- ${showName} -` }}</span>
+      <span>{{ showName }}</span>
     </p>
     <p class="marquee marquee2">
-      <span>{{ `- ${showName} -` }}</span>
+      <span>{{ showName }}</span>
     </p>
   </div>
 </template>
