@@ -1,4 +1,5 @@
 import axios from 'axios';
+import router from '../../router/index';
 
 const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 const mixcloudAPIRoot = 'https://api.mixcloud.com';
@@ -18,8 +19,10 @@ export default {
       try {
         const { data } = await axios.get(`${mixcloudAPIRoot}${id}`);
         state.commit('setSingleShow', data);
+        return data;
       } catch (e) {
         console.log(e);
+        return router.push({ name: '404' });
       }
     }
   },
