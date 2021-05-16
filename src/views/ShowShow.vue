@@ -4,25 +4,8 @@
       <img :src="show.pictures.extra_large" alt="" />
       <VerticalShow />
     </div>
-    <section class="main">
-      <div class="header-pane">
-        <div class="header">show</div>
-      </div>
-      <div class="info" v-if="show.name">
-        <div class="show-name">
-          {{ show.name.slice(0, -10) }}
-        </div>
-        <div class="date">
-          {{ show.name.slice(-8) }}
-        </div>
-        <div class="description">
-          {{ show.description }}
-        </div>
-        <div class="widget"></div>
-      </div>
-    </section>
     <div class="row">
-      <div class="head">listen</div>
+      <!-- <div class="head">listen</div> -->
       <div class="details">
         <iframe
           width="100%"
@@ -35,6 +18,23 @@
         ></iframe>
       </div>
     </div>
+    <section class="main">
+      <div class="header-pane">
+        <div class="header">show</div>
+      </div>
+      <div class="info" v-if="show.name">
+        <h2 class="show-name">
+          {{ show.name.slice(0, -10) }}
+        </h2>
+        <div class="date">
+          <p>{{ show.name.slice(-8) }}</p>
+        </div>
+        <div class="description">
+          <p>{{ show.description }}</p>
+        </div>
+        <div class="widget"></div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -98,16 +98,30 @@ export default {
       }
     }
     .info {
-      .description {
-        font-size: 25px;
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       .show-name {
-        margin: 110px auto 0 auto;
+        margin: 50px auto 20px auto;
+        font-size: 31px;
+      }
+      .date {
+        width: 80%;
+        p {
+          border-bottom: $primaryLineWidth solid black;
+        }
+      }
+      .description {
+        width: 80%;
+        margin: 30px 0 50px 0;
+        p {
+          font-size: 22px;
+        }
       }
     }
   }
   .row {
-    border-top: $primaryLineWidth solid $primaryTextColour;
+    border-bottom: $primaryLineWidth solid $primaryTextColour;
     width: 100%;
     display: flex;
 
