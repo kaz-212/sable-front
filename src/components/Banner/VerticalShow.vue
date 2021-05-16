@@ -1,6 +1,12 @@
 <template>
   <div class="vertical-show" v-if="isLive">
-    <div class="info">
+    <div
+      class="info"
+      :class="{
+        medium: thisShow.name.length >= 21 && 30 > thisShow.name.length,
+        small: thisShow.name.length >= 30
+      }"
+    >
       {{ thisShow.name }}
       <span class="time"
         >{{ thisShow.date_time.slice(11, 16) }} -
@@ -26,25 +32,31 @@ export default {
 
 <style lang="scss" scoped>
 .vertical-show {
-  min-width: 72px;
-  width: 5%;
+  border-left: $primaryLineWidth solid black;
+  min-width: $sideBarWidth;
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
-  border-left: $primaryLineWidth solid black;
   .info {
     -webkit-transform: rotate(90deg);
     -moz-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg);
     position: absolute;
-    top: 200px;
-    font-size: 20px;
-    width: 350px;
+    align-items: center;
+    top: 225px;
+    font-size: 27px;
+    width: 450px;
     .time {
       margin-left: 14px;
     }
+  }
+  .medium {
+    font-size: 19px;
+  }
+  .small {
+    font-size: 15px;
   }
 }
 </style>

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import router from '../../router/index';
 
 const mixcloudAPI = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 const mixcloudAPIRoot = 'https://api.mixcloud.com';
@@ -6,8 +7,7 @@ const mixcloudAPIRoot = 'https://api.mixcloud.com';
 export default {
   namespaced: true,
   state: {
-    pastShows: [],
-    selectedShow: {}
+    pastShows: []
   },
   actions: {
     async fetchShows(state) {
@@ -20,7 +20,7 @@ export default {
         // state.commit('setSingleShow', data);
         return data;
       } catch (e) {
-        return false;
+        return router.push({ name: '404' });
       }
     }
   },
@@ -32,9 +32,9 @@ export default {
   mutations: {
     setShows(state, shows) {
       state.pastShows = shows;
-    },
-    setSingleShow(state, show) {
-      state.selectedShow = show;
     }
+    // setSingleShow(state, show) {
+    //   state.selectedShow = show;
+    // }
   }
 };

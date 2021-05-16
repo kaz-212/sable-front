@@ -11,7 +11,6 @@ export default {
     async fetchCurrentShow({ commit }) {
       try {
         const { data } = await axios.get(sableAPI);
-        console.log(data);
         commit('setCurrentShow', data);
       } catch (e) {
         console.log(`${e}, no shows to display`);

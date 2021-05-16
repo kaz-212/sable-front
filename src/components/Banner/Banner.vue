@@ -6,16 +6,16 @@
         :key="slide.id"
         class="selecta"
         :class="{ selected: selectedImg === index }"
-        @click="selectedImg = index"
+        @click="(selectedImg = index), pause()"
       ></div>
     </div>
+    <MoreInfo
+      :link_url="slides[selectedImg].link_url"
+      :name="slides[selectedImg].name"
+    />
     <div class="img-wrapper" v-if="slides[selectedImg].image_url">
       <img :src="slides[selectedImg].image_url" alt="banner-image" />
-      <div v-if="slides[selectedImg].link_url" class="more-info">
-        <MoreInfo :link_url="slides[selectedImg].link_url" />
-      </div>
     </div>
-    <button>Hello</button>
   </div>
 </template>
 
@@ -57,10 +57,14 @@ export default {
       } else {
         this.selectedImg += 1;
       }
+    },
+    pause() {
+      clearInterval(this.interval);
     }
   },
   async created() {
     this.interval = setInterval(() => this.nextImg(), 12000);
+
     try {
       const { data } = await axios.get(bannerImgURL);
       this.slides = data;
@@ -76,16 +80,14 @@ export default {
   display: flex;
   overflow: hidden;
   position: relative;
-  border-bottom: $primaryLineWidth solid black;
   .img-wrapper {
     min-width: 100vw;
-    height: 60vh;
-    overflow: hidden;
-    margin: 0 auto;
+    height: 70vh;
+    // overflow: hidden;
+    // margin: 0 auto;
     position: relative;
-    // display: flex;
     img {
-      min-width: 100%;
+      width: 100%;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -95,7 +97,7 @@ export default {
   }
   .selectas {
     position: absolute;
-    z-index: 100;
+    z-index: 2;
     bottom: 10px;
     left: 50%;
     margin-left: auto;

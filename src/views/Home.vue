@@ -13,30 +13,25 @@
       <div class="stream-video">
         <div class="video-wrapper"><VideoStream /></div>
       </div>
-      <div class="stream-info">
-        <div class="info">
-          {{ thisShow.name }}
-          <span class="time"
-            >{{ thisShow.date_time.slice(11, 16) }} -
-            {{ thisShow.end_time.slice(11, 16) }}</span
-          >
-        </div>
-      </div>
+      <vertical-show />
     </div>
     <div v-else>
       <Banner />
+      <!-- <vertical-show /> -->
     </div>
   </div>
 </template>
 
 <script>
 import Banner from '@/components/Banner/Banner.vue';
-import VideoStream from '../components/VideoStream/VideoStream.vue';
+import VideoStream from '@/components/VideoStream/VideoStream.vue';
+import VerticalShow from '@/components/Banner/VerticalShow.vue';
 
 export default {
   name: 'Home',
   components: {
     VideoStream,
+    VerticalShow,
     Banner
   },
   computed: {
@@ -53,65 +48,20 @@ export default {
 <style lang="scss" scoped>
 .home {
   width: 100%;
+  overflow: hidden;
   .stream-wrapper {
-    height: auto;
+    min-width: calc(100vw - #{$sideBarWidth});
+    height: calc(100vh - #{$navHeight});
     display: flex;
+    justify-content: space-between;
+
     .stream-video {
-      width: 95%;
-      height: auto;
-      // border-bottom: 1px solid black;
-      border-right: $primaryLineWidth solid black;
-    }
-    .stream-info {
-      min-width: 72px;
-      width: 5%;
-      overflow: hidden;
+      width: 100%;
+      height: 100%;
       position: relative;
-      display: flex;
-      justify-content: center;
-      .info {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        position: absolute;
-        top: 200px;
-        font-size: 27px;
-        width: 350px;
-        .time {
-          margin-left: 14px;
-        }
-      }
+      transform: translate(0, -10%);
+      // top: -10%;
     }
   }
-
-  // .stream-row {
-  //   width: 100%;
-  //   height: 60vh;
-  //   display: flex;
-  //   .stream-info {
-  //     width: $leftColWidth;
-  //     // background-color: olive;
-  //     border-right: $primaryLineWidth solid black;
-  //     border-bottom: $primaryLineWidth solid black;
-  //     display: flex;
-  //     justify-content: flex-start;
-  //     .info {
-  //       display: flex;
-  //       flex-direction: column;
-  //       margin: 30px 0 0 100px;
-  //     }
-  //   }
-  //   .stream-video {
-  //     width: $rightColWidth;
-  //     height: 100%;
-  //     // background-color: red;
-  //     border-bottom: $primaryLineWidth solid black;
-  //     .video-wrapper {
-  //       width: 70%;
-  //       margin: 30px 0 0 30px;
-  //     }
-  //   }
-  // }
 }
 </style>

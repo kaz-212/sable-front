@@ -63,40 +63,24 @@ export default {
 <style lang="scss" scoped>
 .showShow {
   font-size: $navLinkSize;
+  width: 100%;
+  overflow: hidden;
   .banner {
+    min-width: calc(100vw - #{$sideBarWidth});
     display: flex;
-    width: 100%;
+    justify-content: space-between;
     border-bottom: $primaryLineWidth solid black;
     img {
-      width: 95%;
-      height: 500px;
+      width: 100%;
+      height: 70vh;
       overflow: hidden;
       object-fit: cover;
-    }
-  }
-  .banner {
-    display: flex;
-    width: 100%;
-    border-bottom: $primaryLineWidth solid black;
-    img {
-      border-right: $primaryLineWidth solid black;
-      width: 95%;
-      height: 500px;
-      overflow: hidden;
-      object-fit: cover;
+      // border-right: $primaryLineWidth solid black;
     }
   }
   .fade {
-    display: flex;
-    width: 100%;
-    border-bottom: $primaryLineWidth solid black;
     img {
-      width: 95%;
-      height: 500px;
-      overflow: hidden;
-      object-fit: cover;
       opacity: 40%;
-      border-right: $primaryLineWidth solid black;
     }
   }
   .main {
