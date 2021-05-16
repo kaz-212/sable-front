@@ -17,9 +17,10 @@ export default {
     async fetchIndividualShow(state, id) {
       try {
         const { data } = await axios.get(`${mixcloudAPIRoot}${id}`);
-        state.commit('setSingleShow', data);
+        // state.commit('setSingleShow', data);
+        return data;
       } catch (e) {
-        console.log(e);
+        return false;
       }
     }
   },

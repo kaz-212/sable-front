@@ -1,30 +1,48 @@
 <template>
   <div class="show-card">
     <Card
+      v-if="!small"
       :name="name.slice(0, -10)"
       :image="image"
       :type="type"
       :date="name.slice(-8)"
       :tags="tags"
       :id="id"
+      :small="small"
+    />
+    <SmallCard
+      v-else
+      :name="name.slice(0, -10)"
+      :image="image"
+      :type="type"
+      :date="name.slice(-8)"
+      :tags="tags"
+      :id="id"
+      :small="small"
     />
   </div>
 </template>
 
 <script>
 import Card from './Card.vue';
+import SmallCard from './SmallCard.vue';
 
 export default {
   name: 'show-card',
   components: {
-    Card
+    Card,
+    SmallCard
   },
   props: {
     name: String,
     image: String,
     type: String,
     tags: Array,
-    id: String
+    id: String,
+    small: {
+      type: Boolean,
+      default: false
+    }
   }
 };
 </script>
