@@ -18,6 +18,7 @@ export default {
       try {
         const { data } = await axios.get(`${mixcloudAPIRoot}${id}`);
         // state.commit('setSingleShow', data);
+        console.log(data);
         return data;
       } catch (e) {
         return router.push({ name: '404' });

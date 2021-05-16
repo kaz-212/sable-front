@@ -29,7 +29,7 @@
           height="60"
           :src="
             'https://www.mixcloud.com/widget/iframe/?hide_cover=1&mini=1&feed=' +
-            encodeURI(show.key)
+              encodeURI(show.key)
           "
           frameborder="0"
         ></iframe>
@@ -46,16 +46,19 @@ export default {
   components: {
     VerticalShow
   },
+  data() {
+    return {
+      show: ''
+    };
+  },
   computed: {
     id() {
       return this.$route.params.id;
-    },
-    show() {
-      return this.$store.getters['pastShows/getShowById'];
     }
   },
-  created() {
-    this.$store.dispatch('pastShows/fetchIndividualShow', this.id);
+  async created() {
+    const data = await this.$store.dispatch('pastShows/fetchIndividualShow', this.id);
+    this.show = data;
   }
 };
 </script>
