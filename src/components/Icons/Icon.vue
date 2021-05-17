@@ -1,7 +1,7 @@
 <template>
   <div>
     <a v-if="linkto" :href="linkto" target="_blank">
-      <i :class="iconClass"></i>
+      <i :class="iconClass" class="fa-lg" style="color: black;"></i>
     </a>
   </div>
 </template>

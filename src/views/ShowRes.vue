@@ -12,25 +12,43 @@
         <h2 class="res-name">{{ resident.name }}</h2>
         <div class="links">
           <div v-if="resident.soundcloud_url" class="link">
-            <Icon :linkto="resident.soundcloud_url" :iconClass="'fa fa-soundcloud'" />
+            <Icon
+              :linkto="resident.soundcloud_url"
+              :iconClass="'fa fa-soundcloud'"
+            />
           </div>
           <div v-if="resident.mixcloud_url" class="link">
-            <Icon :linkto="resident.mixcloud_url" :iconClass="'fa fa-mixcloud'" />
+            <Icon
+              :linkto="resident.mixcloud_url"
+              :iconClass="'fa fa-mixcloud'"
+            />
           </div>
-          <div v-if="resident.mixcloud_url" class="link">
-            <Icon :linkto="resident.mixcloud_url" :iconClass="'fab fa-facebook'" />
+          <div v-if="resident.facebook_url" class="link">
+            <Icon
+              :linkto="resident.facebook_url"
+              :iconClass="'fab fa-facebook'"
+            />
           </div>
           <div v-if="resident.twitter_url" class="link">
             <Icon :linkto="resident.twitter_url" :iconClass="'fa fa-twitter'" />
           </div>
           <div v-if="resident.instagram_url" class="link">
-            <Icon :linkto="resident.instagram_url" :iconClass="'fa fa-instagram'" />
+            <Icon
+              :linkto="resident.instagram_url"
+              :iconClass="'fa fa-instagram'"
+            />
           </div>
           <div v-if="resident.bandcamp_url" class="link">
-            <Icon :linkto="resident.bandcamp_url" :iconClass="'fa fa-bandcamp'" />
+            <Icon
+              :linkto="resident.bandcamp_url"
+              :iconClass="'fa fa-bandcamp'"
+            />
           </div>
           <div v-if="resident.youtube_url" class="link">
-            <Icon :linkto="resident.youtube_url" :iconClass="'fab fa-youtube'" />
+            <Icon
+              :linkto="resident.youtube_url"
+              :iconClass="'fab fa-youtube'"
+            />
           </div>
         </div>
         <div class="description">
@@ -91,10 +109,15 @@ export default {
     }
   },
   async created() {
-    this.resident = await this.$store.dispatch('residents/fetchIndividualResident', this.id);
+    this.resident = await this.$store.dispatch(
+      'residents/fetchIndividualResident',
+      this.id
+    );
     /*eslint-disable*/
     for (const url of this.showUrls) {
-      const { data } = await axios.get(`https://api.mixcloud.com${url.slice(24)}`);
+      const { data } = await axios.get(
+        `https://api.mixcloud.com${url.slice(24)}`
+      );
       this.shows.push(data);
     }
   }
