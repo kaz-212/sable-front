@@ -1,9 +1,19 @@
 <template>
   <div class="showShow" v-if="show">
-    <div class="banner fade" v-if="show.pictures">
-      <img :src="show.pictures.extra_large" alt="" />
-      <VerticalShow />
+    <div class="image-section">
+      <div class="banner" v-if="show.pictures">
+        <div class="fade">
+          <div class="banner">
+          <img :src="show.pictures.extra_large" alt="" />
+        <VerticalShow />
+          </div>
+        </div>
+        <div class="main-image">
+          <img :src="show.pictures.extra_large" alt="" />
+        </div>
+      </div>
     </div>
+
     <div class="row">
       <!-- <div class="head">listen</div> -->
       <div class="details">
@@ -68,8 +78,19 @@ export default {
   font-size: $navLinkSize;
   width: 100%;
   overflow: hidden;
+    .fade {
+    img {
+      opacity: 90%;
+      -webkit-filter: blur(7px);
+      -moz-filter: blur(7px);
+      -o-filter: blur(7px);
+      -ms-filter: blur(7px);
+      filter: blur(7px);
+    }
+  }
   .banner {
-    min-width: calc(100vw - #{$sideBarWidth});
+    width: calc(100vw - 21px);
+    position: relative;
     display: flex;
     justify-content: space-between;
     border-bottom: $primaryLineWidth solid black;
@@ -81,10 +102,11 @@ export default {
       // border-right: $primaryLineWidth solid black;
     }
   }
-  .fade {
-    img {
-      opacity: 40%;
-    }
+
+  .main-image {
+    position: absolute;
+    // there's deffo a cleaner way of overlaying this image...
+    transform: translate(92%);
   }
   .main {
     display: flex;

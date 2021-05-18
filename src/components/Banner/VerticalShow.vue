@@ -34,6 +34,7 @@ export default {
 .vertical-show {
   border-left: $primaryLineWidth solid black;
   min-width: $sideBarWidth;
+  background-color: $backgroundColour;
   overflow: hidden;
   position: relative;
   display: flex;
