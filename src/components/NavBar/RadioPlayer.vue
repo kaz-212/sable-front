@@ -37,22 +37,15 @@ export default {
   display: flex;
   justify-content: flex-end;
   width: 120px;
-  .ticker-container {
-    overflow: hidden;
-    .icon {
-      margin-right: 40px;
-      margin-left: 10px;
-      cursor: pointer;
-    }
-  }
+
   .blinker-container,
   .ticker-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-right: 35px;
     padding-bottom: 8px;
-    margin-right: 140px;
+    margin-right: 175px;
+    margin-left: auto;
   }
 }
 @media (max-width: 1100px) {
