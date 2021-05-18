@@ -1,5 +1,6 @@
 <template>
   <nav id="nav">
+
     <div @click="expandNav = false" class="logo">
       <i
         @click="setSearching"
@@ -43,21 +44,21 @@
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-if="thisShow">
+    <div class="player" v-if="thisShow.name">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
     </div>
-    <div class="player" v-else>
-      <UpNext />
+    <div class="player upnext" v-else>
+      <ticker-tape showName="next show thursday 2pm" />
     </div>
   </nav>
 </template>
 
 <script>
 import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
-import UpNext from '@/components/Radio/UpNext.vue';
 import LiveNow from '@/components/Animations/LiveNow.vue';
+import TickerTape from '@/components/Animations/TickerTape.vue';
 import SearchBar from '@/components/Search/SearchBar.vue';
 import RadioPlayer from './RadioPlayer.vue';
 
@@ -68,7 +69,7 @@ export default {
     RadioEmbed,
     LiveNow,
     SearchBar,
-    UpNext
+    TickerTape
   },
   data() {
     return {
@@ -206,6 +207,13 @@ export default {
   }
   .searchbar {
     padding-left: 30px;
+  }
+
+  .upnext {
+    justify-content: flex-end;
+    padding-right: 15%;
+    margin-right: 60px;
+    padding-bottom: 10px;
   }
 }
 @media (max-width: 1100px) {
