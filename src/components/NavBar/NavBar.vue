@@ -22,14 +22,13 @@
       <router-link
         @click="expandNav = false"
         class="nav-link"
-        :to="{ name: 'About' }"
-        >about</router-link
+        :to="{ name: 'Blog' }"
+        >blog</router-link
       >
-      <router-link
+      <div
         @click="expandNav = false"
-        class="nav-link"
-        :to="{ name: 'Schedule' }"
-        >schedule</router-link
+        class="nav-link chat"
+        ><a href="http://sableradio.chatango.com/" target="_blank">chat</a></div
       >
       <router-link class="nav-link" :to="{ name: 'Residents' }"
         >residents</router-link
@@ -115,6 +114,10 @@ export default {
     // &:hover {
     //   background-color: $hoverColour;
     // }
+    a {
+      text-decoration: none;
+      color: $primaryTextColour;
+    }
   }
 
   .logo {
@@ -149,6 +152,10 @@ export default {
     padding-top: 5px;
     display: flex;
     align-items: center;
+  }
+
+  .chat {
+    text-decoration: none;
   }
 
   .fa-search {
@@ -197,7 +204,6 @@ export default {
       }
     }
   }
-
   .searchbar {
     padding-left: 30px;
   }

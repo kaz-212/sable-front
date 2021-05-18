@@ -1,11 +1,11 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="blog">
+    <h1>Blog coming soon!</h1>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.about {
+.blog {
   height: calc(100vh - (#{$navHeight} + #{$footerHeight * 2} + 3px));
   display: flex;
   justify-content: center;
