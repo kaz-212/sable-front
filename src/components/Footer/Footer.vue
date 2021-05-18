@@ -1,5 +1,18 @@
 <template>
   <div id="footer">
+    <div class="row about" v-if="this.$route.name === 'Home'">
+      <div class="contact head">about</div>
+      <div class="findus">
+        <div class="about-text">
+          <p>
+            we are a community radio station, broadcasting out of convention house, leeds.
+            pop in and say hi if you're around
+          </p>
+          <br />
+          <p>we started as this and now we are still this</p>
+        </div>
+      </div>
+    </div>
     <div class="row" v-if="$route.name === 'Home'">
       <div class="contact head">find us</div>
       <div class="findus">
@@ -86,6 +99,16 @@ export default {
       margin-right: 2vw;
       margin-left: 2vw;
     }
+
+    .about-text {
+      margin: 1vh;
+      padding: 0;
+      font-size: 18px;
+      line-height: 25px;
+      margin-right: 2vw;
+      margin-left: 2vw;
+    }
+
     .details {
       display: flex;
       align-items: center;
@@ -108,6 +131,9 @@ export default {
         color: $primaryTextColour;
       }
     }
+  }
+  .about {
+  height: calc(100vh - (70vh + #{$navHeight}));
   }
 }
 
