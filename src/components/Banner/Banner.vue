@@ -104,7 +104,7 @@ export default {
     display: flex;
     align-items: center;
     height: 25px;
-    width: 120px;
+    width: auto;
     .selecta {
       position: relative;
       left: -50%;

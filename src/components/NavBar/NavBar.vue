@@ -49,11 +49,15 @@
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
     </div>
+    <div class="player" v-else>
+      <UpNext />
+    </div>
   </nav>
 </template>
 
 <script>
 import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
+import UpNext from '@/components/Radio/UpNext.vue';
 import LiveNow from '@/components/Animations/LiveNow.vue';
 import SearchBar from '@/components/Search/SearchBar.vue';
 import RadioPlayer from './RadioPlayer.vue';
@@ -64,7 +68,8 @@ export default {
     RadioPlayer,
     RadioEmbed,
     LiveNow,
-    SearchBar
+    SearchBar,
+    UpNext
   },
   data() {
     return {
