@@ -27,4 +27,13 @@ export default {
   height: 100%;
   // min-height: 100vh;
 }
+
+    @font-face {
+      font-family: 'TWKLausanne';
+      src: url('../public/TWKLausanne-300.otf');
+    }
+
+    * {
+      font-family: TWKLausanne;
+    }
 </style>
