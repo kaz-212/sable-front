@@ -27,7 +27,6 @@ export default {
   height: 100%;
   width: 100%;
   background-color: $backgroundColour;
-  // position: fixed;
   position: absolute;
   z-index: 10000;
   display: flex;
@@ -46,7 +45,6 @@ export default {
 .loader {
   margin-left: 55px;
   transform-origin: 36% 50%;
-  // transform: rotate(479deg);
   animation: rotate 2s infinite;
   font-size: 40px;
 }

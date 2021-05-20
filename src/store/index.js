@@ -5,6 +5,7 @@ import pastShows from './modules/pastShows';
 import currentShow from './modules/currentShow';
 import residents from './modules/residents';
 import search from './modules/search';
+import loader from './modules/loader';
 
 Vue.use(Vuex);
 
@@ -14,9 +15,7 @@ export default new Vuex.Store({
     pastShows,
     currentShow,
     residents,
-    search
-  },
-  state: {
-    loading: true
+    search,
+    loader
   }
 });

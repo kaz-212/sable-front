@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div>
+    <div v-if="loading">
     <Loader />
     </div>
     <NavBar />
@@ -20,6 +20,11 @@ export default {
     NavBar,
     Footer,
     Loader
+  },
+  computed: {
+    loading() {
+      return this.$store.getters['loader/loading'];
+    }
   }
 };
 </script>
