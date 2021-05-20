@@ -1,9 +1,9 @@
 <template>
   <div id="app">
+    <NavBar />
     <div v-if="loading">
     <Loader />
     </div>
-    <NavBar />
     <router-view />
     <Footer />
   </div>

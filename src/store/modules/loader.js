@@ -8,13 +8,13 @@ export default {
   },
 
   actions: {
-    loaderAction: ({ commit }) => {
-      commit('setLoaderState');
+    loaderAction: ({ commit }, data) => {
+      commit('setLoading', data);
     }
   },
   mutations: {
-    setLoaderState: state => {
-      state.loading = !state.loading;
+    setLoading: (state, data) => {
+      state.loading = data;
     }
   }
 
