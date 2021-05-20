@@ -15,5 +15,8 @@ export default new Vuex.Store({
     currentShow,
     residents,
     search
+  },
+  state: {
+    loading: true
   }
 });
