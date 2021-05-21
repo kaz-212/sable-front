@@ -224,6 +224,7 @@ export default {
     height: auto;
     justify-content: flex-end;
     flex-flow: column;
+    padding-bottom: 10px;
     .hamburger {
       display: flex;
     }
