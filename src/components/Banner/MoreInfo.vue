@@ -1,7 +1,7 @@
 <template>
   <div class="more-info">
     <div class="banner-info-name" v-if="name">{{ name.trim() }}</div>
-    <a :href="link_url" target="_blank" v-if="link_url"
+    <a v-if="link_url" :href="link_url" target="_blank"
       ><button>more info</button></a
     >
   </div>

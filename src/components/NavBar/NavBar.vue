@@ -107,7 +107,7 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 10000;
 
   .nav-link {
     text-decoration: none;
