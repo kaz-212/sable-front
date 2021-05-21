@@ -40,7 +40,7 @@ export default {
   .blinker-container,
   .ticker-container {
     display: flex;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
   }
 }
 @media (max-width: 900px) {
