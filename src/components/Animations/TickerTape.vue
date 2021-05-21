@@ -1,11 +1,13 @@
 <template>
   <div class="ticker-wrap">
-    <p class="marquee">
-      <span>{{ showName }}</span>
-    </p>
-    <p class="marquee marquee2">
-      <span>{{ showName }}</span>
-    </p>
+    <div class="ticker">
+      <p class="marquee">
+        <span>{{ showName }}</span>
+      </p>
+      <p class="marquee marquee2">
+        <span>{{ showName }}</span>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -20,6 +22,9 @@ export default {
   background-color: $backgroundColour;
   box-sizing: content-box;
   margin: 5px;
+  font-size: 17px;
+  direction: rtl;
+
   .marquee {
     overflow-x: hidden;
     white-space: nowrap;
@@ -58,4 +63,8 @@ export default {
     }
   }
 }
+
+  .ticker > * {
+    direction: ltr;
+  }
 </style>

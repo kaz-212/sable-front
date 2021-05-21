@@ -32,7 +32,6 @@ export default {
 
 <style lang="scss" scoped>
 .radio-player {
-  // background-color: olive;
   margin: 10px 20px;
   display: flex;
   justify-content: flex-end;
@@ -41,17 +40,14 @@ export default {
   .blinker-container,
   .ticker-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     padding-bottom: 8px;
-    margin-right: 175px;
-    margin-left: auto;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .radio-player {
     .ticker-container {
-      margin-right: 200px;
+      margin-right: -60px;
+      margin-left: 20px;
     }
   }
 }
