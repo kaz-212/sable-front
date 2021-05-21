@@ -4,8 +4,10 @@
     <div v-if="loading">
     <Loader />
     </div>
+    <div v-else>
     <router-view />
     <Footer />
+    </div>
   </div>
 </template>
 
@@ -23,8 +25,16 @@ export default {
   },
   computed: {
     loading() {
-      return this.$store.getters['loader/loading'];
+      return this.$store.getters['loader/getLoaderState'];
     }
+  },
+  methods: {
+    setLoadingTrue() {
+      this.$store.dispatch('loader/loaderAction', false);
+    }
+  },
+  updated() {
+    return this.$store.getters['loader/getLoaderState'];
   }
 };
 </script>

@@ -24,11 +24,11 @@ export default {
 
 .loader-container {
   z-index: -10;
-  height: calc(100vh - #{$navHeight} - #{$footerHeight});
+  height: calc(100vh - #{$navHeight});
   width: 100%;
   background-color: $backgroundColour;
   position: absolute;
-  z-index: 10;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;

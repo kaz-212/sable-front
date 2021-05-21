@@ -41,6 +41,14 @@ export default {
     thisShow() {
       return this.$store.getters['currentShow/thisShow'];
     }
+  },
+  created() {
+    console.log('created');
+    this.$store.dispatch('loader/loaderAction', true);
+  },
+  mounted() {
+    console.log('mounted');
+    this.$store.dispatch('loader/loaderAction', false);
   }
 };
 </script>
