@@ -3,13 +3,15 @@
     <div class="row about" v-if="this.$route.name === 'Home'">
       <div class="contact head">about</div>
       <div class="findus">
+        <!-- <div class="about-image">
+          <img src="https://imgur.com/TNaYw1T.jpg" />
+        </div> -->
         <div class="about-text">
           <p>
-            we are a community radio station, broadcasting out of convention house, leeds.
-            pop in and say hi if you're around
+            sable radio is an online radio station + creative platform made in leeds.
+            we broadcast, curate programmes, run workshops, + produce podcasts,
+            all from our studio on the edge of the city.
           </p>
-          <br />
-          <p>we started as this and now we are still this</p>
         </div>
       </div>
     </div>
@@ -19,11 +21,11 @@
         <FindUs />
         <div class="findus-text">
           <p>
-            Our studio is located on St Mary's Street at the top of Mabgate
-            green, a 5 minute walk from Leeds Bus Station.
+            our studio is located on st mary's street at the top of mabgate
+            green, a five minute walk from leeds bus station.
           </p>
           <br />
-          <p>The studio is on the first floor and accessible via lift.</p>
+          <p>the studio is on the first floor and accessible via lift.</p>
         </div>
       </div>
     </div>
