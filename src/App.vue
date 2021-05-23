@@ -29,7 +29,7 @@ export default {
     }
   },
   methods: {
-    setLoadingTrue() {
+    setLoadingFalse() {
       this.$store.dispatch('loader/loaderAction', false);
     }
   },
