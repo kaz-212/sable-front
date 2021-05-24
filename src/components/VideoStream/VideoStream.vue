@@ -30,4 +30,15 @@ export default {
     width: 100%;
   }
 }
+
+@media (max-width: 700px) {
+  #video {
+    // padding: 0 0 0 0;
+    height: calc(100vh - 105px);
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+}
+}
 </style>

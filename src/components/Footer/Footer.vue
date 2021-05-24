@@ -1,7 +1,7 @@
 <template>
   <div id="footer">
     <div class="row row-tall about" v-if="this.$route.name === 'Home'">
-      <div class="contact head">about</div>
+      <div class="contact chunky">about</div>
       <div class="findus">
         <!-- <div class="about-image">
           <img src="https://imgur.com/TNaYw1T.jpg" />
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="row row-tall find-us-row" v-if="$route.name === 'Home'">
-      <div class="contact head">find us</div>
+      <div class="contact chunky">find us</div>
       <div class="findus" id="findus">
         <FindUs />
         <div class="findus-text">
@@ -94,6 +94,17 @@ export default {
       height: auto;
       min-height: $footerHeight;
       border-right: $primaryLineWidth solid $primaryTextColour;
+    }
+
+    .chunky {
+      min-width: $leftColWidth;
+      display: flex;
+      padding-left: 2vw;
+      padding-right: 2vw;
+      height: auto;
+      min-height: $footerHeight;
+      border-right: $primaryLineWidth solid $primaryTextColour;
+      padding-top: 2vw;
     }
 
     .findus-text {

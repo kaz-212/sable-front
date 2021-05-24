@@ -109,7 +109,7 @@ export default {
   .nav-link {
     text-decoration: none;
     color: $primaryTextColour;
-    margin-right: 50px;
+    margin-right: 30px;
     font-size: $navLinkSize;
     transition: 0.5s;
     // &:hover {
