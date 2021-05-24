@@ -15,9 +15,9 @@
         </div>
       </div>
     </div>
-    <div class="row row-tall" v-if="$route.name === 'Home'">
+    <div class="row row-tall find-us-row" v-if="$route.name === 'Home'">
       <div class="contact head">find us</div>
-      <div class="findus find-us-row" id="findus">
+      <div class="findus" id="findus">
         <FindUs />
         <div class="findus-text">
           <p>
@@ -151,7 +151,7 @@ export default {
       font-size: 17px;
     }
     .find-us-row {
-      display: hidden;
+      display: none;
     }
   }
 }
