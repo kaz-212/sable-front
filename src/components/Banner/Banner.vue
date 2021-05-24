@@ -129,6 +129,7 @@ export default {
     img {
       height: 100%;
       object-fit: cover;
+      border-bottom: $primaryLineWidth solid black;
     }
   }
 }
