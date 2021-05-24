@@ -64,4 +64,10 @@ export default {
     }
   }
 }
+
+@media (max-width: 700px) {
+  .home {
+    height: calc(100vh - 175px);
+  }
+}
 </style>

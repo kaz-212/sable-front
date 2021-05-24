@@ -1,6 +1,6 @@
 <template>
   <div id="footer">
-    <div class="row about" v-if="this.$route.name === 'Home'">
+    <div class="row row-tall about" v-if="this.$route.name === 'Home'">
       <div class="contact head">about</div>
       <div class="findus">
         <!-- <div class="about-image">
@@ -15,9 +15,9 @@
         </div>
       </div>
     </div>
-    <div class="row" v-if="$route.name === 'Home'">
+    <div class="row row-tall" v-if="$route.name === 'Home'">
       <div class="contact head">find us</div>
-      <div class="findus" id="findus">
+      <div class="findus find-us-row" id="findus">
         <FindUs />
         <div class="findus-text">
           <p>
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row row-tall">
       <div class="contact head">contact</div>
       <div class="details contact-text">
         get in touch at
@@ -144,8 +144,14 @@ export default {
 
 @media (max-width: 700px) {
   #footer {
+    .row-tall {
+      height: 50vh;
+    }
     .contact-text {
       font-size: 17px;
+    }
+    .find-us-row {
+      display: hidden;
     }
   }
 }

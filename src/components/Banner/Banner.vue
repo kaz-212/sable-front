@@ -123,4 +123,13 @@ export default {
     }
   }
 }
+
+@media (max-width: 700px) {
+  .banner {
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+}
+}
 </style>
