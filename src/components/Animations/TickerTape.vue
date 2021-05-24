@@ -22,10 +22,11 @@ export default {
   background-color: $backgroundColour;
   box-sizing: content-box;
   margin: 5px;
-  font-size: 17px;
+  font-size: 16px;
   direction: rtl;
 
   .marquee {
+    line-height: 1;
     overflow-x: hidden;
     white-space: nowrap;
     position: absolute;
