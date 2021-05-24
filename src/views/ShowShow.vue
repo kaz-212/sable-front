@@ -80,7 +80,7 @@ export default {
   overflow: hidden;
     .fade {
     img {
-      opacity: 80%;
+      // opacity: 0.8;
       -webkit-filter: blur(7px);
       -moz-filter: blur(7px);
       -o-filter: blur(7px);
