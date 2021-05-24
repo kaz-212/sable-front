@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="row row-tall find-us-row" v-if="$route.name === 'Home'">
+    <div class="row row-tall not-on-mobile" v-if="$route.name === 'Home'">
       <div class="contact chunky">find us</div>
       <div class="findus" id="findus">
         <FindUs />
@@ -29,7 +29,7 @@
         </div>
       </div>
     </div>
-    <div class="row row-tall">
+    <div class="row row-tall not-on-mobile">
       <div class="contact head">contact</div>
       <div class="details contact-text">
         get in touch at
@@ -40,7 +40,10 @@
       </div>
     </div>
     <div class="row">
-      <div class="head">socials</div>
+      <div class="head">
+      <div class="not-on-mobile">socials</div>
+      <div class="on-mobile">contact</div>
+      </div>
       <div class="details socials">
         <a
           class="footer-link"
@@ -56,6 +59,20 @@
         >
           <i class="fab fa-instagram icon"></i>
         </a>
+        <div class="on-mobile">
+        <a
+          class="footer-link"
+          href="mailto:hello@sableradio.live"
+        >
+          <i class="fas fa-envelope-square icon"></i>
+        </a>
+        <a
+          class="footer-link"
+          href="https://www.google.com/maps/place/Sable+Radio/@53.7993197,-1.5320086,17z/data=!4m5!3m4!1s0x48795dee12aa30b7:0x974e0ba8a48d296a!8m2!3d53.7992842!4d-1.5296654"
+        >
+          <i class="fas fa-map-marker-alt icon"></i>
+        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -153,16 +170,28 @@ export default {
   }
 }
 
+@media (min-width: 700px) {
+  #footer {
+    .on-mobile {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 700px) {
   #footer {
     .row-tall {
-      height: 50vh;
+      height: 40vh;
     }
     .contact-text {
       font-size: 17px;
     }
-    .find-us-row {
+    .not-on-mobile {
       display: none;
+    }
+
+    .chunky {
+      align-items: center;
     }
   }
 }
