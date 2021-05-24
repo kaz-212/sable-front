@@ -1,6 +1,12 @@
 <template>
   <div class="blog">
-    <h1>Residents coming soon!</h1>
+    <h1>
+      Woah there cowboy!
+      <br />
+      This bit of the site isn’t quite ready...
+      <br />
+      come back in a month and there will be more fun stuff here.
+    </h1>
   </div>
   <!-- <div v-if="residents">
     <grid-template header="residents">
