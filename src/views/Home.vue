@@ -59,7 +59,6 @@ export default {
       width: 100%;
       height: 100%;
       position: relative;
-      transform: translate(0, -10px);
       // top: -10%;
     }
   }
@@ -68,6 +67,9 @@ export default {
 @media (max-width: 700px) {
   .home {
     height: calc(100vh - 174px);
+    .stream-video {
+      transform: translate(0, -10%);
+    }
   }
 }
 </style>

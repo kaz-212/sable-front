@@ -40,6 +40,7 @@ export default {
   }
 
   .marquee2 span {
+    width: 100%;
     animation-delay: 6s;
   }
 
@@ -56,9 +57,11 @@ export default {
   @-webkit-keyframes marquee {
     0% {
       -webkit-transform: translate(0, 0);
+      transform: translate(0, 0);
     }
     100% {
       -webkit-transform: translate(-100%, 0);
+      transform: translate(-100%, 0);
     }
   }
 }
