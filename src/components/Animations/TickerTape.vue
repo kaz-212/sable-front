@@ -40,7 +40,6 @@ export default {
   }
 
   .marquee2 span {
-    width: 100%;
     animation-delay: 6s;
   }
 

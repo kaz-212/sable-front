@@ -60,6 +60,10 @@ export default {
       height: 100%;
       position: relative;
       // top: -10%;
+      transform: translate(0, -10%);
+    }
+    .webkit .stream-video {
+      transform: translate(0, 10%);
     }
   }
 }
