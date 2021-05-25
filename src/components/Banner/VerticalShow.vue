@@ -9,8 +9,7 @@
     >
       {{ thisShow.name }}
       <span class="time"
-        >{{ thisShow.date_time.slice(11, 16) }} -
-        {{ thisShow.end_time.slice(11, 16) }}</span
+        >{{ thisShow.date_time.slice(11, 16) }} - {{ thisShow.end_time.slice(11, 16) }}</span
       >
     </div>
   </div>
@@ -46,7 +45,7 @@ export default {
     transform: rotate(90deg);
     position: absolute;
     align-items: center;
-    top: 225px;
+    top: 305px;
     font-size: 25px;
     width: 450px;
     .time {
