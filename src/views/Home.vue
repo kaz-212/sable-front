@@ -59,7 +59,7 @@ export default {
       width: 100%;
       height: 100%;
       position: relative;
-      transform: translate(0, -10%);
+      transform: translate(0, -10px);
       // top: -10%;
     }
   }
