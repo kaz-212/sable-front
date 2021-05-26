@@ -93,7 +93,6 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    border-bottom: $primaryLineWidth solid black;
     img {
       width: 100%;
       height: 70vh;
