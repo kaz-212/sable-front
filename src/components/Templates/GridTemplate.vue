@@ -43,4 +43,12 @@ export default {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .grid-template {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
 </style>
