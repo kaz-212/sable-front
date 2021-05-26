@@ -45,8 +45,8 @@ export default {
   img {
     width: 300px;
     height: 300px;
-    border: $primaryLineWidth solid black;
     object-fit: cover;
+    border: $primaryLineWidth solid black;
     max-width: 100%;
     max-height: 100%;
   }

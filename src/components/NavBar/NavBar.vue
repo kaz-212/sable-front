@@ -21,7 +21,7 @@
         >shows</router-link
       >
       <router-link
-        @click="expandNav = false"
+        @click="expandNav = false, setLoading"
         class="nav-link"
         :to="{ name: 'Blog' }"
         >blog</router-link
@@ -87,6 +87,9 @@ export default {
   methods: {
     setSearching() {
       this.$store.dispatch('search/searching');
+    },
+    setLoading() {
+      this.$store.dispatch('loader/setLoading', true);
     }
   }
 };
