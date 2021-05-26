@@ -33,13 +33,12 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-left: $leftColWidth;
-    padding: 40px 0;
+    padding-top: 2vw;
 
     .grid-item {
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      margin: 00px 0;
     }
   }
 }

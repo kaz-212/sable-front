@@ -44,7 +44,7 @@
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-if="thisShow">
+    <div class="player" v-if="thisShow !== ''">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
@@ -81,7 +81,11 @@ export default {
       return this.$store.getters['search/isSearching'];
     },
     thisShow() {
-      return this.$store.getters['currentShow/thisShow'];
+      try {
+        return this.$store.getters['currentShow/thisShow'];
+      } catch {
+        return '';
+      }
     }
   },
   methods: {

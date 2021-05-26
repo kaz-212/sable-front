@@ -67,7 +67,7 @@ export default {
 
 @media (max-width: 700px) {
   .home {
-    height: calc(100vh - 174px);
+    height: calc(100vh - 172px);
   }
 }
 </style>
