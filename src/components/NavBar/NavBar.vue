@@ -44,7 +44,7 @@
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-if="thisShow.length > 0">
+    <div class="player" v-if="Object.keys(thisShow).length !== 0">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
