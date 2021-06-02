@@ -49,7 +49,7 @@
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
     </div>
-    <div class="upnext">
+    <div class="upnext" v-else>
       <div class="upnext-desktop">
         <ticker-tape showName="next show thursday 2pm" />
       </div>
