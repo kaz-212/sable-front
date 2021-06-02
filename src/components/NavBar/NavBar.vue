@@ -50,7 +50,9 @@
       <LiveNow class="blinker" />
     </div>
     <div class="upnext" v-else>
-      <ticker-tape showName="next show thursday 2pm" />
+      <div class="upnext-desktop">
+        <ticker-tape showName="next show thursday 2pm" />
+      </div>
     </div>
   </nav>
 </template>
@@ -183,7 +185,7 @@ export default {
     justify-content: space-between;
     width: 30px;
     height: 21px;
-    margin-top: 15px;
+    margin-top: 18px;
     .bar {
       height: 3px;
       width: 100%;
@@ -210,9 +212,11 @@ export default {
   }
 
   .upnext {
-    justify-content: flex-end;
-    padding-top: 18px;
+    // justify-content: flex-end;
+    display: flex;
+    align-items: center;
     padding-right: 18px;
+    margin-bottom: 17px;
   }
 }
 @media (max-width: 1100px) {
@@ -241,7 +245,7 @@ export default {
     .logo {
       border: none;
       width: 100vw;
-      margin-top: 10px;
+      margin-top: 7px;
       order: 1;
       .nav-link {
         font-size: 22px;
@@ -256,6 +260,13 @@ export default {
         justify-content: center;
       }
     }
+    .upnext {
+      margin-left: auto;
+      justify-content: center;
+      margin-bottom: 0;
+      transform: translateY(30px);
+      padding-right: 60px;
+    }
   }
 }
 
@@ -263,6 +274,17 @@ export default {
   #nav {
     .nav-link {
       margin-right: 35px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #nav {
+    .upnext {
+      display: none;
+    }
+    .hamburger {
+      margin-top: 16px;
     }
   }
 }
