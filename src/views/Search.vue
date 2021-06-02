@@ -12,13 +12,6 @@ export default {
   components: {
     SearchResults
   }
-  // mounted() {
-  //   /*eslint-disable*/
-  //   this.$store.dispatch('search/searching');
-  // },
-  // destroyed() {
-  //   this.$store.dispatch('search/notSearching');
-  // }
 };
 </script>
 
