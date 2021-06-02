@@ -29,7 +29,7 @@
       <div
         @click="expandNav = false"
         class="nav-link chat"
-        ><a href="http://sableradio.chatango.com/" target="_blank">chat</a></div
+        ><a href="https://www.youtube.com/watch?v=1GASXApwBtU" target="_blank">watch</a></div
       >
       <router-link class="nav-link" :to="{ name: 'Residents' }"
         >residents</router-link
