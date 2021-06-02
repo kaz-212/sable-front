@@ -7,8 +7,7 @@
           <img src="https://imgur.com/TNaYw1T.jpg" />
         </div> -->
         <div class="about-text">
-          <p>
-            Sable Radio is an online radio station + creative platform made in Leeds.
+          <p>Sable Radio is an online radio station + creative platform made in Leeds.
             We broadcast, run workshops, produce podcasts and curate programmes all
             from our studio on the edge of the city.
           </p>
@@ -20,8 +19,7 @@
       <div class="findus" id="findus">
         <FindUs />
         <div class="findus-text">
-          <p>
-            If you need to find us, we are located on St Mary Street at the top of Mabgate Green.
+          <p>If you need to find us, we are located on St Mary Street at the top of Mabgate Green.
           </p>
           <br />
           <p>The studio has been closed because of c*vid but hopefully we’ll be back open soon.</p>
@@ -31,7 +29,7 @@
     <div class="row row-tall not-on-mobile">
       <div class="contact head">contact</div>
       <div class="details contact-text">
-        get in touch at
+        Get in touch at
         <a href="info@sableradio.live">info@sableradio.live</a>
         or find us at
         <a href="https://www.google.com/maps/place/Sable+Radio/@53.7993197,-1.5320086,17z/data=!4m5!3m4!1s0x48795dee12aa30b7:0x974e0ba8a48d296a!8m2!3d53.7992842!4d-1.5296654"
