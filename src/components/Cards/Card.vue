@@ -2,7 +2,6 @@
   <div class="card">
     <router-link :to="{ name: targetLocation, params: { id } }">
       <img v-if="image" :src="image" :alt="name" />
-    </router-link>
     <h2 class="name">{{ name }}</h2>
     <h3 v-if="date" class="date">{{ date }}</h3>
     <div class="tags">
@@ -10,6 +9,7 @@
         {{ tag.name }}
       </h3>
     </div>
+    </router-link>
   </div>
 </template>
 
@@ -40,11 +40,14 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  max-width: 300px;
+  max-width: 240px;
   margin-bottom: 25px;
+  a {
+    text-decoration: none;
+  }
   img {
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
     border: $primaryLineWidth solid black;
     object-fit: cover;
     max-width: 100%;
@@ -52,12 +55,15 @@ export default {
   }
   .name {
     padding: 15px 0 20px 0;
+    font-size: 20px;
+    color: $primaryTextColour;
   }
   .date {
-    border-top: $primaryLineWidth solid black;
-    border-bottom: $primaryLineWidth solid black;
+    border-top: $primaryLineWidth solid $primaryTextColour;
+    border-bottom: $primaryLineWidth solid $primaryTextColour;
     padding: 10px 0 10px 0;
     letter-spacing: 1px;
+    color: $primaryTextColour;
   }
   .tags {
     display: flex;
