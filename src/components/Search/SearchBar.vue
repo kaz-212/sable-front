@@ -71,7 +71,7 @@ input:focus {
    transform: translateX(-50px);
  }
 .search-input {
-    width: 30vw;
+    width: 40vw;
   }
   .icon {
     padding-left: 3vw;
