@@ -45,8 +45,7 @@
       <span class="bar line3"></span>
     </div>
     <div class="player"
-         v-if="Object.keys(thisShow).length !== 0"
-         :class="{ searchToggle: isSearching }">
+         v-if="Object.keys(thisShow).length !== 0">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
