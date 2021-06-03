@@ -65,4 +65,19 @@ input:focus {
   outline: inherit;
   padding-left: 17px;
 }
+
+@media (max-width: 500px) {
+ .search {
+   transform: translateX(-50px);
+ }
+.search-input {
+    width: 30vw;
+  }
+  .icon {
+    padding-left: 3vw;
+  }
+  .btn-search {
+    padding-left: 3vw;
+  }
+}
 </style>

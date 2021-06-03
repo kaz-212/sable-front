@@ -44,12 +44,16 @@
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-if="Object.keys(thisShow).length !== 0">
+    <div class="player"
+         v-if="Object.keys(thisShow).length !== 0"
+         :class="{ searchToggle: isSearching }">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
     </div>
-    <div class="upnext" v-else>
+    <div class="upnext"
+         v-else
+         :class="{ searchToggle: isSearching }">
       <div class="upnext-desktop">
         <ticker-tape showName="next show thursday 2pm" />
       </div>
@@ -259,6 +263,9 @@ export default {
       .radio-player {
         justify-content: center;
       }
+      &.searchToggle {
+        display: none;
+      }
     }
     .upnext {
       margin-left: auto;
@@ -274,6 +281,16 @@ export default {
   #nav {
     .nav-link {
       margin-right: 35px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  #nav {
+    .upnext {
+      &.searchToggle {
+        display: none;
+      }
     }
   }
 }

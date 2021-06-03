@@ -167,7 +167,7 @@ export default {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 1100px) {
   #footer {
     .on-mobile {
       display: none;
@@ -175,7 +175,7 @@ export default {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 1100px) {
   #footer {
     .row-tall {
       height: 40vh;

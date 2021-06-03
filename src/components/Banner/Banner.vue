@@ -124,7 +124,7 @@ export default {
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width:1100px) {
   .banner {
     img {
       height: 100%;
