@@ -31,7 +31,7 @@ export default {
   .grid {
     // background-color: red;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-left: $leftColWidth;
     padding-top: 2vw;
 
@@ -43,10 +43,26 @@ export default {
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
+  .grid-template {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+@media (max-width: 750px) {
   .grid-template {
     .grid {
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (min-width: 1700px) {
+  .grid-template {
+    .grid {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
 }
