@@ -29,7 +29,7 @@
       <div
         @click="expandNav = false"
         class="nav-link chat"
-        ><a href="https://www.youtube.com/watch?v=1GASXApwBtU" target="_blank">watch</a></div
+        ><a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw/videos" target="_blank">watch</a></div
       >
       <router-link class="nav-link" :to="{ name: 'Residents' }"
         >residents</router-link
@@ -54,7 +54,7 @@
          v-else
          :class="{ searchToggle: isSearching }">
       <div class="upnext-desktop">
-        <ticker-tape showName="next show thursday 2pm" />
+        <ticker-tape showName="studio open and broadcasting again soon" />
       </div>
     </div>
   </nav>
