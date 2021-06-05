@@ -54,7 +54,7 @@
          v-else
          :class="{ searchToggle: isSearching }">
       <div class="upnext-desktop">
-        <ticker-tape showName="studio open and broadcasting again soon" />
+        <ticker-tape showName="studio back open and broadcasting again soon" />
       </div>
     </div>
   </nav>
