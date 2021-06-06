@@ -2,7 +2,7 @@
   <div class="blog">
     <grid-template header="blogs">
       <div class="grid">
-        <Card
+        <BlogCard
           v-bind:key="blog.id"
           v-for="blog in blogs"
           :name="blog.name"
@@ -17,22 +17,22 @@
 </template>
 
 <script>
-import Card from '@/components/Cards/Card.vue';
+import BlogCard from '@/components/Cards/BlogCard.vue';
 import GridTemplate from '@/components/Templates/GridTemplate.vue';
 
 export default {
   name: 'Blogs',
   components: {
-    Card,
+    BlogCard,
     GridTemplate
   },
+  // async created() {
+  //   await this.$store.dispatch('blogs/fetchBlogs');
+  // },
   computed: {
     blogs() {
       return this.$store.getters['blogs/getBlogs'];
     }
-  },
-  async created() {
-    await this.$store.dispatch('blogs/fetchBlogs');
   }
 };
 </script>
