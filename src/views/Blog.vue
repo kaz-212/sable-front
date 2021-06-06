@@ -1,19 +1,41 @@
 <template>
   <div class="blog">
-    <h1>
-      Oops!
-      <br />
-      Rome wasn’t built in a day and this bit of our website isn’t finished...
-      <br />
-      come back soon and we’ll have some pretty editorials here.</h1>
+    <grid-template header="blogs">
+      <div class="grid">
+        <Card
+          v-bind:key="blog.id"
+          v-for="blog in blogs"
+          :name="blog.name"
+          :image="blog.banner"
+          type="blog"
+          :id="blog.id.toString()"
+          class="grid-item"
+        />
+      </div>
+    </grid-template>
   </div>
 </template>
 
+<script>
+import Card from '@/components/Cards/Card.vue';
+import GridTemplate from '@/components/Templates/GridTemplate.vue';
+
+export default {
+  name: 'Blogs',
+  components: {
+    Card,
+    GridTemplate
+  },
+  computed: {
+    blogs() {
+      return this.$store.getters['blogs/getBlogs'];
+    }
+  },
+  async created() {
+    await this.$store.dispatch('blogs/fetchBlogs');
+  }
+};
+</script>
+
 <style lang="scss" scoped>
-.blog {
-  height: calc(100vh - (#{$navHeight} + #{$footerHeight * 2} + 3px));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 </style>
