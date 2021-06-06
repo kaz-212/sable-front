@@ -2,6 +2,7 @@ import axios from 'axios';
 import router from '../../router/index';
 
 const residentsQueryURL = 'https://sable-radio.herokuapp.com/api/residents/search/';
+const blogsQueryURL = 'https://sable-radio.herokuapp.com/api/blogs/search/';
 const mixcloudQueryURL = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 
 export default {
@@ -9,6 +10,7 @@ export default {
   state: {
     searchResidentsState: [],
     searchShowsState: [],
+    searchBlogsState: [],
     isSearching: false
   },
   actions: {
@@ -16,6 +18,14 @@ export default {
       try {
         const { data } = await axios.get(`${residentsQueryURL}${queryString}`);
         state.commit('setResidents', data);
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    async searchBlogs(state, queryString) {
+      try {
+        const { data } = await axios.get(`${blogsQueryURL}${queryString}`);
+        state.commit('setBlogs', data);
       } catch (e) {
         console.log(e);
       }
@@ -36,6 +46,7 @@ export default {
       try {
         await Promise.all([
           dispatch('searchResidents', queryString),
+          dispatch('searchBlogs', queryString),
           dispatch('searchShows', queryString)
         ]);
         router.push({ name: 'Search' });
@@ -45,6 +56,7 @@ export default {
     },
     clearAll(state) {
       state.commit('setShows', '');
+      state.commit('setBlogs', '');
       state.commit('setResidents', '');
     },
     searching({ commit }) {
@@ -56,12 +68,16 @@ export default {
   },
   getters: {
     getResidents: state => state.searchResidentsState,
+    getBlogs: state => state.searchBlogsState,
     getShows: state => state.searchShowsState,
     isSearching: state => state.isSearching
   },
   mutations: {
     setResidents(state, residentsData) {
       state.searchResidentsState = residentsData;
+    },
+    setBlogs(state, blogsData) {
+      state.searchBlogsState = blogsData;
     },
     setShows(state, showsData) {
       state.searchShowsState = showsData;

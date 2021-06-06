@@ -15,6 +15,11 @@
             {{ blog.chunk_one }}
           </vue-markdown>
         </div>
+        <div class="text" v-if="blog.chunk_two">
+          <vue-markdown>
+            {{ blog.chunk_two }}
+          </vue-markdown>
+        </div>
       </div>
     </section>
   </div>
