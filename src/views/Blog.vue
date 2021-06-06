@@ -1,40 +1,15 @@
 <template>
-  <div v-if="residents">
-    <grid-template header="residents">
-      <div class="grid">
-        <ResCard
-          v-bind:key="blog.id"
-          v-for="blog in blogs"
-          :name="blog.name"
-          :image="blog.banner"
-          type="resident"
-          :id="resident.id.toString()"
-          class="grid-item"
-        />
-      </div>
-    </grid-template>
+    <div class="blog">
+    <h1>
+      Oops!
+      <br />
+      Rome wasn’t built in a day and this bit of our website isn’t finished...
+      <br />
+      come back soon and we’ll have some pretty editorials here.</h1>
   </div>
 </template>
 
 <script>
-import ResCard from '@/components/Cards/ResCard.vue';
-import GridTemplate from '@/components/Templates/GridTemplate.vue';
-
-export default {
-  name: 'Residents',
-  components: {
-    ResCard,
-    GridTemplate
-  },
-  computed: {
-    residents() {
-      return this.$store.getters['residents/getResidents'];
-    }
-  },
-  async created() {
-    await this.$store.dispatch('residents/fetchResidents');
-  }
-};
 </script>
 
 <style lang="scss" scoped>
