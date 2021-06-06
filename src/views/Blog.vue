@@ -1,11 +1,8 @@
 <template>
     <div class="blog">
-    <h1>
-      Woah there cowboy!
-      <br />
-      This bit of the site isn’t quite ready...
-      <br />
-      come back in a month and there will be more fun stuff here.
+    <h1>Oops!
+      <br/>Rome wasn’t built in a day and this bit of our website isn’t finished...
+      <br/>come back soon and we’ll have some pretty editorials here.
     </h1>
   </div>
   <!-- <div class="blog">
