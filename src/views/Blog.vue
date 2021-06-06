@@ -26,9 +26,9 @@ export default {
     BlogCard,
     GridTemplate
   },
-  // async created() {
-  //   await this.$store.dispatch('blogs/fetchBlogs');
-  // },
+  async created() {
+    await this.$store.dispatch('blogs/fetchBlogs');
+  },
   computed: {
     blogs() {
       return this.$store.getters['blogs/getBlogs'];

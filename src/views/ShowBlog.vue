@@ -10,9 +10,9 @@
       </div>
       <div class="info">
         <h2 class="blog-name">{{ blog.name }}</h2>
-        <div class="description" v-if="blog.description">
+        <div class="text" v-if="blog.chunk_one">
           <vue-markdown>
-            {{ blog.description }}
+            {{ blog.chunk_one }}
           </vue-markdown>
         </div>
       </div>
@@ -82,7 +82,7 @@ export default {
       flex-direction: column;
       align-items: center;
       width: 100%;
-      .description {
+      .text {
         font-size: 25px;
         margin-bottom: 45px;
         width: 80%;
@@ -91,7 +91,7 @@ export default {
         margin-top: 50px;
         font-size: 31px;
       }
-      .description {
+      .text {
         margin-top: 70px;
         display: flex;
         justify-content: center;

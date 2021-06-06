@@ -6,13 +6,7 @@ const allBlogsURL = 'https://sable-radio.herokuapp.com/api/blogs';
 export default {
   namespaced: true,
   state: {
-    blogs: [
-      {
-        id: 1,
-        banner: 'https://imgur.com/ngKluLL.jpg',
-        name: 'example'
-      }
-    ]
+    blogs: []
   },
   actions: {
     async fetchBlogs(state) {
