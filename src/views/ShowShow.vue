@@ -5,7 +5,7 @@
         <div class="fade">
           <div class="banner">
           <img :src="show.pictures.extra_large" alt="" />
-          <!-- <VerticalShow /> -->
+          <VerticalShow />
           </div>
         </div>
         <div class="main-image">
@@ -49,13 +49,13 @@
 </template>
 
 <script>
-// import VerticalShow from '@/components/Banner/VerticalShow.vue';
+import VerticalShow from '@/components/Banner/VerticalShow.vue';
 
 export default {
   name: 'showShow',
-  // components: {
-  //   VerticalShow
-  // },
+  components: {
+    VerticalShow
+  },
   data() {
     return {
       show: ''
@@ -93,7 +93,7 @@ export default {
     }
   }
   .banner {
-    min-width: calc(100vw);
+    width: calc(100vw - 21px);
     position: relative;
     display: flex;
     justify-content: space-between;
