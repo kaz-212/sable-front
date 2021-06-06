@@ -105,7 +105,7 @@ export default {
   .main-image {
     position: absolute;
     // there's deffo a cleaner way of overlaying this image...
-    transform: translate(92%);
+    transform: translate(50%);
   }
   .main {
     display: flex;
@@ -163,6 +163,25 @@ export default {
       width: 100%;
       white-space: pre-wrap;
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .showShow {
+    .main-image {
+      // display: flex;
+      // overflow: hidden;
+      // position: relative;
+      // height: 70vh;
+        img {
+          margin: 0;
+          padding: 0;
+          transform: translateX(-480px);
+          height: 70vh;
+          width: 100%;
+          object-fit: cover;
+        }
+     }
   }
 }
 </style>

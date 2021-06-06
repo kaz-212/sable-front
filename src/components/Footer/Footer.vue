@@ -2,16 +2,11 @@
   <div id="footer">
     <div class="row row-tall about" v-if="this.$route.name === 'Home'">
       <div class="contact chunky">about</div>
-      <div class="findus">
-        <!-- <div class="about-image">
-          <img src="https://imgur.com/TNaYw1T.jpg" />
-        </div> -->
         <div class="about-text">
           <p>Sable Radio is an online radio station + creative platform made in Leeds.
             We broadcast, run workshops, produce podcasts and curate programmes all
             from our studio on the edge of the city.
           </p>
-        </div>
       </div>
     </div>
     <div class="row row-tall not-on-mobile" v-if="$route.name === 'Home'">
@@ -133,6 +128,7 @@ export default {
     .about-text {
       margin: 1vh;
       padding: 0;
+      padding-top: 2vw;
       font-size: 18px;
       line-height: 25px;
       margin-right: 2vw;
@@ -156,14 +152,15 @@ export default {
     .findus {
       display: flex;
       align-items: center;
-      white-space: pre-wrap;
+      // white-space: pre-wrap;
       a {
         color: $primaryTextColour;
       }
     }
   }
   .about {
-  height: calc(100vh - (70vh + #{$navHeight}));
+    display: flex;
+    height: calc(100vh - (75vh + #{$navHeight}));
   }
 }
 
@@ -188,6 +185,10 @@ export default {
     }
 
     .chunky {
+      align-items: center;
+    }
+    .about-text {
+      display: flex;
       align-items: center;
     }
   }

@@ -82,7 +82,7 @@ export default {
   position: relative;
   .img-wrapper {
     min-width: 100vw;
-    height: 70vh;
+    height: 75vh;
     // overflow: hidden;
     // margin: 0 auto;
     position: relative;
