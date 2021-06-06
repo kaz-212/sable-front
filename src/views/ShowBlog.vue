@@ -10,6 +10,10 @@
       </div>
       <div class="info">
         <h2 class="blog-name">{{ blog.name }}</h2>
+        <div class="author">
+          <p>Words by {{ blog.author }}</p>
+          <p class="date">{{ blog.date }}</p>
+        </div>
         <div class="text" v-if="blog.chunk_one">
           <vue-markdown>
             {{ blog.chunk_one }}
@@ -20,6 +24,7 @@
             {{ blog.chunk_two }}
           </vue-markdown>
         </div>
+        <br />
       </div>
     </section>
   </div>
@@ -87,21 +92,28 @@ export default {
       flex-direction: column;
       align-items: center;
       width: 100%;
-
+      font-size: 22px;
       .text {
-        font-size: 25px;
-        margin-bottom: 45px;
         width: 80%;
       }
       .blog-name {
-        margin-top: 50px;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
         font-size: 31px;
+        // width: 80%;
+      }
+      .author {
+        display: flex;
+        width: 80%;
+        border-bottom: $primaryLineWidth solid black;
+        justify-content: space-between;
+        margin-bottom: 40px;
       }
       .text {
-        margin-top: 70px;
+        margin-top: 2vw;
         display: flex;
         justify-content: center;
-      }
+     }
     }
   }
 }

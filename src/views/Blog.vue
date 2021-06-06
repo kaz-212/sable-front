@@ -13,6 +13,7 @@
           v-for="blog in blogs"
           :name="blog.name"
           :image="blog.banner"
+          :date="blog.post_type"
           type="blog"
           :id="blog.id.toString()"
           class="grid-item"

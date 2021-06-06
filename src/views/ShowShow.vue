@@ -123,7 +123,8 @@ export default {
       flex-direction: column;
       align-items: center;
       .show-name {
-        margin: 50px auto 20px auto;
+        margin: 2vw auto 20px auto;
+        // width: 80%;
         font-size: 31px;
       }
       .date {
@@ -134,6 +135,7 @@ export default {
       }
       .description {
         width: 80%;
+        padding-top: 40px;
         margin: 30px 0 50px 0;
         p {
           font-size: 22px;

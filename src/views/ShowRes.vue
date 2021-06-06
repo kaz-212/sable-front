@@ -158,12 +158,12 @@ export default {
       align-items: center;
       width: 100%;
       .description {
-        font-size: 25px;
-        margin-bottom: 45px;
+        font-size: 22px;
+        margin-bottom: 40px;
         width: 80%;
       }
       .res-name {
-        margin-top: 50px;
+        margin-top: 2vw;
         font-size: 31px;
       }
       .links {
@@ -175,15 +175,15 @@ export default {
         }
       }
       .description {
-        margin-top: 70px;
+        margin-top: 40px;
         display: flex;
         justify-content: center;
       }
       .cards {
         width: 80%;
+        padding-right: auto;
         display: flex;
-        justify-content: space-between;
-
+        justify-content: space-around;
         .show {
           margin: 20px;
         }
