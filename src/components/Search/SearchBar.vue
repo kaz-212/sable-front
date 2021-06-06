@@ -38,6 +38,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
 input[type='text'] {
   border: none;
   border-bottom: $primaryLineWidth solid;
