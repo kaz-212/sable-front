@@ -32,7 +32,22 @@ export default {
   },
   computed: {
     targetLocation() {
-      return this.type === 'resident' ? 'ShowResident' : 'ShowShow';
+      let target;
+      switch (this.type) {
+        case 'resident':
+          target = 'ShowResident';
+          break;
+        case 'show':
+          target = 'ShowShow';
+          break;
+        case 'blog':
+          target = 'ShowBlog';
+          break;
+        default:
+          console.log('no type');
+          break;
+      }
+      return target;
     }
   }
 };

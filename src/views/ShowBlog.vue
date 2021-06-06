@@ -6,16 +6,20 @@
     </div>
     <section class="main">
       <div class="header-pane">
-        <p class="header">resident</p>
+        <p class="header">blog</p>
       </div>
       <div class="info">
         <h2 class="blog-name">{{ blog.name }}</h2>
-        <div class="description">
+        <div class="text" v-if="blog.chunk_one">
           <vue-markdown>
-            {{ blog.text_one }}
+            {{ blog.chunk_one }}
           </vue-markdown>
         </div>
-        <br />
+        <div class="text" v-if="blog.chunk_two">
+          <vue-markdown>
+            {{ blog.chunk_two }}
+          </vue-markdown>
+        </div>
       </div>
     </section>
   </div>
@@ -26,7 +30,7 @@ import VerticalShow from '@/components/Banner/VerticalShow.vue';
 import VueMarkdown from 'vue-markdown';
 
 export default {
-  name: 'showRes',
+  name: 'showBlog',
   components: {
     VerticalShow,
     VueMarkdown
@@ -83,7 +87,8 @@ export default {
       flex-direction: column;
       align-items: center;
       width: 100%;
-      .description {
+
+      .text {
         font-size: 25px;
         margin-bottom: 45px;
         width: 80%;
@@ -92,27 +97,10 @@ export default {
         margin-top: 50px;
         font-size: 31px;
       }
-      .links {
-        display: flex;
-        justify-content: center;
-        margin-top: 16px;
-        .link {
-          margin: 8px;
-        }
-      }
-      .description {
+      .text {
         margin-top: 70px;
         display: flex;
         justify-content: center;
-      }
-      .cards {
-        width: 80%;
-        display: flex;
-        justify-content: space-between;
-
-        .show {
-          margin: 20px;
-        }
       }
     }
   }
