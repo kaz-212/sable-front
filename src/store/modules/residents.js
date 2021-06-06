@@ -19,7 +19,6 @@ export default {
     },
     async fetchIndividualResident(state, id) {
       try {
-        console.log(id);
         const { data } = await axios.get(`${allResidentsURL}/${id}`);
         return data;
       } catch (e) {
