@@ -87,6 +87,7 @@ export default {
       flex-direction: column;
       align-items: center;
       width: 100%;
+
       .text {
         font-size: 25px;
         margin-bottom: 45px;

@@ -64,9 +64,8 @@ export default {
     width: 240px;
     height: 240px;
     border: $primaryLineWidth solid black;
+    vertical-align: bottom;
     object-fit: cover;
-    max-width: 100%;
-    max-height: 100%;
   }
   .name {
     padding: 15px 0 20px 0;

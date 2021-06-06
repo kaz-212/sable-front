@@ -1,5 +1,5 @@
 <template>
-  <div class="blog">
+    <div class="blog">
     <h1>
       Woah there cowboy!
       <br />
