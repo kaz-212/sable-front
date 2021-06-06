@@ -59,6 +59,15 @@ export default {
   }
 }
 
+@media (max-width: 500px) {
+    .header-pane {
+      display: none;
+    }
+    .grid-item {
+      margin-left: calc(#{-$leftColWidth});
+    }
+}
+
 @media (min-width: 1700px) {
   .grid-template {
     .grid {
