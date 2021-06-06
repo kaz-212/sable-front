@@ -5,7 +5,7 @@
         <div class="fade">
           <div class="banner">
           <img :src="show.pictures.extra_large" alt="" />
-        <VerticalShow />
+          <VerticalShow />
           </div>
         </div>
         <div class="main-image">
@@ -86,6 +86,10 @@ export default {
       -o-filter: blur(7px);
       -ms-filter: blur(7px);
       filter: blur(7px);
+      min-width: calc(100vw);
+      height: 70vh;
+      overflow: hidden;
+      object-fit: cover;
     }
   }
   .banner {
@@ -93,19 +97,19 @@ export default {
     position: relative;
     display: flex;
     justify-content: space-between;
-    img {
-      width: 100%;
-      height: 70vh;
-      overflow: hidden;
-      object-fit: cover;
-      // border-right: $primaryLineWidth solid black;
-    }
   }
 
   .main-image {
     position: absolute;
+    img {
+      width: 70vh;
+      height: 70vh;
+    }
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     // there's deffo a cleaner way of overlaying this image...
-    transform: translate(92%);
+    transform: translate($leftColWidth);
   }
   .main {
     display: flex;
@@ -164,6 +168,24 @@ export default {
       align-items: center;
       width: 100%;
       white-space: pre-wrap;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .fade {
+    visibility: hidden;
+  }
+  .banner {
+    height: 100vw;
+    width: 100vw;
+    .main-image {
+      img {
+        position: absolute;
+        height: 100vw;
+        width: 100vw;
+      }
+      transform: none;
     }
   }
 }
