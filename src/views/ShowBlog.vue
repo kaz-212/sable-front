@@ -18,7 +18,6 @@
           <vue-markdown>
             {{ blog.chunk_one }}
           </vue-markdown>
-          <br />
         </div>
         <div class="image image-one" v-if="blog.image_one">
           <img :src="blog.image_one" alt="dynamic" />
@@ -27,7 +26,6 @@
           <vue-markdown>
             {{ blog.chunk_two }}
           </vue-markdown>
-          <br />
         </div>
         <div class="image image-two" v-if="blog.image_two">
           <img :src="blog.image_two" alt="dynamic" />
@@ -36,7 +34,6 @@
           <vue-markdown>
             {{ blog.chunk_three }}
           </vue-markdown>
-          <br />
         </div>
         <div class="image image-three" v-if="blog.image_three">
           <img :src="blog.image_three" alt="dynamic" />
@@ -45,7 +42,6 @@
           <vue-markdown>
             {{ blog.chunk_four }}
           </vue-markdown>
-          <br />
         </div>
         <div class="image image-four" v-if="blog.image_four">
           <img :src="blog.image_four" alt="dynamic" />
@@ -54,7 +50,6 @@
           <vue-markdown>
             {{ blog.chunk_five }}
           </vue-markdown>
-          <br />
         </div>
         <div class="image image-five" v-if="blog.image_five">
           <img :src="blog.image_five" alt="dynamic" />
@@ -63,7 +58,6 @@
           <vue-markdown>
             {{ blog.chunk_six }}
           </vue-markdown>
-          <br />
         </div>
         <div class="image image-six" v-if="blog.image_six">
           <img :src="blog.image_six" alt="dynamic" />
@@ -152,6 +146,7 @@ export default {
       font-size: 22px;
       .text {
         width: 80%;
+        margin-bottom: 22px;
       }
       .blog-name {
         margin-top: 2vw;
