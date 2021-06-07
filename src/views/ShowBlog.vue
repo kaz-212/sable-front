@@ -10,20 +10,65 @@
       </div>
       <div class="info">
         <h2 class="blog-name">{{ blog.name }}</h2>
-        <div class="author">
-          <p>Words by {{ blog.author }}</p>
+        <div class="author" v-if="blog.author || blog.date">
+          <p v-if="blog.author">Words by {{ blog.author }}</p>
           <p class="date">{{ blog.date }}</p>
         </div>
         <div class="text" v-if="blog.chunk_one">
           <vue-markdown>
             {{ blog.chunk_one }}
           </vue-markdown>
+          <br />
+        </div>
+        <div class="image image-one" v-if="blog.image_one">
+          <img :src="blog.image_one" alt="dynamic" />
         </div>
         <div class="text" v-if="blog.chunk_two">
           <vue-markdown>
             {{ blog.chunk_two }}
           </vue-markdown>
+          <br />
         </div>
+        <div class="image image-two" v-if="blog.image_two">
+          <img :src="blog.image_two" alt="dynamic" />
+        </div>
+        <div class="text" v-if="blog.chunk_three">
+          <vue-markdown>
+            {{ blog.chunk_three }}
+          </vue-markdown>
+          <br />
+        </div>
+        <div class="image image-three" v-if="blog.image_three">
+          <img :src="blog.image_three" alt="dynamic" />
+        </div>
+        <div class="text" v-if="blog.chunk_four">
+          <vue-markdown>
+            {{ blog.chunk_four }}
+          </vue-markdown>
+          <br />
+        </div>
+        <div class="image image-four" v-if="blog.image_four">
+          <img :src="blog.image_four" alt="dynamic" />
+        </div>
+        <div class="text" v-if="blog.chunk_five">
+          <vue-markdown>
+            {{ blog.chunk_five }}
+          </vue-markdown>
+          <br />
+        </div>
+        <div class="image image-five" v-if="blog.image_five">
+          <img :src="blog.image_five" alt="dynamic" />
+        </div>
+        <div class="text" v-if="blog.chunk_six">
+          <vue-markdown>
+            {{ blog.chunk_six }}
+          </vue-markdown>
+          <br />
+        </div>
+        <div class="image image-six" v-if="blog.image_six">
+          <img :src="blog.image_six" alt="dynamic" />
+        </div>
+        <br />
         <br />
       </div>
     </section>
@@ -71,6 +116,18 @@ export default {
     img {
       width: 100%;
       height: 70vh;
+      overflow: hidden;
+      object-fit: cover;
+      // object-position: 50% 50%;
+    }
+  }
+  .image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 80%;
       overflow: hidden;
       object-fit: cover;
       // object-position: 50% 50%;
