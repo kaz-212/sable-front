@@ -1,58 +1,36 @@
 <template>
   <nav id="nav">
-
     <div @click="expandNav = false" class="logo">
-      <i
-        @click="setSearching"
-        class="fas fa-search icon"
-        :class="{ searchtoggle: isSearching }"
-      >
+      <i @click="setSearching" class="fas fa-search icon" :class="{ searchtoggle: isSearching }">
       </i>
       <SearchBar v-if="isSearching" class="searchbar" />
-      <router-link v-else class="nav-link" :to="{ name: 'Home' }"
-        >sable radio</router-link
-      >
+      <router-link v-else class="nav-link" :to="{ name: 'Home' }">sable radio</router-link>
     </div>
     <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
-      <router-link
-        @click="expandNav = false"
-        class="nav-link"
-        :to="{ name: 'Shows' }"
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Shows' }"
         >shows</router-link
       >
-      <router-link
-        @click="expandNav = false"
-        class="nav-link"
-        :to="{ name: 'Blog' }"
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Blog' }"
         >blog</router-link
       >
-      <div
-        @click="expandNav = false"
-        class="nav-link chat"
-        ><a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw/videos" target="_blank">watch</a></div
-      >
-      <router-link class="nav-link" :to="{ name: 'Residents' }"
-        >residents</router-link
-      >
+      <div @click="expandNav = false" class="nav-link chat">
+        <a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw/videos" target="_blank"
+          >watch</a
+        >
+      </div>
+      <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
     </div>
-    <div
-      class="hamburger"
-      :class="{ toggledropdown: expandNav }"
-      @click="expandNav = !expandNav"
-    >
+    <div class="hamburger" :class="{ toggledropdown: expandNav }" @click="expandNav = !expandNav">
       <span class="bar line1"></span>
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player"
-         v-if="Object.keys(thisShow).length !== 0">
+    <div class="player" v-if="thisShow.length !== 0">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
     </div>
-    <div class="upnext"
-         v-else
-         :class="{ searchToggle: isSearching }">
+    <div class="upnext" v-else :class="{ searchToggle: isSearching }">
       <div class="upnext-desktop">
         <ticker-tape showName="studio back open and broadcasting again soon" />
       </div>
@@ -93,6 +71,9 @@ export default {
     setSearching() {
       this.$store.dispatch('search/searching');
     }
+  },
+  created() {
+    this.$store.dispatch('currentShow/fetchCurrentShow');
   }
 };
 </script>

@@ -23,9 +23,6 @@ export default {
     thisShow() {
       return this.$store.getters['currentShow/thisShow'];
     }
-  },
-  created() {
-    this.$store.dispatch('currentShow/fetchCurrentShow');
   }
 };
 </script>
