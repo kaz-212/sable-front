@@ -25,12 +25,12 @@
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-if="thisShow.length !== 0">
+    <div class="player" v-show="thisShow.length !== 0">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
     </div>
-    <div class="upnext" v-else :class="{ searchToggle: isSearching }">
+    <div class="upnext" v-if="thisShow.length === 0" :class="{ searchToggle: isSearching }">
       <div class="upnext-desktop">
         <ticker-tape showName="studio back open and broadcasting again soon" />
       </div>
