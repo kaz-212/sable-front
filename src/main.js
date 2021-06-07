@@ -6,7 +6,11 @@ import store from './store';
 Vue.config.productionTip = false;
 
 // uncomment below for every redeploy
-if (window.location.protocol !== 'https:') window.location.href = `https://www.sableradio.live${window.location.pathname}`;
+if (process.env.NODE_ENV === 'production') {
+  if (window.location.protocol !== 'https:') {
+    window.location.href = `https://www.sableradio.live${window.location.pathname}`;
+  }
+}
 
 new Vue({
   router,
