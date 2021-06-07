@@ -180,11 +180,10 @@ export default {
         justify-content: center;
       }
       .cards {
-        width: 80%;
-        padding-right: auto;
+        width: 100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: space-evenly;
         .show {
           margin: 20px;
         }
