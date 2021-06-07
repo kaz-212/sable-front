@@ -16,7 +16,7 @@
 
     <div class="row">
       <!-- <div class="head">listen</div> -->
-      <div class="details">
+      <div class="details mix-embed">
         <iframe
           width="100%"
           height="60"
@@ -79,8 +79,8 @@ export default {
   width: 100%;
   overflow: hidden;
     .fade {
-    img {
-      // opacity: 0.8;
+      img {
+        // opacity: 0.8;
       -webkit-filter: blur(7px);
       -moz-filter: blur(7px);
       -o-filter: blur(7px);
@@ -98,7 +98,6 @@ export default {
     display: flex;
     justify-content: space-between;
   }
-
   .main-image {
     position: absolute;
     img {
@@ -169,6 +168,9 @@ export default {
       width: 100%;
       white-space: pre-wrap;
     }
+  .mix-embed {
+    z-index: 1;
+  }
   }
 }
 
