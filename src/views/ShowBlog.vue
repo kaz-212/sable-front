@@ -11,7 +11,7 @@
       <div class="info">
         <h2 class="blog-name">{{ blog.name }}</h2>
         <div class="author" v-if="blog.author || blog.date">
-          <p v-if="blog.author">Words by {{ blog.author }}</p>
+          <p v-if="blog.author">{{ blog.author }}</p>
           <p class="date">{{ blog.date }}</p>
         </div>
         <div class="text" v-if="blog.chunk_one">
@@ -120,6 +120,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 2vw;
     img {
       width: 80%;
       overflow: hidden;
@@ -146,26 +147,42 @@ export default {
       font-size: 22px;
       .text {
         width: 80%;
-        margin-bottom: 22px;
+        margin-bottom: 2vw;
       }
       .blog-name {
-        margin-top: 2vw;
-        margin-bottom: 2vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
         font-size: 31px;
-        // width: 80%;
       }
       .author {
         display: flex;
         width: 80%;
         border-bottom: $primaryLineWidth solid black;
         justify-content: space-between;
-        margin-bottom: 40px;
+        margin-bottom: 3vw;
       }
       .text {
-        margin-top: 2vw;
         display: flex;
         justify-content: center;
      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    .header-pane {
+      display: none;
+    }
+    .blog-name {
+      width: 80%;
+    }
+  }
+  .showBlog {
+    .image {
+      img {
+        width: 100%;
+      }
     }
   }
 }

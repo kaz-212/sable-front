@@ -10,7 +10,14 @@
       </div>
       <div class="info">
         <h2 class="res-name">{{ resident.name }}</h2>
-        <div class="links">
+        <div class="links" v-if="
+                                resident.soundcloud_url ||
+                                resident.mixcloud_url ||
+                                resident.facebook_url ||
+                                resident.twitter_url ||
+                                resident.instagram_url ||
+                                resident.bandcamp_url ||
+                                resident.youtube_url">
           <div v-if="resident.soundcloud_url" class="link">
             <Icon
               :linkto="resident.soundcloud_url"
@@ -163,19 +170,19 @@ export default {
         width: 80%;
       }
       .res-name {
-        margin-top: 2vw;
+        margin-top: 4vw;
+        margin-bottom: 4vw;
         font-size: 31px;
       }
       .links {
         display: flex;
         justify-content: center;
-        margin-top: 16px;
+        margin-bottom: 3vw;
         .link {
           margin: 8px;
         }
       }
       .description {
-        margin-top: 40px;
         display: flex;
         justify-content: center;
       }
@@ -188,6 +195,17 @@ export default {
           margin: 20px;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    .header-pane {
+      display: none;
+    }
+    .res-name {
+      width: 80%;
     }
   }
 }
