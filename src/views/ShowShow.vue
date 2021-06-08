@@ -126,20 +126,19 @@ export default {
       flex-direction: column;
       align-items: center;
       .show-name {
-        margin: 2vw auto 20px auto;
-        // width: 80%;
+        margin: 4vw auto 4vw auto;
         font-size: 31px;
       }
       .date {
         width: 80%;
+        margin-bottom: 3vw;
         p {
           border-bottom: $primaryLineWidth solid black;
         }
       }
       .description {
         width: 80%;
-        padding-top: 40px;
-        margin: 30px 0 50px 0;
+        margin-bottom: 2vw;
         p {
           font-size: 22px;
         }
@@ -188,6 +187,14 @@ export default {
         width: 100vw;
       }
       transform: none;
+    }
+  }
+  .main {
+    .header-pane {
+      display: none;
+    }
+    .show-name {
+      width: 80%;
     }
   }
 }
