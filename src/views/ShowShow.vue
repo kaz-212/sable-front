@@ -138,7 +138,6 @@ export default {
       }
       .description {
         width: 80%;
-        // padding-top: 4vw;
         margin-bottom: 2vw;
         p {
           font-size: 22px;
