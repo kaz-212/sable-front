@@ -42,10 +42,4 @@ export default {
       content: ""; /* clears default height */
       margin-top: 2vw; /* change this to whatever height you want it */
     }
-
-    @media (max-width: 600px) {
-      br {
-        margin-top: 4vw;
-      }
-    }
 </style>
