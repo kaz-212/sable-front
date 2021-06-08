@@ -120,7 +120,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2vw;
+    margin-top: 2vw;
     img {
       width: 80%;
       overflow: hidden;
@@ -147,11 +147,11 @@ export default {
       font-size: 22px;
       .text {
         width: 80%;
-        margin-bottom: 2vw;
+        margin-top: 2vw;
       }
       .blog-name {
         margin-top: 4vw;
-        margin-bottom: 4vw;
+        margin-bottom: 2vw;
         font-size: 31px;
       }
       .author {
@@ -159,7 +159,8 @@ export default {
         width: 80%;
         border-bottom: $primaryLineWidth solid black;
         justify-content: space-between;
-        margin-bottom: 3vw;
+        margin-top: 2vw;
+        margin-bottom: 1vw;
       }
       .text {
         display: flex;
@@ -170,6 +171,7 @@ export default {
 }
 
 @media (max-width: 600px) {
+.showBlog {
   .main {
     .header-pane {
       display: none;
@@ -178,12 +180,17 @@ export default {
       width: 80%;
     }
   }
-  .showBlog {
     .image {
       img {
         width: 100%;
       }
     }
+  }
+}
+
+@media (min-width: 600px) {
+  .info {
+    margin-bottom: 4vw;
   }
 }
 </style>
