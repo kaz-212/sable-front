@@ -1,9 +1,10 @@
 <template>
   <div class="more-info">
     <div class="banner-info-name" v-if="name">{{ name.trim() }}</div>
-    <a v-if="link_url" :href="link_url" target="_blank"
-      ><button>explore</button></a
-    >
+    <a v-if="link_url" :href="link_url" target="_blank">
+      <button v-if="link_text">{{ link_text }}</button>
+      <button v-else>explore</button>
+    </a>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ export default {
   name: 'MoreInfo',
   props: {
     link_url: String,
+    link_text: String,
     name: String
   }
 };

@@ -12,6 +12,7 @@
     <MoreInfo
       :link_url="slides[selectedImg].link_url"
       :name="slides[selectedImg].name"
+      :link_text="slides[selectedImg].link_text"
     />
     <div class="img-wrapper" v-if="slides[selectedImg].image_url">
       <img :src="slides[selectedImg].image_url" alt="banner-image" />
