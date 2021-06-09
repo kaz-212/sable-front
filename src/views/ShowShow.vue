@@ -90,6 +90,7 @@ export default {
       height: 70vh;
       overflow: hidden;
       object-fit: cover;
+      transform: scale(1.1);
     }
   }
   .banner {
