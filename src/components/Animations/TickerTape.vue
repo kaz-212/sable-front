@@ -40,11 +40,7 @@ export default {
     checkBrowserNotSafari() {
       const ua = navigator.userAgent.toLowerCase();
       if (ua.indexOf('safari') !== -1) {
-        if (ua.indexOf('chrome') > -1) {
-          this.isNotSafari = true;
-        } else {
-          this.isNotSafari = false;
-        }
+        this.isNotSafari = (ua.indexOf('chrome') > -1);
       }
     }
   },
