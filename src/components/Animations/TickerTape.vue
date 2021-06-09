@@ -1,6 +1,6 @@
 <template>
   <div class="ticker-wrap">
-    <div class="ticker">
+    <div class="ticker" v-if="isNotIOS && isNotSafari">
       <p class="marquee">
         <span>{{ showName }}</span>
       </p>
@@ -8,12 +8,50 @@
         <span>{{ showName }}</span>
       </p>
     </div>
+    <div class="static" v-else>
+      <span>{{ showName }}</span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['showName']
+  props: ['showName'],
+  data() {
+    return {
+      isNotIOS: true,
+      isNotSafari: true
+    };
+  },
+  methods: {
+    checkOSNotiOS() {
+      const disabled = [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ];
+
+      const result = !disabled.includes(navigator.platform);
+      this.isNotIOS = result;
+    },
+    checkBrowserNotSafari() {
+      const ua = navigator.userAgent.toLowerCase();
+      if (ua.indexOf('safari') !== -1) {
+        if (ua.indexOf('chrome') > -1) {
+          this.isNotSafari = true;
+        } else {
+          this.isNotSafari = false;
+        }
+      }
+    }
+  },
+  created() {
+    this.checkBrowserNotSafari();
+    this.checkOSNotiOS();
+  }
 };
 </script>
 
@@ -24,7 +62,12 @@ export default {
   margin: 5px;
   font-size: 16px;
   direction: rtl;
-
+  .static {
+    line-height: 1;
+    overflow-x: hidden;
+    white-space: nowrap;
+    position: absolute;
+  }
   .marquee {
     line-height: 1;
     overflow-x: hidden;
