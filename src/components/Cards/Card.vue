@@ -1,7 +1,11 @@
 <template>
-  <div class="card">
+  <div class="card" v-bind:class="{ fade: $route.name === 'Search' }">
     <router-link :to="{ name: targetLocation, params: { id } }">
-      <img v-if="image" :src="image" :alt="name" />
+    <h2 class="type" v-if="$route.name === 'Search'">{{ type }}</h2>
+      <img v-if="image"
+           :src="image"
+           :alt="name"
+      />
     <h2 class="name">{{ name }}</h2>
     <h3 v-if="date" class="date">{{ date }}</h3>
     <div class="tags">
@@ -57,10 +61,12 @@ export default {
 .card {
   max-width: 240px;
   margin-bottom: 25px;
+  transition: 3s;
   a {
     text-decoration: none;
   }
   img {
+    position: relative;
     width: 240px;
     height: 240px;
     border: $primaryLineWidth solid black;
@@ -79,6 +85,17 @@ export default {
     letter-spacing: 1px;
     color: $primaryTextColour;
   }
+  .type {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 240px;
+    background: rgb(2, 2, 2);
+    color: #fff;
+    opacity: 1;
+  }
   .tags {
     display: flex;
     flex-wrap: wrap;
@@ -91,6 +108,15 @@ export default {
       color: grey;
       padding-right: 7px;
     }
+  }
+}
+
+.fade:hover {
+  img {
+  opacity: 0.3;
+  }
+  .type {
+  opacity: 1;
   }
 }
 </style>

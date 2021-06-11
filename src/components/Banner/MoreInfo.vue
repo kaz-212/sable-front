@@ -43,6 +43,7 @@ button:hover {
   padding: 10px;
   margin-bottom: 1.5vw;
   margin-left: 2vw;
+  margin-right: 2vw;
   border: 1px solid black;
   background-color: rgb(255, 255, 255);
 }
