@@ -61,7 +61,6 @@ export default {
 .card {
   max-width: 240px;
   margin-bottom: 25px;
-  transition: 3s;
   a {
     text-decoration: none;
   }
