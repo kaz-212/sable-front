@@ -30,7 +30,6 @@
             :image="show.pictures.large"
             :id="show.key"
             type="show"
-            :tags="show.tags"
             class="grid-item"
           />
         </div>
