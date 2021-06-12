@@ -34,6 +34,7 @@ button {
   color: white;
   background-color: black;
   transition: 0.2s;
+  font-size: 14px;
 }
 button:hover {
   background-color: grey;
