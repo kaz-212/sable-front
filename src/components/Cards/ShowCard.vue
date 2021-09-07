@@ -2,20 +2,20 @@
   <div class="show-card">
     <Card
       v-if="!small"
-      :name="name.slice(0, -10)"
+      :name="name.slice(0, -24)"
       :image="image"
       :type="type"
-      :date="name.slice(-8)"
+      :date="name.slice(-23, -13)"
       :tags="tags"
       :id="id"
       :small="small"
     />
     <SmallCard
       v-else
-      :name="name.slice(0, -10)"
+      :name="name.slice(0, -24)"
       :image="image"
       :type="type"
-      :date="name.slice(-8)"
+      :date="name.slice(-23, -13)"
       :tags="tags"
       :id="id"
       :small="small"

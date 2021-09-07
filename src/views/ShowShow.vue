@@ -34,10 +34,10 @@
       </div>
       <div class="info" v-if="show.name">
         <h2 class="show-name">
-          {{ show.name.slice(0, -10) }}
+          {{ show.name.slice(0, -24) }}
         </h2>
         <div class="date">
-          <p>{{ show.name.slice(-8) }}</p>
+          <p>{{ show.name.slice(-23, -13) }}</p>
         </div>
         <div class="description">
           <p>{{ show.description }}</p>
