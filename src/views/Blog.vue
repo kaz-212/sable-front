@@ -5,22 +5,20 @@
       <br/>come back soon and we’ll have some pretty editorials here.
     </h1>
   </div> -->
-  <div class="blog">
-    <grid-template header="blogs">
-      <div class="grid">
-        <BlogCard
-          v-bind:key="blog.id"
-          v-for="blog in blogs"
-          :name="blog.name"
-          :image="blog.banner"
-          :date="blog.post_type"
-          type="blog"
-          :id="blog.id.toString()"
-          class="grid-item"
-        />
-      </div>
-    </grid-template>
-  </div>
+  <grid-template header="blogs">
+    <div class="grid">
+      <BlogCard
+        v-bind:key="blog.id"
+        v-for="blog in blogs"
+        :name="blog.name"
+        :image="blog.banner"
+        :date="blog.post_type"
+        type="blog"
+        :id="blog.id.toString()"
+        class="grid-item"
+      />
+    </div>
+  </grid-template>
 </template>
 
 <script>
