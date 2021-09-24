@@ -120,7 +120,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2vw;
+    margin-top: 40px;
     img {
       width: 80%;
       overflow: hidden;
@@ -147,11 +147,11 @@ export default {
       font-size: 22px;
       .text {
         width: 80%;
-        margin-top: 2vw;
+        margin-top: 40px;
       }
       .blog-name {
         margin-top: 4vw;
-        margin-bottom: 2vw;
+        margin-bottom: 40px;
         font-size: 31px;
       }
       .author {
@@ -159,8 +159,8 @@ export default {
         width: 80%;
         border-bottom: $primaryLineWidth solid black;
         justify-content: space-between;
-        margin-top: 2vw;
-        margin-bottom: 1vw;
+        margin-top: 20px;
+        margin-bottom: 20px;
       }
       .text {
         display: flex;
@@ -190,7 +190,7 @@ export default {
 
 @media (min-width: 600px) {
   .info {
-    margin-bottom: 4vw;
+    margin-bottom: 40px;
   }
 }
 </style>
