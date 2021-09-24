@@ -40,6 +40,6 @@ export default {
     br {
       display: block; /* makes it have a width */
       content: ""; /* clears default height */
-      margin-top: 2vw; /* change this to whatever height you want it */
+      margin-top: 30px; /* change this to whatever height you want it */
     }
 </style>
