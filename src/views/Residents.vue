@@ -17,7 +17,7 @@
           :name="resident.name"
           :image="resident.image_url"
           type="resident"
-          :id="resident.id.toString()"
+          :id="slugify(resident.name)"
           class="grid-item"
         />
       </div>
@@ -38,6 +38,11 @@ export default {
   computed: {
     residents() {
       return this.$store.getters['residents/getResidents'];
+    }
+  },
+  methods: {
+    slugify(name) {
+      return name.split(' ').join('-');
     }
   },
   async created() {
