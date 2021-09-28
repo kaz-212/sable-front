@@ -14,7 +14,7 @@
         :image="blog.banner"
         :date="blog.post_type"
         type="blog"
-        :id="blog.id.toString()"
+        :id="slugify(blog.name)"
         class="grid-item"
       />
     </div>
@@ -30,6 +30,11 @@ export default {
   components: {
     BlogCard,
     GridTemplate
+  },
+  methods: {
+    slugify(name) {
+      return name.split(' ').join('-');
+    }
   },
   async created() {
     await this.$store.dispatch('blogs/fetchBlogs');
