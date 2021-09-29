@@ -3,7 +3,9 @@ import router from '../../router/index';
 
 const residentsQueryURL = 'https://sable-radio.herokuapp.com/api/residents/search/';
 const blogsQueryURL = 'https://sable-radio.herokuapp.com/api/blogs/search/';
-const mixcloudQueryURL = 'https://api.mixcloud.com/sableradio/cloudcasts/';
+// const mixcloudQueryURL = 'https://api.mixcloud.com/sableradio/cloudcasts/';
+const mixcloudPrefix = 'https://api.mixcloud.com/search/?q=';
+const mixcloudSuffix = '%20Sable%20Radio&type=cloudcast';
 
 export default {
   namespaced: true,
@@ -32,17 +34,19 @@ export default {
     },
     async searchShows(state, queryString) {
       try {
-        const { data } = await axios.get(mixcloudQueryURL);
-        const result = data.data.filter(show =>
-          /*eslint-disable*/
-          show.name.toLowerCase().includes(queryString.toLowerCase())
-        );
+        const { data } = await axios.get(`${mixcloudPrefix}${queryString}${mixcloudSuffix}`);
+        console.log(data);
+        const result = data;
+        // const result = data.data.filter(show =>
+        //   /*eslint-disable*/
+        //   show.name.toLowerCase().includes(queryString.toLowerCase())
+        // );
         state.commit('setShows', result);
       } catch (e) {
         console.log(e);
       }
     },
-    async searchAll({ dispatch, commit }, queryString) {
+    async searchAll({ dispatch }, queryString) {
       try {
         await Promise.all([
           dispatch('searchResidents', queryString),
