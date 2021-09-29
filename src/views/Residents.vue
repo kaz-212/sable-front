@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     slugify(name) {
-      return name.split(' ').join('-');
+      return name.replaceAll('-', '±').replaceAll(' ', '-').replaceAll('/', '|');
     }
   },
   async created() {
