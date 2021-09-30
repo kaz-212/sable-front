@@ -11,7 +11,7 @@
             :name="resident.name"
             :image="resident.image_url"
             type="resident"
-            :id="resident.id"
+            :id="slugify(resident.name)"
             class="grid-item"
           />
           <ResCard
@@ -20,7 +20,7 @@
             :name="blog.name"
             :image="blog.banner"
             type="blog"
-            :id="blog.id"
+            :id="slugify(blog.name)"
             class="grid-item"
           />
           <ShowCard
@@ -66,6 +66,11 @@ export default {
     },
     queryShows() {
       return this.$store.getters['search/getShows'];
+    }
+  },
+  methods: {
+    slugify(name) {
+      return name.replaceAll('-', '±').replaceAll(' ', '-').replaceAll('/', '|');
     }
   }
 };
