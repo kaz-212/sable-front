@@ -148,6 +148,7 @@ export default {
       .text {
         width: 80%;
         margin-top: 40px;
+        line-height: 30px;
       }
       .blog-name {
         margin-top: 4vw;

@@ -203,7 +203,7 @@ export default {
     margin-bottom: 17px;
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   #nav {
     height: auto;
     justify-content: flex-end;
@@ -275,7 +275,7 @@ export default {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   #nav {
     .upnext {
       display: none;

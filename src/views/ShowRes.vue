@@ -167,6 +167,7 @@ export default {
       .description {
         font-size: 22px;
         margin-bottom: 40px;
+        line-height: 30px;
         width: 80%;
       }
       .res-name {
