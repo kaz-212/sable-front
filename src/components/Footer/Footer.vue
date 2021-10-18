@@ -149,9 +149,6 @@ export default {
         margin-right: 5vw;
         margin-left: 3px;
       }
-      a {
-        color: $primaryTextColour;
-      }
     }
     .findus {
       display: flex;

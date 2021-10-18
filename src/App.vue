@@ -28,6 +28,12 @@ export default {
   // min-height: 100vh;
 }
 
+a:-webkit-any-link {
+  color: black;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
     @font-face {
       font-family: 'TWKLausanne';
       src: url('../public/TWKLausanne-300.otf');
