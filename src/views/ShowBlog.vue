@@ -149,12 +149,6 @@ export default {
         width: 80%;
         margin-top: 40px;
         line-height: 30px;
-        color: $primaryTextColour;
-          a:-webkit-any-link {
-            color: black;
-            cursor: pointer;
-            text-decoration: underline;
-          }
       }
       .blog-name {
         margin-top: 4vw;
