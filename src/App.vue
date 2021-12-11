@@ -49,20 +49,6 @@ export default {
   font-style: italic;
 }
 
-@font-face {
-  font-family: 'TWKLausanne';
-  src: url('../public/fonts/TWKLausanne-800.ttf') format("truetype");
-  font-weight: extra-bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'TWKLausanne';
-  src: url('../public/fonts/TWKLausanne-800Italic.ttf') format("truetype");
-  font-weight: extra-bold;
-  font-style: italic;
-}
-
 * {
   font-family: 'TWKLausanne';
 }
