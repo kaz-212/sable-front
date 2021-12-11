@@ -20,6 +20,53 @@ export default {
 </script>
 
 <style lang="scss">
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('../public/fonts/TWKLausanne-300.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('../public/fonts/TWKLausanne-300Italic.ttf') format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('../public/fonts/TWKLausanne-600.ttf') format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('../public/fonts/TWKLausanne-600Italic.ttf') format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('../public/fonts/TWKLausanne-800.ttf') format("truetype");
+  font-weight: extra-bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TWKLausanne';
+  src: url('../public/fonts/TWKLausanne-800Italic.ttf') format("truetype");
+  font-weight: extra-bold;
+  font-style: italic;
+}
+
+* {
+  font-family: 'TWKLausanne';
+}
+
 #app {
   background-color: $backgroundColour;
   margin: 0;
@@ -33,15 +80,6 @@ a:-webkit-any-link {
   cursor: pointer;
   text-decoration: underline;
 }
-
-    @font-face {
-      font-family: 'TWKLausanne';
-      src: url('../public/TWKLausanne-300.otf');
-    }
-
-    * {
-      font-family: TWKLausanne;
-    }
 
     br {
       display: block; /* makes it have a width */
