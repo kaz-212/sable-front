@@ -21,8 +21,6 @@
         <div class="findus-text">
           <p>If you need to find us, we are located on St Mary Street at the top of Mabgate Green.
           </p>
-          <br />
-          <p>The studio has been closed because of c*vid but hopefully we’ll be back open soon.</p>
         </div>
       </div>
     </div>

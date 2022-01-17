@@ -14,7 +14,7 @@
         >blog</router-link
       >
       <div @click="expandNav = false" class="nav-link chat">
-        <a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw/videos" target="_blank"
+        <a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw" target="_blank"
           >watch</a
         >
       </div>
