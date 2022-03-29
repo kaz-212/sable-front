@@ -66,7 +66,7 @@ export default {
   }
   .marquee {
     line-height: 1;
-    overflow-x: hidden;
+    overflow: hidden;
     white-space: nowrap;
     position: absolute;
   }

@@ -55,6 +55,7 @@ export default {
   .grid-template {
     .grid {
       grid-template-columns: 1fr;
+      padding-top: 10vh;
     }
   }
 }
