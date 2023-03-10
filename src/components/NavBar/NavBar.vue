@@ -7,52 +7,52 @@
       <router-link v-else class="nav-link logo-link" :to="{ name: 'Home' }"><img class="logo-image" src="https://imgur.com/NqfyxTx.png" alt=""></router-link>
     </div>
     <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
-      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Shows' }"
-        >shows</router-link
-      >
-      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Blog' }"
-        >blog</router-link
-      >
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Blog' }">
+        blog
+      </router-link>
       <div @click="expandNav = false" class="nav-link chat">
-        <a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw" target="_blank"
-          >watch</a
-        >
+        <a href="https://www.youtube.com/channel/UCm8EBbqs6nOquh0dW17y4Rw" target="_blank">
+          watch
+        </a>
       </div>
-      <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link>
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Shows' }">
+        shows
+      </router-link>
+      <!-- <router-link class="nav-link" :to="{ name: 'Residents' }">residents</router-link> -->
     </div>
     <div class="hamburger" :class="{ toggledropdown: expandNav }" @click="expandNav = !expandNav">
       <span class="bar line1"></span>
       <span class="bar line2"></span>
       <span class="bar line3"></span>
     </div>
-    <div class="player" v-show="thisShow.length !== 0">
+    <!-- <div class="player" v-show="thisShow.length !== 0">
       <RadioPlayer />
       <RadioEmbed class="embed" />
       <LiveNow class="blinker" />
-    </div>
-    <div class="upnext" v-if="thisShow.length === 0" :class="{ searchToggle: isSearching }">
+    </div> -->
+    <!-- <div class="upnext" v-if="thisShow.length === 0" :class="{ searchToggle: isSearching }">
       <div class="upnext-desktop">
         <ticker-tape showName="studio back open and broadcasting again soon" />
       </div>
-    </div>
+    </div> -->
   </nav>
 </template>
 
 <script>
-import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
-import LiveNow from '@/components/Animations/LiveNow.vue';
-import TickerTape from '@/components/Animations/TickerTape.vue';
+// import RadioEmbed from '@/components/Radio/RadioEmbed.vue';
+// import LiveNow from '@/components/Animations/LiveNow.vue';
+// import TickerTape from '@/components/Animations/TickerTape.vue';
+// import RadioPlayer from './RadioPlayer.vue';
 import SearchBar from '@/components/Search/SearchBar.vue';
-import RadioPlayer from './RadioPlayer.vue';
 
 export default {
   name: 'NavBar',
   components: {
-    RadioPlayer,
-    RadioEmbed,
-    LiveNow,
-    SearchBar,
-    TickerTape
+    // RadioPlayer,
+    // RadioEmbed,
+    // LiveNow,
+    // TickerTape,
+    SearchBar
   },
   data() {
     return {
