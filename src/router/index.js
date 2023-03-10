@@ -15,11 +15,11 @@ const routes = [
     name: 'Shows',
     component: () => import(/* webpackChunkName: "shows" */ '../views/Shows.vue')
   },
-  {
-    path: '/residents',
-    name: 'Residents',
-    component: () => import(/* webpackChunkName: "resident" */ '../views/Residents.vue')
-  },
+  // {
+  //   path: '/residents',
+  //   name: 'Residents',
+  //   component: () => import(/* webpackChunkName: "resident" */ '../views/Residents.vue')
+  // },
   {
     path: '/residents/:id',
     name: 'ShowResident',

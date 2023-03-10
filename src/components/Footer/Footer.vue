@@ -28,8 +28,8 @@
       <div class="contact head">contact</div>
       <div class="details contact-text">
         Get in touch at
-        <a href="info@sableradio.live">info@sableradio.live</a>
-        or find us at
+        <a href="info@sableradio.live">info@sableradio.live</a>, sign up to our
+        <a href="https://tinyurl.com/sablenewsletter">newsletter</a>, or find us at
         <a href="https://www.google.com/maps/place/Sable+Radio/@53.7993197,-1.5320086,17z/data=!4m5!3m4!1s0x48795dee12aa30b7:0x974e0ba8a48d296a!8m2!3d53.7992842!4d-1.5296654"
         target="_blank">convention house</a>
       </div>
@@ -53,6 +53,27 @@
           target="_blank"
         >
           <i class="fab fa-instagram icon"></i>
+        </a>
+        <a
+          class="footer-link"
+          href="https://soundcloud.com/sableradioleeds"
+          target="_blank"
+        >
+          <i class="fab fa-soundcloud icon"></i>
+        </a>
+        <a
+          class="footer-link"
+          href="https://www.mixcloud.com/sableradio/"
+          target="_blank"
+        >
+          <i class="fab fa-mixcloud icon"></i>
+        </a>
+        <a
+          class="footer-link"
+          href="https://www.youtube.com/@sableradio6870"
+          target="_blank"
+        >
+          <i class="fab fa-youtube icon"></i>
         </a>
         <div class="on-mobile">
         <a
