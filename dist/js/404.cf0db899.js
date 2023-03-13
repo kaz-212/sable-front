@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["404"],{"8cdb":function(e,t,s){"use strict";s.r(t);var n=function(){var e=this,t=e.$createElement;e._self._c;return e._m(0)},c=[function(){var e=this,t=e.$createElement,s=e._self._c||t;return s("div",{staticClass:"page-not-found"},[s("div",{staticClass:"message"},[s("h1",[e._v("oops - 404 error")]),s("br"),s("p",[e._v("this page does not exist")])])])}],a={},i=a,o=(s("e2d2"),s("2877")),r=Object(o["a"])(i,n,c,!1,null,"15cca348",null);t["default"]=r.exports},be82:function(e,t,s){},e2d2:function(e,t,s){"use strict";s("be82")}}]);
-//# sourceMappingURL=404.29691f1a.js.map
+//# sourceMappingURL=404.cf0db899.js.map
