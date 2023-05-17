@@ -8,7 +8,7 @@ Vue.config.productionTip = false;
 // uncomment below for every redeploy
 if (process.env.NODE_ENV === 'production') {
   if (window.location.protocol !== 'https:') {
-    window.location.href = `https://www.sableradio.live${window.location.pathname}`;
+    window.location.href = `https://www.sablestudio.co${window.location.pathname}`;
   }
 }
 

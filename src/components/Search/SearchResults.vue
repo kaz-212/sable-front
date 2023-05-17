@@ -2,6 +2,7 @@
   <div>
     <div v-if="queryResidents.length > 0 ||
                queryShows.length > 0 ||
+               queryProjects.length > 0 ||
                queryBlogs.length > 0">
       <grid-template header="search results">
         <div class="grid">
@@ -21,6 +22,15 @@
             :image="blog.banner"
             type="blog"
             :id="slugify(blog.name)"
+            class="grid-item"
+          />
+          <ResCard
+            v-bind:key="project.id"
+            v-for="project in queryProjects"
+            :name="project.name"
+            :image="project.image_url"
+            type="project"
+            :id="slugify(project.name)"
             class="grid-item"
           />
           <ShowCard
@@ -60,6 +70,9 @@ export default {
   computed: {
     queryResidents() {
       return this.$store.getters['search/getResidents'];
+    },
+    queryProjects() {
+      return this.$store.getters['search/getProjects'];
     },
     queryBlogs() {
       return this.$store.getters['search/getBlogs'];

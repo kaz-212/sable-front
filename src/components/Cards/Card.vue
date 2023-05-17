@@ -44,6 +44,9 @@ export default {
         case 'show':
           target = 'ShowShow';
           break;
+        case 'project':
+          target = 'ShowProj';
+          break;
         case 'blog':
           target = 'ShowBlog';
           break;

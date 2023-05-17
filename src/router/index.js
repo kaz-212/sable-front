@@ -15,6 +15,11 @@ const routes = [
     name: 'Shows',
     component: () => import(/* webpackChunkName: "shows" */ '../views/Shows.vue')
   },
+  {
+    path: '/projects',
+    name: 'Projects',
+    component: () => import(/* webpackChunkName: "shows" */ '../views/Projects.vue')
+  },
   // {
   //   path: '/residents',
   //   name: 'Residents',
@@ -24,6 +29,11 @@ const routes = [
     path: '/residents/:id',
     name: 'ShowResident',
     component: () => import(/* webpackChunkName: "ShowResident" */ '../views/ShowRes.vue')
+  },
+  {
+    path: '/projects/:id',
+    name: 'ShowProj',
+    component: () => import(/* webpackChunkName: "ShowProj" */ '../views/ShowProj.vue')
   },
   {
     path: '/shows/:id',

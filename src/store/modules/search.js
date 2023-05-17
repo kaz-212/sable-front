@@ -3,6 +3,7 @@ import router from '../../router/index';
 
 const residentsQueryURL = 'https://sable-radio.herokuapp.com/api/residents/search/';
 const blogsQueryURL = 'https://sable-radio.herokuapp.com/api/blogs/search/';
+const projectsQueryURL = 'https://sable-radio.herokuapp.com/api/projs/search/';
 const mixcloudQueryURL = 'https://api.mixcloud.com/sableradio/cloudcasts/';
 
 export default {
@@ -10,6 +11,7 @@ export default {
   state: {
     searchResidentsState: [],
     searchShowsState: [],
+    searchProjsState: [],
     searchBlogsState: [],
     isSearching: false
   },
@@ -30,6 +32,14 @@ export default {
         console.log(e);
       }
     },
+    async searchProjects(state, queryString) {
+      try {
+        const { data } = await axios.get(`${projectsQueryURL}${queryString}`);
+        state.commit('setProjects', data);
+      } catch (e) {
+        console.log(e);
+      }
+    },
     async searchShows(state, queryString) {
       try {
         const { data } = await axios.get(mixcloudQueryURL);
@@ -46,6 +56,7 @@ export default {
       try {
         await Promise.all([
           dispatch('searchResidents', queryString),
+          dispatch('searchProjects', queryString),
           dispatch('searchBlogs', queryString),
           dispatch('searchShows', queryString)
         ]);
@@ -57,6 +68,7 @@ export default {
     clearAll(state) {
       state.commit('setShows', '');
       state.commit('setBlogs', '');
+      state.commit('setProjects', '');
       state.commit('setResidents', '');
     },
     searching({ commit }) {
@@ -68,6 +80,7 @@ export default {
   },
   getters: {
     getResidents: state => state.searchResidentsState,
+    getProjects: state => state.searchProjectsState,
     getBlogs: state => state.searchBlogsState,
     getShows: state => state.searchShowsState,
     isSearching: state => state.isSearching
@@ -78,6 +91,9 @@ export default {
     },
     setBlogs(state, blogsData) {
       state.searchBlogsState = blogsData;
+    },
+    setProjects(state, projectsData) {
+      state.searchProjectsState = projectsData;
     },
     setShows(state, showsData) {
       state.searchShowsState = showsData;

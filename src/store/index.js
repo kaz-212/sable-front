@@ -6,6 +6,7 @@ import currentShow from './modules/currentShow';
 import residents from './modules/residents';
 import search from './modules/search';
 import blogs from './modules/blogs';
+import projects from './modules/projects';
 
 Vue.use(Vuex);
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     currentShow,
     residents,
     search,
-    blogs
+    blogs,
+    projects
   }
 });
