@@ -7,9 +7,9 @@
       <router-link v-else class="nav-link logo-link" :to="{ name: 'Home' }"><img class="logo-image" src="https://imgur.com/NqfyxTx.png" alt=""></router-link>
     </div>
     <div @click="expandNav = false" class="links" :class="{ hide: !expandNav }">
-      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Projects' }">
+      <!-- <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Projects' }">
         projects
-      </router-link>
+      </router-link> -->
       <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Blog' }">
         blog
       </router-link>
