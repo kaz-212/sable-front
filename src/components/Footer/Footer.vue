@@ -19,7 +19,7 @@
       <div class="findus" id="findus">
         <FindUs />
         <div class="findus-text">
-          <p>If you need to find us, we are located at Byron Street Mills, Mabgate.
+          <p>If you need to find us, we are located at 10A Byron Street Mills, Mabgate.
           </p>
         </div>
       </div>
