@@ -10,6 +10,9 @@
       <!-- <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Projects' }">
         projects
       </router-link> -->
+      <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'About' }">
+        about
+      </router-link>
       <router-link @click="expandNav = false" class="nav-link" :to="{ name: 'Blog' }">
         blog
       </router-link>
