@@ -28,7 +28,7 @@
       <div class="contact head">contact</div>
       <div class="details contact-text">
         Get in touch at
-        <a href="info@sableradio.live">info@sableradio.live</a>, sign up to our
+        <a href="mailto:hello@sablestudio.co">hello@sablestudio.co</a>, sign up to our
         <a href="https://live.us5.list-manage.com/subscribe?u=8a1c0f23dfbe02fba90e7cab1&id=8b73b6b6a7">newsletter</a>, or find us at
         <a href="https://goo.gl/maps/BK9dRNynsgkBXQiF8"
         target="_blank">byron street mills</a>
